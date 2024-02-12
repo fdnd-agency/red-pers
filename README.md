@@ -7,7 +7,7 @@ Red Pers is een groep van - op dit moment 54 - jonge, gedreven mensen met een pa
 We willen graag dat de website goed te gebruiken is door alle gebruikers. De website werkt nog niet volledig responsive en is ook nog niet getest op toegankelijkheid. Daarnaast moeten er nog een aantal componenten en pagina's afgemaakt worden en er zijn wensen voor nieuwe features, zoals bijvoorbeeld een podcast player en een aantrekkelijkere weergave van foto reportages. 
 ## Resources
 
-[Backlog]()
+[Backlog](https://github.com/orgs/fdnd-agency/projects/28)
 
 [Huisstijl]()  
 
