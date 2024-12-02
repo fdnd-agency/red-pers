@@ -1,0 +1,256 @@
+:root{
+    /* FONTS */
+    --font-main: Inter, 'sans-serif';
+    --font-alt: Tiempos, 'Source serif 4';
+    --font-style: regular;
+    --font-size: 16px;
+    --font-size-small: 14px;
+    --line-height: 125%;
+    --font-style-ligth: light;
+    --line-height-small: 144%;
+    --font-style-bold: bold;
+    --font-style-italic: italic;
+    --font-style-extra-bold: extra-bold;
+
+    /* COLORS */
+    --background-color: #ffffff;
+    --img-text-background-color: #00000080;
+    --text-color: #000000;
+    --alt-text-color: #757575;
+    --light-border-color: #9b9b9b94;
+    --accent-color1: #D5302D;
+    --accent-color2: #F4FBE9;
+    --accent-color3: #F9D4CF;
+    --accent-color4: #5340e8;
+    --border-fieldset-focus: #005FCC;
+  
+    /* WIDTH/HEIGHT */
+    --main-width: 1240px;
+    --article-width: 600px;
+    --margin-center: 0 auto;
+    --thumbnail-width: 100%;
+    --thumbnail-height: 200px;
+    --thumbnail-heightsm: 150px;
+  
+    /* BORDERS */
+    --border: solid var(--text-color) 1px;
+    --border-light: solid var(--light-border-color) 1px;
+    
+    --line-length: 75ch;
+    --line-heigth: 30px;
+
+    /* HOVER TRANSITIONS */
+    --hover: 0.4s;
+}
+
+/* #region Fonts */
+/* inter-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/inter-v13-latin-regular.woff2") format("woff2");
+  }
+  /* inter-500 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    src: url("/fonts/inter-v13-latin-500.woff2") format("woff2");
+  }
+  /* inter-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    src: url("/fonts/inter-v13-latin-700.woff2") format("woff2");
+  }
+  
+  /* TiemposText */
+  @font-face {
+    font-display: swap;
+    font-family: "Tiempos";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/TiemposText-Regular.woff2") format("woff2");
+  }
+  
+  /* TiemposHeadline */
+  @font-face {
+    font-display: swap;
+    font-family: "Tiempos";
+    font-style: normal;
+    font-weight: 700;
+    src: url("/fonts/TiemposHeadline-Medium.woff2") format("woff2");
+  }
+  /* #endregion Fonts */
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    font-style: var(--font-style);
+    font-size: var(--font-size);
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    line-height: var(--line-height);
+}
+  
+main {
+    max-width: 1240px;
+    margin: var(--margin-center);
+}
+  
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+button, a.button {
+    color: var(--alt-text-color);
+    background-color: var(--button-background-color);
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+.bold {
+    font-weight: var(--font-style-bold);
+}
+
+.italic{
+    font-family: var(--font-main);
+    font-style: var(--font-style-italic);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+}
+
+.small{
+    font-family: var(--font-main);
+    font-style: var(--font-style);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+}
+
+header{
+    font-family: var(--font-main);
+    font-style: var(--font-style);
+    font-size: var(--font-size);
+    line-height: 100%;
+    letter-spacing: -2%;
+}
+
+.kop-1{
+    font-family: var(--font-main);
+    font-style: var(--font-style-extra-bold);
+    font-size: 32px;
+    line-height: 150%;
+}
+
+.kop-2{
+    font-family: var(--font-main);
+    font-style: var(--font-style-bold);
+    font-size: 20px;
+    line-height: 100%;
+}
+
+.kop-3{
+    font-family: var(--font-main);
+    font-style: var(--font-style-extra-bold);
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -1%;
+}
+
+h4 {
+    font-family: var(--font-main);
+    font-style: var(--font-style-bold);
+    font-size: var(--font-size-small);
+    line-height: 150%;
+    letter-spacing: 2%;
+}
+
+.menu-item{
+    font-family: var(--font-main);
+    font-style: var(--font-style);
+    font-size: var(--font-size);
+    line-height: 100%;
+    letter-spacing: -2%;
+}
+
+.slogan{
+    font-family: var(--font-main);
+    font-style: var(--font-style);
+    font-size: var(--font-size);
+    line-height: 100%;
+    letter-spacing: -2%;
+}
+
+.knop{
+    font-family: var(--font-main);
+    font-style: var(--font-style);
+    font-size: var(--font-size);
+    line-height: 100%;
+    letter-spacing: -2%;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.meta {
+    font-family: var(--font-main);
+    font-style: var(--font-style);
+    font-size: 11px;
+    line-height: 140%;
+    letter-spacing: 10%;
+}
+
+.tussenkop{
+    font-family: var(--font-main);
+    font-style: black;
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.broodtekst{
+    font-family: var(--font-alt);
+    font-style: var(--font-style);
+    font-size: var(--font-size);
+    line-height: 170%;
+}
+
+.broodtekst-italic {
+    font-family: var(--font-alt);
+    font-style: var(--font-style-italic);
+    font-size: var(--font-size);
+    line-height: 170%;
+}
+
+.uitgelicht{
+    font-family: var(--font-alt);
+    font-style: var(--font-style-bold);
+    font-size: 38px;
+    line-height: 100%;
+}
+
+blockquote {
+    font-family: var(--font-alt);
+    font-style: bold;
+    font-size: 38px;
+    line-height: 100%;
+    padding-top: 1em;
+}
+
+blockquote::before {
+    content: '‘’';
+    color: var(--accent-color1);
+    font-size: 100px;
+    margin-bottom: -60px;
+    display: block;
+}
