@@ -11,6 +11,7 @@
     import Header from '$lib/Organism/Header.svelte';
     import Artikel from '$lib/Organism/Artikel.svelte';
     import CategoryPreview from '$lib/Organism/CategoryPreview.svelte';
+  import Nav from '../lib/Organism/Nav.svelte';
 
 </script>
 
@@ -27,6 +28,8 @@
             <!-- This will show if no posts are available -->
             <p>No posts available</p>
         {/if}
+
+        <Nav />
     
         {#each data.categories as category}
             <CategoryPreview categoryName={category.name} categorySlug={category.slug} posts={category.posts} />
@@ -44,7 +47,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: 1em;
-        padding-top: 1em;
         justify-content: center;
     }
 </style>
