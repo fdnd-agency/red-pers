@@ -1,22 +1,24 @@
-<main>
-<h3>Steun Red Pers</h3>
-<section class="donatiebox">
-    <p class="intro">
-      Je las dit artikel gratis, maar dat betekent niet dat het Red Pers niets heeft gekost. Wij bieden jonge, aspirerende journalisten een podium én begeleiding. Dat kunnen we nog beter met jouw steun. Die steun komt met twee voor de prijs van één, want onze sponsor matcht jouw donatie. Geef jij ons vijf euro? Dan ontvangen wij een tientje.
-    </p>
+
+    <main>
+      <h3>Steun Red Pers</h3>
+      <section class="donatiebox">
+        <p class="intro">
+          Je las dit artikel gratis, maar dat betekent niet dat het Red Pers niets heeft gekost. Wij bieden jonge, aspirerende journalisten een podium én begeleiding. Dat kunnen we nog beter met jouw steun. Die steun komt met twee voor de prijs van één, want onze sponsor matcht jouw donatie. Geef jij ons vijf euro? Dan ontvangen wij een tientje.
+        </p>
+    
+        <div class="donatie-bedragen">
+          <button aria-label="Doneer 5 euro" class="bedrag-button">€5</button>
+          <button aria-label="Doneer 10 euro" class="bedrag-button">€10</button>
+          <button aria-label="Doneer 20 euro" class="bedrag-button">€20</button>
+          <button aria-label="Doneer 50 euro" class="bedrag-button">€50</button>
+        </div>
+    
+        <div class="andere-donatie">
+          <button aria-label="Anders, vul zelf bedrag in">ANDERS</button>
+        </div>
+      </section>
+    </main>
   
-    <div class="donatie-bedragen">
-      <button aria-label="Doneer 5 euro" class="bedrag-button">€5</button>
-      <button aria-label="Doneer 10 euro" class="bedrag-button">€10</button>
-      <button aria-label="Doneer 20 euro" class="bedrag-button">€20</button>
-      <button aria-label="Doneer 50 euro" class="bedrag-button">€50</button>
-    </div>
-  
-    <div class="andere-donatie">
-      <button aria-label="Anders, vul zelf bedrag in">ANDERS</button>
-    </div>
-  </section>
-</main>
   
 <style>
 main{

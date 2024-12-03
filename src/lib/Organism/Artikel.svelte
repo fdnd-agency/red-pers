@@ -48,6 +48,25 @@
         border-bottom: var(--border);
     }
 
+    article img{
+        animation: fade-in linear;
+        animation-timeline: view();
+        animation-range-start:500px ;
+        animation-range-end: 700px;
+    }
+
+    @keyframes fade-in {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
     h1 {
         font-family: var(--font-alt);
         font-weight: var(--font-style-bold);
