@@ -48,6 +48,19 @@
         border-bottom: var(--border);
     }
 
+    article > img {
+        filter: blur(10px); 
+        animation: fade-in 1s linear forwards;
+        animation-timeline: view();
+        animation-range: contain;
+    }
+
+    @keyframes fade-in {
+        to {
+            filter: blur(0); 
+        }
+    }
+
 
     h1 {
         font-family: var(--font-alt);

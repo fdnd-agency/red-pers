@@ -66,6 +66,7 @@
         margin-bottom: 1em;
     }
     
+    
     :global(article img) {
         width: 100%;
         height: auto;
