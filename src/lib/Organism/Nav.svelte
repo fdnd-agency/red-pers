@@ -1,17 +1,21 @@
 <script>
+    export let alwaysSticky;
+
     import { categoriesData } from "$lib/index.js";
-  import { onMount } from "svelte";
+    import { onMount } from "svelte";
 
-    let sticky = false;
+    let sticky = alwaysSticky;
 
-    onMount(() => {
-        window.addEventListener('scroll', () => {
-            sticky = window.scrollY > 710;
+    if (!alwaysSticky) {
+        onMount(() => {
+            window.addEventListener('scroll', () => {
+                sticky = window.scrollY > 710;
+            })
         })
-    })
+    }
 </script>
 
-<div class="container" class:sticky={sticky}>
+<div class="container" class:sticky={sticky} class:alwaysSticky={alwaysSticky}>
     <nav>
         <div class="nav-items">
             <ul>
@@ -29,7 +33,8 @@
         margin-top: 2em;
     }
 
-    .sticky {
+    /* if sticky is true but alwaysSticky is false */
+    .sticky:not(.alwaysSticky) {
         margin-bottom: 3em;
     }
 
@@ -44,15 +49,24 @@
         background-color: var(--background-color);
     }
 
-    ul {
-        width: var(--main-width);
+    .nav-items {
+        width: 100vw;
         height: 100%;
+    }
+
+    ul {
+        width: 100%;
+        max-width: var(--main-width);
+        height: 100%;
+
         display: flex;
         align-items: center;
-        padding: 10px 0;
-        margin: 0;
         justify-content: space-evenly;
         gap: 20px;
+
+        padding: 10px 0;
+        margin: 0 auto;
+        
         list-style: none;
         font-family: var(--menu-item);
         font-size: 14px;
@@ -63,7 +77,6 @@
 
     .sticky ul {
         border-top: none;
-        padding: 10px calc((100vw - var(--main-width)) / 2);
     }
 
     a {

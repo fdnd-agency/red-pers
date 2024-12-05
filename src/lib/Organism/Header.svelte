@@ -1,7 +1,7 @@
 <script>
     /** @type {import('./$types').PageData} */
 
-    export let hasNav = false;
+    export let alwaysSticky = true;
 
     const dateFormat = {
         month: 'long',
@@ -9,29 +9,27 @@
         weekday: 'long',
         year: 'numeric'
     };
-    const dateFormatSmall = {
-        month: 'short',
-        day: 'numeric',
-        weekday: 'short'
-    }
+
     import SearchBar from "$lib/Molecules/SearchBar.svelte";
     import Nieuwsbrief from "$lib/Molecules/Nieuwsbrief.svelte";
     import Donatiebtn from "$lib/Molecules/Donatiebtn.svelte";
     import { onMount } from "svelte";
     import Nav from "./Nav.svelte";
 
-    let sticky = false;
+    let sticky = alwaysSticky;
     
-    function checkScroll() {
-        sticky = window.scrollY > 50;
+    if (!alwaysSticky) {
+        onMount(() => {
+            // set sticky to true if we have scrolled > 50px
+            window.addEventListener("scroll", () => {
+                sticky = window.scrollY > 50;
+            });
+        });
     }
-
-    onMount(() => {
-        window.addEventListener("scroll", checkScroll);
-    });
 </script>
 
-<header class:has-sticky={sticky}>
+<!-- class sticky when sticky is true, class animate when header is not alwaysSticky -->
+<header class:sticky={sticky} class:animate={!alwaysSticky}>
     <section class="top">
         <ul>
             <li>Colofon</li>
@@ -40,13 +38,13 @@
             <li>Contact</li>
         </ul>
     </section>
-    <section class="main-header" class:sticky={sticky}>
+    <section class="main-header">
         <div class="main-header-inner">
             <div class="date">
                 <p class="date-bold uppercase">{(new Date()).toLocaleDateString("nl-NL", dateFormat)}</p>
                 <p class="uppercase">Podium voor de journalistiek</p>
             </div>
-            <a href="/">
+            <a href="/" class="logo-container">
                 <img src="/RedPers_Logo_Cmyk_Black.webp" alt="RedPers logo" width="280" height="70" />
             </a>
             <ul>
@@ -58,8 +56,9 @@
             </ul>
         </div>
     </section>
-    {#if hasNav}
-        <Nav />
+    {#if alwaysSticky}
+        <!-- Only include nav in header when header is alwaysSticky -->
+        <Nav alwaysSticky={alwaysSticky} />
     {/if}
 </header>
 
@@ -68,20 +67,28 @@
         background-color: var(--paper-color);
         padding: 3em 0;
         width: 100vw;
-        height: 140px;
-        overflow-y: hidden; /* Hide the inner borders */
+        overflow-y: hidden; /* Hide the inner borders when animating */
 
-        /* Bron: https://kizu.dev/scroll-driven-animations/ */
+        padding: 0 0;
+        background-color: var(--background-color);
+
+        height: 80px;
+    }
+    
+    .animate .main-header {
+        height: 140px;
+        padding: 3em 0;
+        background-color: var(--paper-color);
+
         animation: auto linear shrink-header both;
 
         animation-timeline: view();
-        animation-range:
-            100vh
-            calc(100vh + 40em);
+        animation-range: 100vh calc(100vh + 40em);
     }
+    /* Bron: https://kizu.dev/scroll-driven-animations/ */
 
-    .has-sticky {
-        /* Total height of main-header */
+    .sticky.animate {
+        /* Total height of main-header, required when making position fixed */
         margin-bottom: 230px;
     }
 
@@ -91,20 +98,21 @@
         height: 100%;
         justify-content: space-between;
 
-        width: var(--main-width);
+        max-width: var(--main-width);
+        padding: 0 10px;
         border-top: var(--border);
         border-bottom: var(--border);
         margin: 0 auto;
     }
 
-    .sticky {
+    .sticky .main-header {
         position: fixed;
         top: -1px; /* Hide upper inner border */
         left: 0;
         border-bottom: 1px solid black;
     }
 
-    a {
+    .logo-container {
         height: 50%;
     }
     

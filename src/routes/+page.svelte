@@ -15,7 +15,7 @@
 
 </script>
 
-<Header/>
+<Header alwaysSticky={false}/>
 
 <div class="background">
     <main>
@@ -29,7 +29,7 @@
             <p>No posts available</p>
         {/if}
 
-        <Nav />
+        <Nav alwaysSticky={false} />
     
         {#each data.categories as category}
             <CategoryPreview categoryName={category.name} categorySlug={category.slug} posts={category.posts} />
