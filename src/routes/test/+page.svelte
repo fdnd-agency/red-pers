@@ -1,6 +1,6 @@
-
-    <div class="scroll-watcher"></div>
+<div class="scroll-watcher" style="background-image: {gradientStyle}"></div>
     <main>
+       
         <!-- Artikel 1 -->
         <article>
             <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Licht en natuur">
@@ -35,24 +35,25 @@
     </main>
 
 <style>
-    .scroll-watcher{
-        height: 10px;
-        position: fixed;
-        top: 0;
-        z-index: 1000;
-        background-color: #D5302D;
-        transform-origin: left;
-        width: 100%;
-        scale: 0 1;
-        animation: scroll-watcher linear;
-        animation-timeline: scroll()
-    }
+  .scroll-watcher {
+    height: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #D5302D; /* Fallback kleur */
+    transform-origin: left;
+    width: 100%;
+    scale: 0 1;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+    transition: background-image 0.2s ease-in-out; /* Vloeiende overgang van gradient */
+  }
 
-    article > img {
-    filter: blur(10px); 
+article > img {
+    filter: blur(50px); 
     animation: fade-in 1s linear forwards;
     animation-timeline: view();
-    animation-range: contain;
+    animation-range: entry;
 }
 
 @keyframes fade-in {
@@ -61,8 +62,44 @@
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  /* Zet animaties en bewegingen uit voor gebruikers die reduced motion prefereren */
+  article > img {
+    animation: none;
+    transition: none;
+  }
+}
+
 
     @keyframes scroll-watcher{
         to { scale: 1 1;}
     }
 </style>
+
+<script>
+    import { onMount } from 'svelte';
+    
+    let gradientStyle = 'linear-gradient(to right, #ff7e5f, #feb47b)';
+  
+    const updateGradientOnScroll = () => {
+      const scrollPosition = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercentage = scrollPosition / maxScroll;
+      const hue = Math.floor(scrollPercentage * 360); 
+      const saturation = 100;  
+      const lightness = 50;   
+  
+      gradientStyle = `linear-gradient(to right, hsl(${hue}, ${saturation}%, ${lightness}%), hsl(${(hue + 180) % 360}, ${saturation}%, ${lightness}%))`;
+    };
+  
+    // Voeg scroll event listener toe bij component mounten
+    onMount(() => {
+      window.addEventListener('scroll', updateGradientOnScroll);
+  
+      // Verwijder de event listener bij unmounten van de component
+      return () => {
+        window.removeEventListener('scroll', updateGradientOnScroll);
+      };
+    });
+  </script>
+  

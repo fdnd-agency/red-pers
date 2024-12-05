@@ -48,18 +48,7 @@
         border-bottom: var(--border);
     }
 
-    article > img {
-        filter: blur(10px); 
-        animation: fade-in 1s linear forwards;
-        animation-timeline: view();
-        animation-range: contain;
-    }
 
-    @keyframes fade-in {
-        to {
-            filter: blur(0); 
-        }
-    }
 
 
     h1 {
@@ -69,6 +58,27 @@
         line-height: var(--title-font-line-height);
         letter-spacing: 0.25px;
     }
+
+    article > img {
+    filter: blur(50px); 
+    animation: fade-in 1s linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+}
+
+@keyframes fade-in {
+    to {
+        filter: blur(0); 
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Zet animaties en bewegingen uit voor gebruikers die reduced motion prefereren */
+  article > img {
+    animation: none;
+    transition: none;
+  }
+}
 
     .title {
         width: calc(100% - 1em);

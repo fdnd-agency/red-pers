@@ -9,10 +9,13 @@
     
     import Footer from '$lib/Organism/Footer.svelte';
     import Header from '$lib/Organism/Header.svelte';
+    import Scrollwatcher from '$lib/Molecules/Scrollwatcher.svelte';
     import Artikel from '$lib/Organism/Artikel.svelte';
     import CategoryPreview from '$lib/Organism/CategoryPreview.svelte';
 
 </script>
+
+<Scrollwatcher/>
 
 <Header/>
 
@@ -47,4 +50,6 @@
         padding-top: 1em;
         justify-content: center;
     }
+
+    
 </style>

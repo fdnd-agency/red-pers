@@ -3,6 +3,7 @@
     import Header from '$lib/Organism/Header.svelte';
     import ArtikelKlein from '$lib/Molecules/Artikelklein.svelte';
     import Footer from '$lib/Organism/Footer.svelte';
+    import Scrollwatcher from '$lib/Molecules/Scrollwatcher.svelte';
 
     /** @type {import('./$types').PageData} */
     export let data;
@@ -20,6 +21,7 @@
     }
 </script>
 
+<Scrollwatcher />
 <Header/>
 <ArtikelInfoframe post={post}></ArtikelInfoframe>
 
