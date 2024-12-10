@@ -8,7 +8,8 @@ export async function load() {
         categories: await Promise.all(categoriesData.map(async (category) => ({
             name: category.name,
             slug: category.slug,
-            posts: await wp.posts().param('categories', category.id).perPage(3)
+            posts: await wp.posts().param('categories', category.id).perPage(3),
+            color: category.color
         })))
     }
 }

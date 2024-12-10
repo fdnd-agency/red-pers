@@ -48,6 +48,7 @@
 
     .search-bar {
         width: var(--search-bar-width);
+        background-color: inherit;
         margin-left: calc(-2px - var(--search-bar-width));
         height: 2.5em;
         transition: width 500ms, margin-left 500ms;
@@ -61,7 +62,7 @@
 
     button {
         filter: invert(1);
-        background-color: var(--background-color);
+        background-color: inherit;
         height: 3em;
         width: 3em;
     }
