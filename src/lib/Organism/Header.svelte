@@ -15,7 +15,7 @@
     import SearchBar from "$lib/Molecules/SearchBar.svelte";
     import Nieuwsbrief from "$lib/Molecules/Nieuwsbrief.svelte";
     import Donatiebtn from "$lib/Molecules/Donatiebtn.svelte";
-  import { onMount } from "svelte";
+    import { onMount } from "svelte";
 
     let sticky = false;
     
@@ -242,6 +242,7 @@
         background-color: var(--background-color);
         border-bottom: 1px solid #ddd;
         border-top: 1px solid #ddd;
+        z-index: 1;
     }
     
     .onder-items {

@@ -21,7 +21,7 @@
         {#if data.posts}
             {#each data.posts as post}
                 <!-- @html means: there is html in this string, render it -->
-                <Artikel post={post} />
+                <Artikel post={post} transitionId={post.id} />
             {/each}
         {:else}
             <!-- This will show if no posts are available -->

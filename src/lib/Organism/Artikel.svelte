@@ -1,5 +1,6 @@
 <script>
     export let post
+    export let transitionId = undefined;
 
     const dateFormat = {
         month: 'short',
@@ -9,10 +10,17 @@
 
 <a href="/{post.slug}">
     <article class="article">
-        <img loading="lazy" src={post.yoast_head_json.og_image[0].url} alt="Artikel afbeelding" width="25em" height="15em">
+        <img
+            loading="lazy"
+            style={transitionId ? `view-transition-name: img-${transitionId}` : ''}
+            src={post.yoast_head_json.og_image[0].url}
+            alt="Artikel afbeelding"
+            width="25em"
+            height="15em"
+        >
         <div class="title-info-text">
             <div class="title">
-                <h1 class="artikel-kop">{@html post.title.rendered}</h1>
+                <h1 class="artikel-kop" style={transitionId ? `view-transition-name: h1-${transitionId}` : ''}>{@html post.title.rendered}</h1>
             </div>
             <div class="info-text">
                 <p>
