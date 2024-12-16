@@ -13,7 +13,7 @@
     </div>
     <div class="articles">
         {#each posts as post}
-            <Artikel post={post} />
+            <Artikel post={post} transitionId={`${categorySlug}-${post.id}`} />
         {/each}
     </div>
 </div>

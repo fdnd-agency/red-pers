@@ -38,7 +38,7 @@
 
 <style>
     .background {
-        background-color: #f5f5f5;
+        background-color: var(--paper-color);
     }
     main {
         display: flex;

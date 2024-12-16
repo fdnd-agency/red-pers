@@ -1,6 +1,6 @@
 <script>
     export let post
-    export let transitionId = undefined;
+    export let transitionId
 
     const dateFormat = {
         month: 'short',
@@ -8,11 +8,12 @@
     };
 </script>
 
-<a href="/{post.slug}">
+<!-- vtn = view-transition-name -->
+<a href="/{post.slug}?vtn={transitionId}">
     <article class="article">
         <img
             loading="lazy"
-            style={transitionId ? `view-transition-name: img-${transitionId}` : ''}
+            style={`view-transition-name: img-${transitionId}`}
             src={post.yoast_head_json.og_image[0].url}
             alt="Artikel afbeelding"
             width="25em"
@@ -20,7 +21,7 @@
         >
         <div class="title-info-text">
             <div class="title">
-                <h1 class="artikel-kop" style={transitionId ? `view-transition-name: h1-${transitionId}` : ''}>{@html post.title.rendered}</h1>
+                <h1 class="artikel-kop" style={`view-transition-name: h1-${transitionId}`}>{@html post.title.rendered}</h1>
             </div>
             <div class="info-text">
                 <p>

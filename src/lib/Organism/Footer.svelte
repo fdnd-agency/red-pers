@@ -82,7 +82,7 @@
 <style>
     
     footer {
-        background-color: #f5f5f5;
+        background-color: var(--paper-color);
         padding: 100px;
     }
 
@@ -165,7 +165,7 @@
     }
 
     footer {
-        background-color: #f5f5f5;
+        background-color: var(--paper-color);
         padding: 50px 20px;
     }
 

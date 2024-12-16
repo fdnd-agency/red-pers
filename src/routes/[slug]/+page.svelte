@@ -8,7 +8,7 @@
     export let data;
     
     // Check if the data has been received and is an array
-    const post = data.post;
+    const { post, transitionId } = data;
     import Makersblok from '$lib/Molecules/Makersblok.svelte';
     import Donatiebox from '$lib/Molecules/Donatiebox.svelte';
     import ArtikelTools from '../../lib/Molecules/ArtikelTools.svelte';
@@ -21,28 +21,26 @@
 </script>
 
 <Header/>
-<ArtikelInfoframe post={post}></ArtikelInfoframe>
+<ArtikelInfoframe post={post} transitionId={transitionId}></ArtikelInfoframe>
 
 <main>
     <ArtikelTools changeFontSizeFunction={changeFontSize}></ArtikelTools>
     {#if post}
-    <!-- @html means: there is html in this string, render it -->
-    <article>
-        <p class:large={fontSizeBig}>{@html post.content.rendered} </p>
-        <Donatiebox />
-        <h2>Dit artikel werd geschreven door</h2>
-        <Makersblok author={post.authors[0]}></Makersblok>
-    </article>
-  
-{:else}
-    <p>No post available</p>
-{/if}
+        <!-- @html means: there is html in this string, render it -->
+        <article>
+            <p class:large={fontSizeBig}>{@html post.content.rendered} </p>
+            <Donatiebox />
+            <h2>Dit artikel werd geschreven door</h2>
+            <Makersblok author={post.authors[0]}></Makersblok>
+        </article>
+    {:else}
+        <p>No post available</p>
+    {/if}
 
-<h2>Meer van {post.authors[0].display_name}</h2>
-<ArtikelKlein posts={data.authorPosts}/>
-<h2>Meer van Red Pers</h2>
-<ArtikelKlein posts={data.additionalPosts}/>
-
+    <h2>Meer van {post.authors[0].display_name}</h2>
+    <ArtikelKlein posts={data.authorPosts}/>
+    <h2>Meer van Red Pers</h2>
+    <ArtikelKlein posts={data.additionalPosts}/>
 </main>
 
 <Footer/>

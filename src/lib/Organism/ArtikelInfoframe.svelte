@@ -1,5 +1,6 @@
 <script>
     export let post
+    export let transitionId
     const dateFormat = {
         day: 'numeric',
         month: 'long',
@@ -14,7 +15,7 @@
                 <p class="boven-kop uppercase bold">
                     {@html post.yoast_head_json.schema["@graph"][0].articleSection[0]}
                 </p>
-                <h1 class="artikel-kop" style={`view-transition-name: h1-${post.id}`}>{@html post.title.rendered}</h1>
+                <h1 class="artikel-kop" style={`view-transition-name: h1-${transitionId}`}>{@html post.title.rendered}</h1>
                 <div class="introtekst">
                     {@html post.excerpt.rendered}
                 </div>
@@ -24,7 +25,7 @@
                 </div>
             </article>
             <article class="img-container">
-                <img style={`view-transition-name: img-${post.id}`} width="850" height="400" src={post.yoast_head_json.og_image[0].url} alt="Artikel afbeelding">
+                <img style={`view-transition-name: img-${transitionId}`} width="850" height="400" src={post.yoast_head_json.og_image[0].url} alt="Artikel afbeelding">
                 <p class="small">
                     {(new Date(post.date)).toLocaleDateString("nl-NL", dateFormat)}
                 </p>

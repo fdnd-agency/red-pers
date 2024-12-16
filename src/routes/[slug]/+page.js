@@ -2,7 +2,7 @@
 import wp from "$lib/wordpress";
 import { error } from "@sveltejs/kit";
 
-export async function load({ params }) {
+export async function load({ params, url }) {
     const post = (await wp.posts().slug(params.slug))[0];
     // If there is no post, return 404
     if (!post) {
@@ -18,6 +18,7 @@ export async function load({ params }) {
     return {
         post,
         authorPosts,
-        additionalPosts
+        additionalPosts,
+        transitionId: url.searchParams.get('vtn')
     }
 }

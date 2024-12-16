@@ -23,8 +23,33 @@
         sticky = window.scrollY > 130;
     }
 
+    function toggleDarkMode() {
+        if (document.startViewTransition) {
+            document.startViewTransition(async () => {
+                document.body.classList.toggle('dark-mode');
+            })
+        } else {
+            document.body.classList.toggle('dark-mode');
+        }
+    }
+
     onMount(() => {
         window.addEventListener("scroll", checkScroll);
+
+        // Check user preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // dark mode
+            document.body.classList.add('dark-mode');
+        }
+        // Watch for changes in user preference
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        });
+        // Bron: https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript
     });
 </script>
 
@@ -56,7 +81,7 @@
                 </div>
             </nav>
             <a href="/">
-                <img src="/RedPers_Logo_Cmyk_Black (1).webp" alt="RedPers logo" width="150" height="35" />
+                <img class="logo" src="/RedPers_Logo_Cmyk_Black (1).webp" alt="RedPers logo" width="150" height="35" />
             </a>
             <div class="mobile-search">
                 <SearchBar resultsPage="/search" name="searchterm" placeholder="Zoeken..." />
@@ -73,6 +98,48 @@
 
     <div class="groot-scherm">
         <section class="boven">
+            <button on:click={toggleDarkMode}>
+                <svg class="dark-mode-only" width="30" height="30">
+                    <circle cx="15" cy="15" r="8" fill="white" />
+                  
+                    <line
+                        id="ray"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        x1="15"
+                        y1="1"
+                        x2="15"
+                        y2="3"
+                    ></line>
+                    
+                    <use href="#ray" transform="rotate(45 15 15)" />
+                    <use href="#ray" transform="rotate(90 15 15)" />
+                    <use href="#ray" transform="rotate(135 15 15)" />
+                    <use href="#ray" transform="rotate(180 15 15)" />
+                    <use href="#ray" transform="rotate(225 15 15)" />
+                    <use href="#ray" transform="rotate(270 15 15)" />
+                    <use href="#ray" transform="rotate(315 15 15)" />
+                </svg>
+                <svg class="light-mode-only" width="30" height="30">
+                    <path
+                        stroke="white"
+                        fill="white"
+                        d="
+                            M 15, 6
+                            A 9 9 0 1 0 15, 24
+                            A 12 12 0 0 1 15, 5
+                        "
+                    />
+                    <path
+                        stroke="white"
+                        d="
+                            M 15, 6
+                            A 9 9 0 0 1 15, 24
+                        "
+                    />
+                </svg> 
+            </button>
             <ul>
                 <li>Colofon</li>
                 <li>Over</li>
@@ -86,7 +153,7 @@
                 <p class="uppercase">Podium voor de journalistiek</p>
             </div>
             <a href="/">
-                <img src="/RedPers_Logo_Cmyk_Black (1).webp" alt="RedPers logo" width="160" height="40" />
+                <img class="logo" src="/RedPers_Logo_Cmyk_Black (1).webp" alt="RedPers logo" width="160" height="40" />
             </a>
             <ul>
                 <li><Nieuwsbrief /></li>
