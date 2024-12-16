@@ -18,15 +18,7 @@
 
 <div class="background">
     <main>
-        {#if data.posts}
-            {#each data.posts as post}
-                <!-- @html means: there is html in this string, render it -->
-                <Artikel post={post} />
-            {/each}
-        {:else}
-            <!-- This will show if no posts are available -->
-            <p>No posts available</p>
-        {/if}
+
     
         {#each data.categories as category}
             <CategoryPreview categoryName={category.name} categorySlug={category.slug} posts={category.posts} />

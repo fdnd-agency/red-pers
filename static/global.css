@@ -254,3 +254,7 @@ blockquote::before {
     margin-bottom: -60px;
     display: block;
 }
+
+@view-transition {
+    navigation: auto;
+}

@@ -24,7 +24,7 @@
                 </div>
             </article>
             <article class="img-container">
-                <img width="850" height="400" src={post.yoast_head_json.og_image[0].url} alt="Artikel afbeelding">
+                <img style="view-transition-name: {post.slug}" width="850" height="400" src={post.yoast_head_json.og_image[0].url} alt="Artikel afbeelding">
                 <p class="small">
                     {(new Date(post.date)).toLocaleDateString("nl-NL", dateFormat)}
                 </p>

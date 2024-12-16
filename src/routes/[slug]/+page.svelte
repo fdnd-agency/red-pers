@@ -38,10 +38,10 @@
     <p>No post available</p>
 {/if}
 
-<h2>Meer van {post.authors[0].display_name}</h2>
+<!-- <h2>Meer van {post.authors[0].display_name}</h2>
 <ArtikelKlein posts={data.authorPosts}/>
 <h2>Meer van Red Pers</h2>
-<ArtikelKlein posts={data.additionalPosts}/>
+<ArtikelKlein posts={data.additionalPosts}/> -->
 
 </main>
 

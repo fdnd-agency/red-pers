@@ -9,7 +9,7 @@
 
 <a href="/{post.slug}">
     <article class="article">
-        <img loading="lazy" src={post.yoast_head_json.og_image[0].url} alt="Artikel afbeelding" width="25em" height="15em">
+        <img style="view-transition-name: {post.slug}"loading="lazy" src={post.yoast_head_json.og_image[0].url} alt="Artikel afbeelding" width="25em" height="15em">
         <div class="title-info-text">
             <div class="title">
                 <h1 class="artikel-kop">{@html post.title.rendered}</h1>
