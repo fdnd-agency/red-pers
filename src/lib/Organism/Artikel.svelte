@@ -42,6 +42,13 @@
         background-color: var(--background-color);
     }
 
+    article:hover {
+	border: solid 2px var(--blue);
+	transform: scale(1.05);
+	transition: 0.7s;
+	filter: blur(12px);
+}
+
     img {
         width: 100%;
         height: 15em;
