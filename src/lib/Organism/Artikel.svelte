@@ -35,7 +35,6 @@
     article {
         --title-font-size: 28px;
         --title-font-line-height: 32px;
-
         max-width: 25em;
         width: 100vw;
         border: var(--border);
@@ -43,7 +42,6 @@
     }
 
     article:hover {
-	border: solid 2px var(--blue);
 	transform: scale(1.05);
 	transition: 0.7s;
 	filter: blur(12px);
