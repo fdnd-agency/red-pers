@@ -16,12 +16,7 @@
     import Nieuwsbrief from "$lib/Molecules/Nieuwsbrief.svelte";
     import Donatiebtn from "$lib/Molecules/Donatiebtn.svelte";
   import { onMount } from "svelte";
-  import Switch from '$lib/Molecules/Switch.svelte';
-  let switchState = false;
 
-  function handleToggle(event) {
-    console.log('Switch state is now:', event.detail.isOn);
-  }
 
     let sticky = false;
     
