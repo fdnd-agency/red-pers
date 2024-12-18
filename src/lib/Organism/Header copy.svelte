@@ -98,6 +98,7 @@
             <div class="onder-items">
                 <p class="datum-bold uppercase">{(new Date()).toLocaleDateString("nl-NL", dateFormatSmall)}</p>
                 <ul>
+                    <img src="/output-onlinegiftools (1).gif" alt="" width="150" height="150">
                     <li><a href="/">Voorpagina</a></li>
                     {#each categoriesData as category}
                         <li><a href="/categorie/{category.slug}">{category.name}</a></li>
@@ -317,13 +318,17 @@
         height: 100%;
         display: flex;
         align-items: center;
-        padding: 15px;
         justify-content: center;
         gap: 20px;
         list-style: none;
         font-family: var(--menu-item);
         font-size: 14px;
     }
+
+    .onder img{
+        max-width: 100%; /* Zorgt ervoor dat de GIF zich aanpast aan de breedte van de container */
+  height: 80px;
+}
 
     .midden {
         display: flex;
