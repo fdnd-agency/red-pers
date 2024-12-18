@@ -87,7 +87,7 @@
                     <img src="/RedPers_Logo_Cmyk_Black (1).webp" alt="RedPers logo" width="160" height="40" />
             </a>
             <ul>
-                <li><Nieuwsbrief /></li>
+                <li class="NB"><Nieuwsbrief /></li>
                 <li><Donatiebtn /></li>
                 <li class="groot-search">
                     <SearchBar resultsPage="/search" name="searchterm" placeholder="Zoeken..." />
@@ -118,9 +118,6 @@
     height: 100px; /* Set a height for .boven so it’s visible */
     width: 100%; /* Or a specific width like 100vw, depending on your layout */
     overflow: hidden; /* Prevent the image from overflowing when it moves */
-    background-image: url('/black-background-with-snowflakes-falling-style-cartoon-depicting-christmas-concept_1273183-1014.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .boven img {
@@ -143,6 +140,9 @@
     }
 }
 
+.groot-scherm{
+    background: linear-gradient(45deg, #ff0000, #ffffff, #008000);
+}
 
 
     #menuToggle {
@@ -286,6 +286,11 @@
         margin: 0 auto;
     }
 
+    .midden{
+        border-top: 2px solid black;
+        color: #d4af37; /* Gouden kleur */
+    }
+
     .onder .datum-bold {
         display: none;
     }
@@ -322,7 +327,6 @@
 
     .midden {
         display: flex;
-        background-color: var(--background-color);
         align-items: center;
         padding: 10px;
         margin-left: 10px;
@@ -335,6 +339,10 @@
 
     .sticky ul {
         border: none;
+    }
+
+    .NB{
+        color: black;
     }
 
     .midden ul {
@@ -386,7 +394,6 @@
     }
 
     .boven {
-        background-color: black;
         display: flex;
         color: white;
         justify-content: end;

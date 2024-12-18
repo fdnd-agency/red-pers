@@ -24,6 +24,7 @@
     });
 </script>
 
+
 <!-- Snowflakes container -->
 <div class="snowflakes">
     {#each Array(500).fill() as _, index}
@@ -104,9 +105,8 @@
 
 <style>
  .background {
-    background-image: url('/black-background-with-snowflakes-falling-style-cartoon-depicting-christmas-concept_1273183-1014.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(45deg, #ff0000, #ffffff, #008000);
+
 }
 
     .svg-container {
