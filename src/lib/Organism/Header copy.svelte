@@ -95,8 +95,6 @@
                 <img src="/RedPers_Logo_Cmyk_Black (1).webp" alt="RedPers logo" width="160" height="40" />
             </a>
             <ul>
-                <li>CHIRSTMAS MODE</li>
-                <li><Switch bind:isOn={switchState} on:toggle={handleToggle} />
                 <li><Nieuwsbrief /></li>
                 <li><Donatiebtn /></li>
                 <li class="groot-search">
