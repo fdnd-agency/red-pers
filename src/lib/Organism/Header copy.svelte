@@ -14,7 +14,7 @@
     import { categoriesData } from "$lib/index.js";
     import SearchBar from "$lib/Molecules/SearchBar.svelte";
     import Nieuwsbrief from "$lib/Molecules/Nieuwsbrief.svelte";
-    import Donatiebtn from "$lib/Molecules/Donatiebtn.svelte";
+    import Donatiebtn from "$lib/Molecules/Donatiebtn copy.svelte";
   import { onMount } from "svelte";
 
 
@@ -74,12 +74,7 @@
 
     <div class="groot-scherm">
         <section class="boven">
-            <ul>
-                <li>Colofon</li>
-                <li>Over</li>
-                <li>Meedoen</li>
-                <li>Contact</li>
-            </ul>
+            <img src="/sportsmanias-emoji.gif" alt="Emoji" class="emoji-image">
         </section>
         <section class="midden">
             <div class="datum">
@@ -87,7 +82,9 @@
                 <p class="uppercase">Podium voor de journalistiek</p>
             </div>
             <a href="/">
-                <img src="/RedPers_Logo_Cmyk_Black (1).webp" alt="RedPers logo" width="160" height="40" />
+
+                    
+                    <img src="/RedPers_Logo_Cmyk_Black (1).webp" alt="RedPers logo" width="160" height="40" />
             </a>
             <ul>
                 <li><Nieuwsbrief /></li>
@@ -115,6 +112,39 @@
 </header>
 
 <style>
+
+.boven {
+    position: relative;
+    height: 100px; /* Set a height for .boven so it’s visible */
+    width: 100%; /* Or a specific width like 100vw, depending on your layout */
+    overflow: hidden; /* Prevent the image from overflowing when it moves */
+    background-image: url('/black-background-with-snowflakes-falling-style-cartoon-depicting-christmas-concept_1273183-1014.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.boven img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    animation: walk-left 10s linear infinite;
+    z-index: 1; /* Ensure the image stays above other content */
+}
+
+
+
+
+@keyframes walk-left {
+    0% {
+        left: 100%; /* Start off the screen to the right */
+    }
+    100% {
+        left: -200px; /* Move off the screen to the left (considering image width) */
+    }
+}
+
+
+
     #menuToggle {
         display: block;
         position: relative;
@@ -137,6 +167,8 @@
         z-index: 2; 
         -webkit-touch-callout: none;
     }
+
+    
 
     #menuToggle span {
         display: block;
@@ -341,11 +373,7 @@
         margin: 0;
     }
 
-    .boven li:hover {
-    color: #000000;
-    background-color: #f0f0f0;
-    transition: var(--hover);
-    }
+
 
     ul a:hover {
     color: #ff0000;
@@ -364,13 +392,7 @@
         justify-content: end;
     }
     
-    .boven ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        cursor: pointer;
-        padding: 0;
-    }
+ 
 
     .boven ul li {
         padding: 15px;
@@ -383,9 +405,6 @@
             display: none;
         }
 
-        .boven ul {
-            display: none; 
-        }
     }
 
     @media (min-width: 900px) {
@@ -393,4 +412,6 @@
             display: none;
         }
     }
+
+    
 </style>

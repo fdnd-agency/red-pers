@@ -65,40 +65,7 @@ onNavigate((navigation) => {
 
 
 /* Sneeuwval toe te voegen aan de overgang */
-@keyframes snow-fall {
-    0% {
-        transform: translateY(-100px) translateX(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(200px) translateX(-50px);
-        opacity: 0;
-    }
-}
 
-.snowflake {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    animation: snow-fall 3s linear infinite;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-}
-
-.snowflake:nth-child(2) {
-    left: 25%;
-    animation-duration: 4s;
-    animation-delay: 0.5s;
-}
-
-.snowflake:nth-child(3) {
-    left: 75%;
-    animation-duration: 5s;
-    animation-delay: 1s;
-}
 
 /* Optionele reductie voor motion */
 @media (prefers-reduced-motion) {
@@ -106,16 +73,7 @@ onNavigate((navigation) => {
     :root::view-transition-new(root) {
         animation: none !important;
     }
-
-    .snowflake {
-        animation: none !important;
-    }
 }
 
 </style>
 
-<div class="snowflakes">
-    <div class="snowflake"></div>
-    <div class="snowflake"></div>
-    <div class="snowflake"></div>
-</div>

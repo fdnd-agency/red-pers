@@ -157,6 +157,7 @@
         <div class="light"></div>
         <div class="light"></div>
     </div>
+    
     <div class="knob"></div>
 </div>
 <span class="label">{isOn ? 'Aan' : 'Uit'}</span>

@@ -1,5 +1,5 @@
 <script>
-    import Artikel from '$lib/Organism/Artikel.svelte';
+    import Artikel from '$lib/Organism/Artikel copy.svelte';
     
     export let categoryName;
     export let categorySlug;
