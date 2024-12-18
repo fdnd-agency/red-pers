@@ -48,6 +48,7 @@
         border-bottom: var(--border);
     }
 
+
     h1 {
         font-family: var(--font-alt);
         font-weight: var(--font-style-bold);
