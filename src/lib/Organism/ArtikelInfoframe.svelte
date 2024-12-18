@@ -41,7 +41,7 @@
 
     header {
         width: calc(100vw - 2em);
-        background-color: var(--accent-color2);
+        background-color: var(--paper-color);
         padding: 0 1em;
     }
 

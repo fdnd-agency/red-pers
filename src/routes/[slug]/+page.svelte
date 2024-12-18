@@ -51,6 +51,7 @@
     main {
         max-width: var(--article-width);
         padding: 0 1em;
+        background-color: var(--background-color);
     }
 
     .large {

@@ -13,19 +13,20 @@
     --font-style-extra-bold: extra-bold;
 
     /* COLORS */
-    --background-color: #ffffff;
+    --background-color:#f3efe4;
+    --paper-color: #ddd2b3;
     --img-text-background-color: #00000080;
-    --text-color: #000000;
+    --text-color: #0f3b13;
     --alt-text-color: #757575;
     --light-border-color: #9b9b9b94;
-    --accent-color1: #D5302D;
+    --accent-color1: #7a2725;
     --accent-color2: #F4FBE9;
     --accent-color3: #F9D4CF;
     --accent-color4: #5340e8;
     --border-fieldset-focus: #005FCC;
   
     /* WIDTH/HEIGHT */
-    --main-width: 1240px;
+    --main-width: 1265px;
     --article-width: 600px;
     --margin-center: 0 auto;
     --thumbnail-width: 100%;
@@ -33,7 +34,7 @@
     --thumbnail-heightsm: 150px;
   
     /* BORDERS */
-    --border: solid var(--text-color) 1px;
+    --border: 5px double var(--text-color);
     --border-light: solid var(--light-border-color) 1px;
     
     --line-length: 75ch;
@@ -86,6 +87,15 @@
     font-weight: 700;
     src: url("/fonts/TiemposHeadline-Medium.woff2") format("woff2");
   }
+
+  @font-face {
+    font-display: swap;
+    font-family: "Underwood";
+    font-style: normal;
+    font-weight: 700;
+    src: url("/fonts/MyUnderwood-KOVy.ttf") format("truetype");
+  }
+  
   /* #endregion Fonts */
 
 body {
@@ -101,7 +111,7 @@ body {
 }
   
 main {
-    max-width: 1240px;
+    max-width: var(--main-width);
     margin: var(--margin-center);
 }
   
@@ -254,3 +264,56 @@ blockquote::before {
     margin-bottom: -60px;
     display: block;
 }
+
+.dark-mode-only {
+    display: none;
+}
+
+.dark-mode .dark-mode-only {
+    display: initial;
+}
+
+.dark-mode .light-mode-only {
+    display: none;
+}
+
+.dark-mode .logo {
+    filter: invert(1);
+}
+
+.dark-mode {
+    --background-color: black;
+    --text-color: white;
+    --paper-color: #333333; /* TODO: Change this. It's ugly */
+    --border: 1px solid var(--text-color);
+    color: var(--text-color);
+}
+
+
+/* View transition */
+@keyframes fade-in {
+    from { opacity: 0; }
+}
+
+@keyframes fade-out {
+    to { opacity: 0; }
+}
+
+@keyframes slide-from-right {
+    from { transform: translateX(30px); }
+}
+
+@keyframes slide-to-left {
+    to { transform: translateX(-30px); }
+}
+
+::view-transition-old(root) {
+    animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+}
+
+::view-transition-new(root) {
+    animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+}
+/* Bron: https://developer.chrome.com/docs/web-platform/view-transitions/same-document */

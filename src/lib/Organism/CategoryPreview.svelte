@@ -21,14 +21,14 @@
 <style>
     .category-name {
         margin: 3em 0;
-        border-top: 8px solid black;
+        border-top: 8px solid var(--text-color);
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
     h1 {
-        background-color: black;
+        background-color: var(--text-color);
         color: white;
         margin: 0;
         padding: 0.5em;

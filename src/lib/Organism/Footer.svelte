@@ -1,5 +1,7 @@
 <script>
     import { onMount, onDestroy } from 'svelte';
+    import ChristmasTree from '$lib/Atoms/ChristmasTree.svelte';
+  import Snowman from '../Atoms/Snowman.svelte';
 
     let year = new Date().getFullYear();
 
@@ -67,6 +69,9 @@
                 <li><a href="/">X Twitter</a></li>
             </ul>
         </li>
+        <li>
+            <Snowman/>
+        </li>
     </ul>
 
     <section class="end-footer">
@@ -82,7 +87,7 @@
 <style>
     
     footer {
-        background-color: #f5f5f5;
+        background-color: var(--paper-color);
         padding: 100px;
     }
 
@@ -165,7 +170,7 @@
     }
 
     footer {
-        background-color: #f5f5f5;
+        background-color: var(--paper-color);
         padding: 50px 20px;
     }
 
