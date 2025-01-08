@@ -15,7 +15,7 @@
     import SearchBar from "$lib/Molecules/SearchBar.svelte";
     import Nieuwsbrief from "$lib/Molecules/Nieuwsbrief.svelte";
     import Donatiebtn from "$lib/Molecules/Donatiebtn.svelte";
-  import { onMount } from "svelte";
+    import { onMount } from "svelte";
 
     let sticky = false;
     
