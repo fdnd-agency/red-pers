@@ -4,20 +4,23 @@
     import { categoriesData } from "$lib/index.js";
 </script>
 
-<nav class:open={open}>
-    <ul>
-        <li><a href="/">Voorpagina</a></li>
-        {#each categoriesData as category}
-            <li><a href="/categorie/{category.slug}">{category.name}</a></li>
-        {/each}
-    </ul>
-    <ul class="nav-2">
-        <li><a href="/">Colofon</a></li>
-        <li><a href="/">Over</a></li>
-        <li><a href="/">Meedoen</a></li>
-        <li><a href="/">Contact</a></li>
-    </ul>
-</nav>
+<div class="container" class:open={open}>
+    <div class="overlay" />
+    <nav>
+        <ul>
+            <li><a href="/">Voorpagina</a></li>
+            {#each categoriesData as category}
+                <li><a href="/categorie/{category.slug}">{category.name}</a></li>
+            {/each}
+        </ul>
+        <ul class="nav-2">
+            <li><a href="/">Colofon</a></li>
+            <li><a href="/">Over</a></li>
+            <li><a href="/">Meedoen</a></li>
+            <li><a href="/">Contact</a></li>
+        </ul>
+    </nav>
+</div>
 
 <style>
     nav {
@@ -37,7 +40,7 @@
         transition-behavior: allow-discrete;
     }
 
-    .open {
+    :global(header:has(.toggle-nav:checked) nav) {
         translate: 0 0;
         display: flex;
 
@@ -64,5 +67,14 @@
 
     .nav-2 a {
         color: var(--background-color);
+    }
+
+    :global(header:has(.toggle-nav:checked) .overlay) {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
     }
 </style>

@@ -28,14 +28,10 @@
             });
         });
     }
-
-    function toggleMobileNav() {
-        mobileNavOpen = !mobileNavOpen;
-    }
 </script>
 
 <!-- class sticky when sticky is true, class animate when header is not alwaysSticky -->
-<header class:sticky={sticky} class:animate={!alwaysSticky} class:mobile-nav-open={mobileNavOpen}>
+<header class:sticky={sticky} class:animate={!alwaysSticky}>
     <section class="top wide-screen-only">
         <ul>
             <li>Colofon</li>
@@ -47,13 +43,16 @@
     <section class="main-header">
         <div class="main-header-inner">
             <div class="date">
-                <button class="small-screen-only toggle-nav" on:click={toggleMobileNav}>
-                    <svg viewBox="0 0 18 14" width="36" height="28">
-                        <path d="M 1 0 h 16 a 1 1 0 0 1 0 2 h -16 a 1 1 0 0 1 0 -2"></path>
-                        <path d="M 1 6 h 16 a 1 1 0 0 1 0 2 h -16 a 1 1 0 0 1 0 -2"></path>
-                        <path d="M 1 12 h 16 a 1 1 0 0 1 0 2 h -16 a 1 1 0 0 1 0 -2"></path>
-                    </svg>
-                </button>
+                <div class="toggle-nav-container">
+                    <input class="small-screen-only toggle-nav" type="checkbox" id="toggle-nav"aria-label="Menu" />
+                    <label for="toggle-nav">
+                        <svg viewBox="0 0 18 14" width="36" height="28" class="nav-icon">
+                            <path d="M 1 0 h 16 a 1 1 0 0 1 0 2 h -16 a 1 1 0 0 1 0 -2"></path>
+                            <path d="M 1 6 h 16 a 1 1 0 0 1 0 2 h -16 a 1 1 0 0 1 0 -2"></path>
+                            <path d="M 1 12 h 16 a 1 1 0 0 1 0 2 h -16 a 1 1 0 0 1 0 -2"></path>
+                        </svg>
+                    </label>
+                </div>
                 <p class="date-bold uppercase wide-screen-only">{(new Date()).toLocaleDateString("nl-NL", dateFormat)}</p>
                 <p class="uppercase wide-screen-only">Podium voor de journalistiek</p>
             </div>
@@ -88,25 +87,6 @@
 
         height: 80px;
     }
-    
-    @media only screen and (min-width: 861px) {
-        .animate .main-header {
-            height: 140px;
-            padding: 3em 0;
-            background-color: var(--paper-color);
-
-            animation: auto linear shrink-header both;
-
-            animation-timeline: view();
-            animation-range: 100vh calc(100vh + 40em);
-        }
-        /* Bron: https://kizu.dev/scroll-driven-animations/ */
-
-        .sticky.animate {
-            /* Total height of main-header, required when making position fixed */
-            margin-bottom: 230px;
-        }
-    }
 
     .main-header-inner {
         display: flex;
@@ -125,7 +105,7 @@
         position: fixed;
         top: -1px; /* Hide upper inner border */
         left: 0;
-        border-bottom: 1px solid black;
+        border-bottom: var(--border);
     }
 
     .logo-container {
@@ -175,7 +155,6 @@
 
     .search {
         --search-bar-width: 20em;
-        --search-background-color: white;
     }
 
     .top li:hover {
@@ -210,27 +189,47 @@
         font-size: 14px;
     }
 
-    .toggle-nav path {
-        transition: transform 500ms, opacity 500ms;
-    }
-    
-    .toggle-nav path:nth-of-type(1) {
-        transform-origin: 1px 1px;
-    }
-    
-    .toggle-nav path:nth-of-type(3) {
-        transform-origin: 1px 13px;
+    .toggle-nav-container {
+        width: 36px;
+        height: 28px;
+        position: relative;
     }
 
-    .mobile-nav-open .toggle-nav path:nth-of-type(1) {
-        transform: rotate(45deg);
+    .toggle-nav-container input, .nav-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
-    .mobile-nav-open .toggle-nav path:nth-of-type(2) {
+    .toggle-nav-container input {
         opacity: 0;
     }
 
-    .mobile-nav-open .toggle-nav path:nth-of-type(3) {
+    .nav-icon {
+        cursor: pointer;
+    }
+
+    .nav-icon path {
+        transition: transform 500ms, opacity 500ms;
+    }
+    
+    .nav-icon path:nth-of-type(1) {
+        transform-origin: 1px 1px;
+    }
+    
+    .nav-icon path:nth-of-type(3) {
+        transform-origin: 1px 13px;
+    }
+
+    header:has(.toggle-nav:checked) path:nth-of-type(1) {
+        transform: rotate(45deg);
+    }
+
+    header:has(.toggle-nav:checked) path:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    header:has(.toggle-nav:checked) path:nth-of-type(3) {
         transform: rotate(-45deg);
     }
 
@@ -238,15 +237,18 @@
         0% {
             padding: 3em 0;
             background-color: var(--paper-color);
+            --search-background-color: var(--paper-color);
         }
         50% {
             padding: 0 0;
             background-color: var(--background-color);
+            --search-background-color: var(--background-color);
             height: 140px;
         }
         100% {
             padding: 0 0;
             background-color: var(--background-color);
+            --search-background-color: var(--background-color);
 
             height: 80px;
         }
@@ -254,6 +256,28 @@
 
     .small-screen-only {
         display: none;
+    }
+    
+    @media only screen and (min-width: 861px) {
+        .animate .main-header {
+            height: 140px;
+            padding: 3em 0;
+            background-color: var(--paper-color);
+
+            animation: auto linear shrink-header both;
+
+            animation-timeline: view();
+            animation-range: 100vh calc(100vh + 40em);
+        }
+        /* Bron: https://kizu.dev/scroll-driven-animations/ */
+
+        .sticky {
+            margin-bottom: 70px;
+        }
+        .sticky.animate {
+            /* Total height of main-header, required when making position fixed */
+            margin-bottom: 230px;
+        }
     }
 
     @media only screen and (max-width: 860px) {
@@ -273,6 +297,8 @@
             position: fixed;
             top: -1px; /* Hide upper inner border */
             left: 0;
+            border-bottom: var(--border);
+            z-index: 1;
         }
     }
 </style>

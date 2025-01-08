@@ -4,10 +4,9 @@
     export let categoryName;
     export let categorySlug;
     export let posts;
-    export let color;
 </script>
 
-<div style="--category-color: {color}">
+<div>
     <div class="category-name">
         <h1>{categoryName}</h1>
         <a href="/categorie/{categorySlug}">Meer {categoryName} <img src="/Vector-arrow.svg" alt="Link"></a>
@@ -22,14 +21,14 @@
 <style>
     .category-name {
         margin: 3em 0;
-        border-top: 8px solid var(--category-color);
+        border-top: 8px solid black;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
     h1 {
-        background-color: var(--category-color);
+        background-color: black;
         color: white;
         margin: 0;
         padding: 0.5em;

@@ -51,13 +51,14 @@
     }
 
     .nav-items {
-        width: var(--main-width);
+        max-width: var(--main-width);
         height: 100%;
         border-top: var(--border);
         border-bottom: var(--border);
     }
 
     .sticky .nav-items {
+        max-width: 100vw;
         width: 100vw;
         border-top: none;
         border-bottom: var(--border-light);
