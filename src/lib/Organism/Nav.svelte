@@ -1,21 +1,22 @@
 <script>
-    export let alwaysSticky;
+    export let alwaysSticky = false;
 
     import { categoriesData } from "$lib/index.js";
     import { onMount } from "svelte";
 
     let sticky = alwaysSticky;
+    let container;
 
     if (!alwaysSticky) {
         onMount(() => {
             window.addEventListener('scroll', () => {
-                sticky = window.scrollY > 710;
+                sticky = container?.getBoundingClientRect()?.y <= 78; // Bron: https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element
             })
         })
     }
 </script>
 
-<div class="container" class:sticky={sticky} class:alwaysSticky={alwaysSticky}>
+<div class="container" class:sticky={sticky} bind:this={container} class:alwaysSticky={alwaysSticky}>
     <nav>
         <div class="nav-items">
             <ul>
@@ -35,7 +36,7 @@
 
     /* if sticky is true but alwaysSticky is false */
     .sticky:not(.alwaysSticky) {
-        margin-bottom: 3em;
+        margin-bottom: 7em;
     }
 
     nav {
@@ -50,8 +51,16 @@
     }
 
     .nav-items {
-        width: 100vw;
+        width: var(--main-width);
         height: 100%;
+        border-top: var(--border);
+        border-bottom: var(--border);
+    }
+
+    .sticky .nav-items {
+        width: 100vw;
+        border-top: none;
+        border-bottom: var(--border-light);
     }
 
     ul {
@@ -61,7 +70,7 @@
 
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: center;
         gap: 20px;
 
         padding: 10px 0;
@@ -70,22 +79,21 @@
         list-style: none;
         font-family: var(--menu-item);
         font-size: 14px;
-
-        border-top: var(--border);
-        border-bottom: var(--border);
-    }
-
-    .sticky ul {
-        border-top: none;
     }
 
     a {
         font-family: var(--menu-item);
-        text-transform: uppercase;
+        font-size: 14px;
     }
 
     a:hover {
         color: #ff0000;
         transition: var(--hover);
+    }
+
+    @media only screen and (max-width: 860px) {
+        .container {
+            display: none;
+        }
     }
 </style>

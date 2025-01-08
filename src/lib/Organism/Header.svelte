@@ -13,10 +13,12 @@
     import SearchBar from "$lib/Molecules/SearchBar.svelte";
     import Nieuwsbrief from "$lib/Molecules/Nieuwsbrief.svelte";
     import Donatiebtn from "$lib/Molecules/Donatiebtn.svelte";
+    import MobileNav from "$lib/Organism/MobileNav.svelte";
     import { onMount } from "svelte";
     import Nav from "./Nav.svelte";
 
     let sticky = alwaysSticky;
+    let mobileNavOpen = false;
     
     if (!alwaysSticky) {
         onMount(() => {
@@ -26,11 +28,15 @@
             });
         });
     }
+
+    function toggleMobileNav() {
+        mobileNavOpen = !mobileNavOpen;
+    }
 </script>
 
 <!-- class sticky when sticky is true, class animate when header is not alwaysSticky -->
-<header class:sticky={sticky} class:animate={!alwaysSticky}>
-    <section class="top">
+<header class:sticky={sticky} class:animate={!alwaysSticky} class:mobile-nav-open={mobileNavOpen}>
+    <section class="top wide-screen-only">
         <ul>
             <li>Colofon</li>
             <li>Over</li>
@@ -41,15 +47,22 @@
     <section class="main-header">
         <div class="main-header-inner">
             <div class="date">
-                <p class="date-bold uppercase">{(new Date()).toLocaleDateString("nl-NL", dateFormat)}</p>
-                <p class="uppercase">Podium voor de journalistiek</p>
+                <button class="small-screen-only toggle-nav" on:click={toggleMobileNav}>
+                    <svg viewBox="0 0 18 14" width="36" height="28">
+                        <path d="M 1 0 h 16 a 1 1 0 0 1 0 2 h -16 a 1 1 0 0 1 0 -2"></path>
+                        <path d="M 1 6 h 16 a 1 1 0 0 1 0 2 h -16 a 1 1 0 0 1 0 -2"></path>
+                        <path d="M 1 12 h 16 a 1 1 0 0 1 0 2 h -16 a 1 1 0 0 1 0 -2"></path>
+                    </svg>
+                </button>
+                <p class="date-bold uppercase wide-screen-only">{(new Date()).toLocaleDateString("nl-NL", dateFormat)}</p>
+                <p class="uppercase wide-screen-only">Podium voor de journalistiek</p>
             </div>
             <a href="/" class="logo-container">
                 <img src="/RedPers_Logo_Cmyk_Black.webp" alt="RedPers logo" width="280" height="70" />
             </a>
             <ul>
-                <li><Nieuwsbrief /></li>
-                <li><Donatiebtn /></li>
+                <li class="wide-screen-only"><Nieuwsbrief /></li>
+                <li class="wide-screen-only"><Donatiebtn /></li>
                 <li class="search">
                     <SearchBar resultsPage="/search" name="searchterm" placeholder="Zoeken..." />
                 </li>
@@ -60,6 +73,7 @@
         <!-- Only include nav in header when header is alwaysSticky -->
         <Nav alwaysSticky={alwaysSticky} />
     {/if}
+    <MobileNav open={mobileNavOpen} />
 </header>
 
 <style>
@@ -75,21 +89,23 @@
         height: 80px;
     }
     
-    .animate .main-header {
-        height: 140px;
-        padding: 3em 0;
-        background-color: var(--paper-color);
+    @media only screen and (min-width: 861px) {
+        .animate .main-header {
+            height: 140px;
+            padding: 3em 0;
+            background-color: var(--paper-color);
 
-        animation: auto linear shrink-header both;
+            animation: auto linear shrink-header both;
 
-        animation-timeline: view();
-        animation-range: 100vh calc(100vh + 40em);
-    }
-    /* Bron: https://kizu.dev/scroll-driven-animations/ */
+            animation-timeline: view();
+            animation-range: 100vh calc(100vh + 40em);
+        }
+        /* Bron: https://kizu.dev/scroll-driven-animations/ */
 
-    .sticky.animate {
-        /* Total height of main-header, required when making position fixed */
-        margin-bottom: 230px;
+        .sticky.animate {
+            /* Total height of main-header, required when making position fixed */
+            margin-bottom: 230px;
+        }
     }
 
     .main-header-inner {
@@ -158,7 +174,8 @@
     }
 
     .search {
-        --search-bar-width:
+        --search-bar-width: 20em;
+        --search-background-color: white;
     }
 
     .top li:hover {
@@ -193,6 +210,30 @@
         font-size: 14px;
     }
 
+    .toggle-nav path {
+        transition: transform 500ms, opacity 500ms;
+    }
+    
+    .toggle-nav path:nth-of-type(1) {
+        transform-origin: 1px 1px;
+    }
+    
+    .toggle-nav path:nth-of-type(3) {
+        transform-origin: 1px 13px;
+    }
+
+    .mobile-nav-open .toggle-nav path:nth-of-type(1) {
+        transform: rotate(45deg);
+    }
+
+    .mobile-nav-open .toggle-nav path:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    .mobile-nav-open .toggle-nav path:nth-of-type(3) {
+        transform: rotate(-45deg);
+    }
+
     @keyframes shrink-header {
         0% {
             padding: 3em 0;
@@ -208,6 +249,30 @@
             background-color: var(--background-color);
 
             height: 80px;
+        }
+    }
+
+    .small-screen-only {
+        display: none;
+    }
+
+    @media only screen and (max-width: 860px) {
+        .wide-screen-only {
+            display: none;
+        }
+
+        .small-screen-only {
+            display: initial;
+        }
+
+        header {
+            margin-bottom: 80px;
+        }
+
+        .main-header {
+            position: fixed;
+            top: -1px; /* Hide upper inner border */
+            left: 0;
         }
     }
 </style>

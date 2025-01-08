@@ -48,16 +48,18 @@
 
     .search-bar {
         width: var(--search-bar-width);
-        background-color: inherit;
+        background-color: var(--search-background-color);
         margin-left: calc(-2px - var(--search-bar-width));
         height: 2.5em;
-        transition: width 500ms, margin-left 500ms;
+        transition: width 500ms, margin-left 500ms, opacity 0s 0s;
     }
 
     .closed {
         width: 0;
         margin-left: 0;
         border: none;
+        opacity: 0;
+        transition: width 500ms, margin-left 500ms, opacity 0s 500ms;
     }
 
     button {
