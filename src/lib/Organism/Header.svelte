@@ -1,310 +1,122 @@
 <script>
     /** @type {import('./$types').PageData} */
+
+    export let alwaysSticky = true;
+
     const dateFormat = {
         month: 'long',
         day: 'numeric',
         weekday: 'long',
         year: 'numeric'
     };
-    const dateFormatSmall = {
-        month: 'short',
-        day: 'numeric',
-        weekday: 'short'
-    }
-    import { categoriesData } from "$lib/index.js";
+
     import SearchBar from "$lib/Molecules/SearchBar.svelte";
     import Nieuwsbrief from "$lib/Molecules/Nieuwsbrief.svelte";
     import Donatiebtn from "$lib/Molecules/Donatiebtn.svelte";
+    import MobileNav from "$lib/Organism/MobileNav.svelte";
     import { onMount } from "svelte";
+    import Nav from "./Nav.svelte";
 
-    let sticky = false;
+    let sticky = alwaysSticky;
     
-    function checkScroll() {
-        sticky = window.scrollY > 130;
+    if (!alwaysSticky) {
+        onMount(() => {
+            // set sticky to true if we have scrolled > 50px
+            window.addEventListener("scroll", () => {
+                sticky = window.scrollY > 50;
+            });
+        });
     }
-
-    onMount(() => {
-        window.addEventListener("scroll", checkScroll);
-    });
 </script>
 
-<header>
-    <div class="klein-scherm">
-        <section class="mobile-header">
-            <nav>
-                <div id="menuToggle">
-                    <input type="checkbox" aria-label="Menu"/>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <ul id="menu">
-                        <li>
-                            <a href="/">Voorpagina</a>
-                        </li>
-                        {#each categoriesData as category}
-                            <li>
-                                <a href="/categorie/{category.slug}">{category.name}</a>
-                            </li>
-                        {/each}
-                        <div class="boven-mobile">
-                            <li>Colofon</li>
-                            <li>Over</li>
-                            <li>Meedoen</li>
-                            <li>Contact</li>
-                        </div>
-                    </ul>
+<!-- class sticky when sticky is true, class animate when header is not alwaysSticky -->
+<header class:sticky={sticky} class:animate={!alwaysSticky}>
+    <section class="top wide-screen-only">
+        <ul>
+            <li>Colofon</li>
+            <li>Over</li>
+            <li>Meedoen</li>
+            <li>Contact</li>
+        </ul>
+    </section>
+    <section class="main-header">
+        <div class="main-header-inner">
+            <div class="date">
+                <div class="small-screen-only toggle-nav-container">
+                    <input class="toggle-nav" type="checkbox" id="toggle-nav"aria-label="Menu" />
+                    <label for="toggle-nav">
+                        <svg viewBox="0 0 18 14" width="36" height="28" class="nav-icon">
+                            <path d="M 1 0 h 16 a 1 1 0 0 1 0 2 h -16 a 1 1 0 0 1 0 -2"></path>
+                            <path d="M 1 6 h 16 a 1 1 0 0 1 0 2 h -16 a 1 1 0 0 1 0 -2"></path>
+                            <path d="M 1 12 h 16 a 1 1 0 0 1 0 2 h -16 a 1 1 0 0 1 0 -2"></path>
+                        </svg>
+                    </label>
                 </div>
-            </nav>
-            <a href="/">
-                <img src="/RedPers_Logo_Cmyk_Black (1).webp" alt="RedPers logo" width="150" height="35" />
-            </a>
-            <div class="mobile-search">
-                <SearchBar resultsPage="/search" name="searchterm" placeholder="Zoeken..." />
+                <p class="date-bold uppercase wide-screen-only">{(new Date()).toLocaleDateString("nl-NL", dateFormat)}</p>
+                <p class="uppercase wide-screen-only">Podium voor de journalistiek</p>
             </div>
-        </section>
-
-        <section class="mobile-datum">
-            <div class="datum uppercase">
-                <p>{(new Date()).toLocaleDateString("nl-NL", dateFormat)}</p>
-                <p class="uppercase">podium voor de journalistiek</p>
-            </div>
-        </section>
-    </div>
-
-    <div class="groot-scherm">
-        <section class="boven">
-            <ul>
-                <li>Colofon</li>
-                <li>Over</li>
-                <li>Meedoen</li>
-                <li>Contact</li>
-            </ul>
-        </section>
-        <section class="midden">
-            <div class="datum">
-                <p class="datum-bold uppercase">{(new Date()).toLocaleDateString("nl-NL", dateFormat)}</p>
-                <p class="uppercase">Podium voor de journalistiek</p>
-            </div>
-            <a href="/">
-                <img src="/RedPers_Logo_Cmyk_Black (1).webp" alt="RedPers logo" width="160" height="40" />
+            <a href="/" class="logo-container">
+                <img src="/RedPers_Logo_Cmyk_Black.webp" alt="RedPers logo" width="280" height="70" />
             </a>
             <ul>
-                <li><Nieuwsbrief /></li>
-                <li><Donatiebtn /></li>
-                <li class="groot-search">
+                <li class="wide-screen-only"><Nieuwsbrief /></li>
+                <li class="wide-screen-only"><Donatiebtn /></li>
+                <li class="search">
                     <SearchBar resultsPage="/search" name="searchterm" placeholder="Zoeken..." />
                 </li>
             </ul>
-        </section>
-        <section class="onder" class:sticky={sticky}>
-            <div class="onder-items">
-                <p class="datum-bold uppercase">{(new Date()).toLocaleDateString("nl-NL", dateFormatSmall)}</p>
-                <ul>
-                    <li><a href="/">Voorpagina</a></li>
-                    {#each categoriesData as category}
-                        <li><a href="/categorie/{category.slug}">{category.name}</a></li>
-                    {/each}
-                </ul>
-                <div class="search-sticky">
-                    <SearchBar resultsPage="/search" name="searchterm" placeholder="Zoeken..." />
-                </div>
-            </div>
-        </section>
-    </div>
+        </div>
+    </section>
+    {#if alwaysSticky}
+        <!-- Only include nav in header when header is alwaysSticky -->
+        <Nav alwaysSticky={alwaysSticky} />
+    {/if}
+    <MobileNav />
 </header>
 
 <style>
-    #menuToggle {
-        display: block;
-        position: relative;
-        top: 5px;
-        left: 10px;
-        z-index: 1;
-        -webkit-user-select: none;
-        user-select: none;
-    }
+    .main-header {
+        background-color: var(--paper-color);
+        padding: 3em 0;
+        width: 100vw;
+        overflow-y: hidden; /* Hide the inner borders when animating */
 
-    #menuToggle input {
-        display: block;
-        width: 40px;
-        height: 32px;
-        position: absolute;
-        top: -7px;
-        left: -5px;
-        cursor: pointer;
-        opacity: 0; 
-        z-index: 2; 
-        -webkit-touch-callout: none;
-    }
-
-    #menuToggle span {
-        display: block;
-        width: 33px;
-        height: 4px;
-        margin-bottom: 5px;
-        position: relative;
-        border-radius: 3px;
-        background-color: black;
-        z-index: 1;
-        transform-origin: 4px 0px;
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-                    opacity 0.55s ease;
-    }
-
-    #menuToggle span:first-child {
-        transform-origin: 0% 0%;
-    }
-
-    #menuToggle span:nth-last-child(2) {
-        transform-origin: 0% 100%;
-    }
-
-    #menuToggle input:checked ~ span {
-        opacity: 1;
-        transform: rotate(45deg) translate(-2px, -1px);
-        background: #232323;
-    }
-
-    #menuToggle input:checked ~ span:nth-last-child(3) {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-    }
-
-    #menuToggle input:checked ~ span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(0, -1px);
-    }
-
-    #menu {
-        flex-direction: column;
-        position: absolute;
-        width: 175px;
-        margin: -100px 0 0 -50px;
-        padding: 50px;
-        outline: 1px solid black;
-        height: 500px;
-        padding-top: 125px;
-        background: #F7F7F5;
-        list-style-type: none;
-        -webkit-font-smoothing: antialiased; 
-        transform-origin: 0% 0%;
-        transform: translate(-100%, 0);
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    }
-
-    #menu li {
-        padding: 5px ;
-    }
-
-   .boven-mobile {
-        border-top: 1px solid rgba(154, 154, 154, 0.679);
-        font-size: smaller;
-        font-weight: bold;
-   }
-
-    #menuToggle input:checked ~ ul {
-        transform: none;
-    }
-
-    .mobile-header {
-        position: fixed;
-        top: 0;
-        width: calc(100vw - 2em);
+        padding: 0 0;
         background-color: var(--background-color);
 
+        height: 80px;
+    }
+
+    .main-header-inner {
         display: flex;
         align-items: center;
+        height: 100%;
         justify-content: space-between;
-        padding: 20px;
-        border-bottom: 1px solid rgba(154, 154, 154, 0.679);
+
+        max-width: var(--main-width);
+        padding: 0 10px;
+        border-top: var(--border);
+        border-bottom: var(--border);
+        margin: 0 auto;
     }
 
-    .mobile-datum {
-        margin-top: 6em;
-        
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        font-size: smaller;
-        border-bottom: 1px solid rgba(154, 154, 154, 0.679);
+    .sticky .main-header {
+        position: fixed;
+        top: -1px; /* Hide upper inner border */
+        left: 0;
+        border-bottom: var(--border);
     }
 
-    .mobile-search {
-        --search-bar-width: 80vw;
-        z-index: 3;
-    }
-
-    .groot-search {
-        --search-bar-width: 20em;
-    }
-
-    .onder {
-        background-color: var(--background-color);
-        border-bottom: 1px solid #ddd;
-        border-top: 1px solid #ddd;
+    .logo-container {
+        height: 50%;
     }
     
-    .onder-items {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: var(--main-width);
-
-        margin: 0 auto;
-    }
-
-    .onder .datum-bold {
-        display: none;
-    }
-
-    .search-sticky {
-        display: none;
-        --search-bar-width: 15em;
-    }
-
-    .sticky {
-        position: fixed;
-        top: 0;
-        border-bottom: 1px solid var(--light-border-color);
-        width: 100vw;
-        margin: 0 auto;
-    }
-
-    .sticky .datum-bold {
-        display: block;
-    }
-
-    .onder ul {
-        width: 100%;
+    img {
         height: 100%;
-        display: flex;
-        align-items: center;
-        padding: 15px;
-        justify-content: center;
-        gap: 20px;
-        list-style: none;
-        font-family: var(--menu-item);
-        font-size: 14px;
+        object-fit: contain;
     }
 
-    .midden {
-        display: flex;
-        background-color: var(--background-color);
-        align-items: center;
-        padding: 10px;
-        margin-left: 10px;
-        justify-content: space-between;
-    }
-
-    .sticky .search-sticky {
-        display: block;
-    }
-
-    .sticky ul {
-        border: none;
-    }
-
-    .midden ul {
+    .main-header ul {
         display: flex; 
         list-style: none; 
         margin: 0;
@@ -315,19 +127,19 @@
         font-family: var(--menu-item);
     }
 
-    .datum {
+    .date {
         display: flex;
         flex-direction: column; 
         margin-right: 20px;
     }
 
-    .datum p {
+    .date p {
         margin: 0;
         font-family:var(--menu-item);
         font-size: 14px;
     }
 
-    .datum-bold {
+    .date-bold {
         font-weight: bold;
         text-wrap: nowrap;
     }
@@ -340,15 +152,15 @@
         margin: 0;
     }
 
-    .boven li:hover {
-    color: #000000;
-    background-color: #f0f0f0;
-    transition: var(--hover);
+    .search {
+        --search-bar-width: 20em;
+        z-index: 2;
     }
 
-    ul a:hover {
-    color: #ff0000;
-    transition: var(--hover);
+    .top li:hover {
+        color: #000000;
+        background-color: #f0f0f0;
+        transition: var(--hover);
     }
 
     ul li {
@@ -356,14 +168,14 @@
         align-items: center;
     }
 
-    .boven {
+    .top {
         background-color: black;
         display: flex;
         color: white;
         justify-content: end;
     }
     
-    .boven ul {
+    .top ul {
         display: flex;
         list-style: none;
         margin: 0;
@@ -371,25 +183,125 @@
         padding: 0;
     }
 
-    .boven ul li {
+    .top li {
         padding: 15px;
         font-family: var(--menu-item);
         font-size: 14px;
     }
 
-    @media (max-width: 900px) {
-        .groot-scherm {
-            display: none;
-        }
+    .toggle-nav-container {
+        width: 36px;
+        height: 28px;
+        position: relative;
+    }
 
-        .boven ul {
-            display: none; 
+    .toggle-nav-container input, .nav-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .toggle-nav-container input {
+        opacity: 0;
+    }
+
+    .toggle-nav-container:has(input:focus) {
+        outline: 1px solid purple;
+        outline-offset: 3px;
+    }
+
+    .nav-icon {
+        cursor: pointer;
+    }
+
+    .nav-icon path {
+        transition: transform 500ms, opacity 500ms;
+    }
+    
+    .nav-icon path:nth-of-type(1) {
+        transform-origin: 1px 1px;
+    }
+    
+    .nav-icon path:nth-of-type(3) {
+        transform-origin: 1px 13px;
+    }
+
+    header:has(.toggle-nav:checked) path:nth-of-type(1) {
+        transform: rotate(45deg);
+    }
+
+    header:has(.toggle-nav:checked) path:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    header:has(.toggle-nav:checked) path:nth-of-type(3) {
+        transform: rotate(-45deg);
+    }
+
+    @keyframes shrink-header {
+        0% {
+            padding: 3em 0;
+            background-color: var(--paper-color);
+            --search-background-color: var(--paper-color);
+        }
+        50% {
+            padding: 0 0;
+            background-color: var(--background-color);
+            --search-background-color: var(--background-color);
+            height: 140px;
+        }
+        100% {
+            padding: 0 0;
+            background-color: var(--background-color);
+            --search-background-color: var(--background-color);
+
+            height: 80px;
         }
     }
 
-    @media (min-width: 900px) {
-        .klein-scherm {
+    .small-screen-only {
+        display: none;
+    }
+    
+    @media only screen and (min-width: 861px) {
+        .animate .main-header {
+            height: 140px;
+            padding: 3em 0;
+            background-color: var(--paper-color);
+
+            animation: auto linear shrink-header both;
+
+            animation-timeline: view();
+            animation-range: 100vh calc(100vh + 40em);
+        }
+        /* Bron: https://kizu.dev/scroll-driven-animations/ */
+
+        .sticky {
+            margin-bottom: 70px;
+        }
+        .sticky.animate {
+            /* Total height of main-header, required when making position fixed */
+            margin-bottom: 230px;
+        }
+    }
+
+    @media only screen and (max-width: 860px) {
+        .wide-screen-only {
             display: none;
+        }
+
+        .small-screen-only {
+            display: initial;
+        }
+
+
+        .main-header {
+            position: fixed;
+            top: -1px; /* Hide upper inner border */
+            left: 0;
+            border-bottom: var(--border);
+            z-index: 1;
+            --search-background-color: var(--background-color);
         }
     }
 </style>
