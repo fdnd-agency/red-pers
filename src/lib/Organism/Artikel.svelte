@@ -13,17 +13,24 @@
 <a href="/{post.slug}">
     <article class="article {isFirst ? 'first-article highlighted' : 'other-articles'}" 
         style={isFirst ? 'max-width:1240px' : 'max-width: 25em;'}>
-        
+
         <!-- Voeg hier de badge toe voor het nieuwste artikel -->
         {#if isFirst}
         <div class="newest">NIEUWSTE ARTIKEL</div>
         {/if}
         
         <img loading="lazy" src={post.yoast_head_json.og_image[0].url} alt="Artikel afbeelding" width="25em" height="15em">
+        
         <div class="title-info-text">
             <div class="title">
                 <h1 class="artikel-kop">{@html post.title.rendered}</h1>
             </div>
+            
+            <!-- Excerpt alleen zichtbaar als het eerste artikel is -->
+            {#if isFirst}
+                <p class="excerpt">{@html post.excerpt.rendered}</p>
+            {/if}
+
             <div class="info-text">
                 <p>
                     <span class="author">{post.yoast_head_json.author}</span>
@@ -37,9 +44,11 @@
                 </p>
                 <p>{(new Date(post.date)).toLocaleDateString("nl-NL", dateFormat)}</p>
             </div>
+
         </div>
     </article>
 </a>
+
 
 <style>
 
@@ -64,9 +73,13 @@
         overflow: hidden;
     }
 
+    .first-article .excerpt {
+    font-size: 16px; /* Pas eventueel de lettergrootte aan voor de excerpt */
+    margin-top: -5em;
+    line-height: 1.5;
+}
+
     .info-text {
-        height: 2em;
-        padding: 0 0.5em;
 
         display: flex;
         justify-content: space-between;
