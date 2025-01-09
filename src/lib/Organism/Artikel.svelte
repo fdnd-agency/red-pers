@@ -132,6 +132,7 @@
 
     .first-article {
         display: flex;
+        margin-top: 20px;
         position: relative;
         flex-direction: row;  /* Zorgt ervoor dat afbeelding en tekst naast elkaar staan */
         gap: 1em;
