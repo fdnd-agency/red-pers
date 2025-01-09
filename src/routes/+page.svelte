@@ -11,28 +11,26 @@
     import Header from '$lib/Organism/Header.svelte';
     import Artikel from '$lib/Organism/Artikel.svelte';
     import CategoryPreview from '$lib/Organism/CategoryPreview.svelte';
-
 </script>
 
 <Header/>
 
 <div class="background">
     <main>
-        {#if data.posts}
-            {#each data.posts as post}
-                <!-- @html means: there is html in this string, render it -->
-                <Artikel post={post} />
+        {#if data.posts && data.posts.length > 0}
+            {#each data.posts.slice(0, 5) as post, i}
+                <Artikel post={post} isFirst={i === 0} />
             {/each}
         {:else}
-            <!-- This will show if no posts are available -->
             <p>No posts available</p>
         {/if}
-    
+
+        <!-- Overzicht van categorieën -->
         {#each data.categories as category}
             <CategoryPreview categoryName={category.name} categorySlug={category.slug} posts={category.posts} />
         {/each}
     </main>
-</div>
+</div>    
 
 <Footer />
 
@@ -40,6 +38,7 @@
     .background {
         background-color: #f5f5f5;
     }
+
     main {
         display: flex;
         flex-wrap: wrap;
@@ -47,4 +46,4 @@
         padding-top: 1em;
         justify-content: center;
     }
-</style>
+</style> 
