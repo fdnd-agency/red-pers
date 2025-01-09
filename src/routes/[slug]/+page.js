@@ -6,7 +6,7 @@ export async function load({ params }) {
     const post = (await wp.posts().slug(params.slug))[0];
     // If there is no post, return 404
     if (!post) {
-        error(404);
+        throw error(404, 'Post not found');
     }
 
     // Find the 3 most recent posts that have the same author as `post`

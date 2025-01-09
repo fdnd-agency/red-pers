@@ -21,6 +21,7 @@
         
         <img loading="lazy" src={post.yoast_head_json.og_image[0].url} alt="Artikel afbeelding" width="25em" height="15em">
         
+        <div class="everything">
         <div class="title-info-text">
             <div class="title">
                 <h1 class="artikel-kop">{@html post.title.rendered}</h1>
@@ -46,6 +47,7 @@
             </div>
 
         </div>
+    </div>
     </article>
 </a>
 
@@ -66,6 +68,11 @@
         letter-spacing: 0.25px;
     }
 
+    .first-article .everything{
+        width: 50%;
+        padding: 20px;
+    }
+
     .title {
         width: calc(100% - 1em);
         height: 11em;
@@ -84,7 +91,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
         border-top: var(--border);
 
         font-size: 12px;
@@ -148,7 +154,6 @@
         margin-top: 20px;
         position: relative;
         flex-direction: row;  /* Zorgt ervoor dat afbeelding en tekst naast elkaar staan */
-        gap: 1em;
         border-left: 4px solid #D5302D; /* Rode lijn aan de linkerkant voor accent */
         background-color: var(--background-color);
         max-width: 1240px;
@@ -197,6 +202,7 @@
         height: 2em;
         padding: 0 0.5em;
         display: flex;
+
         justify-content: space-between;
         align-items: center;
         font-size: 14px;
