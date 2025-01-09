@@ -1,10 +1,15 @@
 <script>
-    export let open;
-
     import { categoriesData } from "$lib/index.js";
+
+    const dateFormat = {
+        month: 'long',
+        day: 'numeric',
+        weekday: 'long',
+        year: 'numeric'
+    };
 </script>
 
-<div class="container" class:open={open}>
+<div class="container">
     <div class="overlay" />
     <nav>
         <ul>
@@ -21,6 +26,12 @@
         </ul>
     </nav>
 </div>
+<section class="mobile-datum">
+    <div class="datum uppercase">
+        <p>{(new Date()).toLocaleDateString("nl-NL", dateFormat)}</p>
+        <p class="uppercase">podium voor de journalistiek</p>
+    </div>
+</section>
 
 <style>
     nav {
@@ -69,6 +80,21 @@
         color: var(--background-color);
     }
 
+    .mobile-datum {
+        margin-top: 6em;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        font-size: smaller;
+        border-bottom: 1px solid rgba(154, 154, 154, 0.679);
+    }
+
+    .mobile-datum p {
+        margin: 0;
+    }
+
     :global(header:has(.toggle-nav:checked) .overlay) {
         width: 100vw;
         height: 100vh;
@@ -76,5 +102,11 @@
         top: 0;
         left: 0;
         background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    @media only screen and (min-width: 861px) {
+        .mobile-datum {
+            display: none;
+        }
     }
 </style>

@@ -18,7 +18,6 @@
     import Nav from "./Nav.svelte";
 
     let sticky = alwaysSticky;
-    let mobileNavOpen = false;
     
     if (!alwaysSticky) {
         onMount(() => {
@@ -43,8 +42,8 @@
     <section class="main-header">
         <div class="main-header-inner">
             <div class="date">
-                <div class="toggle-nav-container">
-                    <input class="small-screen-only toggle-nav" type="checkbox" id="toggle-nav"aria-label="Menu" />
+                <div class="small-screen-only toggle-nav-container">
+                    <input class="toggle-nav" type="checkbox" id="toggle-nav"aria-label="Menu" />
                     <label for="toggle-nav">
                         <svg viewBox="0 0 18 14" width="36" height="28" class="nav-icon">
                             <path d="M 1 0 h 16 a 1 1 0 0 1 0 2 h -16 a 1 1 0 0 1 0 -2"></path>
@@ -72,7 +71,7 @@
         <!-- Only include nav in header when header is alwaysSticky -->
         <Nav alwaysSticky={alwaysSticky} />
     {/if}
-    <MobileNav open={mobileNavOpen} />
+    <MobileNav />
 </header>
 
 <style>
@@ -155,6 +154,7 @@
 
     .search {
         --search-bar-width: 20em;
+        z-index: 2;
     }
 
     .top li:hover {
@@ -289,9 +289,6 @@
             display: initial;
         }
 
-        header {
-            margin-bottom: 80px;
-        }
 
         .main-header {
             position: fixed;
@@ -299,6 +296,7 @@
             left: 0;
             border-bottom: var(--border);
             z-index: 1;
+            --search-background-color: var(--background-color);
         }
     }
 </style>

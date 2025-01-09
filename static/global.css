@@ -104,6 +104,7 @@ body {
 main {
     max-width: 1240px;
     margin: var(--margin-center);
+    padding-top: 2em;
 }
   
 a {
