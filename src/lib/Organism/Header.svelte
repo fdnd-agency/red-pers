@@ -205,6 +205,11 @@
         opacity: 0;
     }
 
+    .toggle-nav-container:has(input:focus) {
+        outline: 1px solid purple;
+        outline-offset: 3px;
+    }
+
     .nav-icon {
         cursor: pointer;
     }
