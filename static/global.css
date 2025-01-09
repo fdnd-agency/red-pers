@@ -13,6 +13,7 @@
     --font-style-extra-bold: extra-bold;
 
     /* COLORS */
+    --paper-color: #f7f7f5;
     --background-color: #ffffff;
     --img-text-background-color: #00000080;
     --text-color: #000000;
@@ -103,6 +104,7 @@ body {
 main {
     max-width: 1240px;
     margin: var(--margin-center);
+    padding-top: 2em;
 }
   
 a {
