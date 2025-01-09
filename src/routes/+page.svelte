@@ -7,6 +7,7 @@
     import Artikel from '$lib/Organism/Artikel.svelte';
     import CategoryPreview from '$lib/Organism/CategoryPreview.svelte';
     import Nav from '../lib/Organism/Nav.svelte';
+
 </script>
 
 <Header alwaysSticky={false}/>
@@ -27,6 +28,7 @@
 
         <Nav alwaysSticky={false} />
     
+
         {#each data.categories as category}
             <CategoryPreview
                 categoryName={category.name}
@@ -35,7 +37,7 @@
             />
         {/each}
     </main>
-</div>
+</div>    
 
 <Footer />
 
@@ -45,9 +47,10 @@
     }
 
     .featured {
+
         display: flex;
         flex-wrap: wrap;
         gap: 1em;
         justify-content: center;
     }
-</style>
+</style> 

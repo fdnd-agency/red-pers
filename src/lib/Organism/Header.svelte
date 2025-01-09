@@ -17,6 +17,7 @@
     import { onMount } from "svelte";
     import Nav from "./Nav.svelte";
 
+
     let sticky = alwaysSticky;
     
     if (!alwaysSticky) {
