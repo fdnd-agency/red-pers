@@ -1,5 +1,8 @@
+
+
 <script>
-    export let post
+    export let post;
+    export let isFirst = false;
 
     const dateFormat = {
         month: 'short',
@@ -8,7 +11,14 @@
 </script>
 
 <a href="/{post.slug}">
-    <article class="article">
+    <article class="article {isFirst ? 'first-article highlighted' : 'other-articles'}" 
+        style={isFirst ? 'max-width:1240px' : 'max-width: 25em;'}>
+        
+        <!-- Voeg hier de badge toe voor het nieuwste artikel -->
+        {#if isFirst}
+        <div class="newest">NIEUWSTE ARTIKEL</div>
+        {/if}
+        
         <img loading="lazy" src={post.yoast_head_json.og_image[0].url} alt="Artikel afbeelding" width="25em" height="15em">
         <div class="title-info-text">
             <div class="title">
@@ -32,15 +42,6 @@
 </a>
 
 <style>
-    article {
-        --title-font-size: 28px;
-        --title-font-line-height: 32px;
-
-        max-width: 25em;
-        width: 100vw;
-        border: var(--border);
-        background-color: var(--background-color);
-    }
 
     img {
         width: 100%;
@@ -119,4 +120,108 @@
         display: none;
     }
 }
+
+.other-articles {
+        --title-font-size: 28px;
+        --title-font-line-height: 32px;
+        max-width: 25em;
+        border: var(--border);
+        background-color: var(--background-color);
+    }
+
+
+    .first-article {
+        display: flex;
+        position: relative;
+        flex-direction: row;  /* Zorgt ervoor dat afbeelding en tekst naast elkaar staan */
+        gap: 1em;
+        border-left: 4px solid #D5302D; /* Rode lijn aan de linkerkant voor accent */
+        background-color: var(--background-color);
+        max-width: 1240px;
+        margin-bottom: 1.5em;
+        box-sizing: border-box;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Zachte overgang voor de hover-effecten */
+    }
+
+    .first-article .newest {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 0, 0, 0.7); /* Rood met doorzichtige achtergrond */
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+
+    .first-article img {
+        width: 100%;
+        height: 26em;
+        border-bottom: var(--border);
+        object-fit: cover; /* Zorgt ervoor dat de afbeelding niet uitgerekt wordt */
+    }
+
+    .first-article h1 {
+        font-family: var(--font-alt);
+        font-weight: var(--font-style-bold);
+        font-size: var(--title-font-size);
+        line-height: var(--title-font-line-height);
+        letter-spacing: 0.25px;
+        transition: color 0.3s ease; /* Zachte overgang voor kleurverandering bij hover */
+    }
+
+    .first-article .title {
+        width: calc(100% - 1em);
+        height: 11em;
+        padding: 0.5em;
+        overflow: hidden;
+    }
+
+    .first-article .info-text {
+        height: 2em;
+        padding: 0 0.5em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    .first-article .author {
+        font-weight: bold;
+    }
+
+    .first-article {
+        --title-font-size: 28px;
+        --title-font-line-height: 32px;
+        border: var(--border);
+        background-color: var(--background-color);
+        margin-bottom: 1.5em;
+        box-sizing: border-box;
+        border-left: 4px solid red;
+        max-width: 1240px;
+    }
+
+    /* Hover effect */
+    .first-article:hover {
+        transform: scale(1.02);  /* Vergroot het artikel subtiel */
+    }
+
+
+    /* Media Query voor mobiele apparaten */
+    @media only screen and (max-width: 768px) {
+        .first-article {
+            flex-direction: column;  /* Zorgt ervoor dat afbeelding en tekst onder elkaar staan op mobiele schermen */
+            gap: 1em;
+        }
+
+        .first-article img {
+            width: 100%;  /* Afbeelding neemt de volledige breedte in op mobiel */
+            height: auto;
+        }
+    }
 </style>
+
+
