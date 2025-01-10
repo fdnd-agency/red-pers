@@ -95,7 +95,7 @@
         justify-content: space-between;
         align-items: center;
         border-top: var(--border);
-
+        padding: 0.5em;
         font-size: 12px;
         text-transform: uppercase;
     }

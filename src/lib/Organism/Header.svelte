@@ -29,6 +29,8 @@
     }
 </script>
 
+
+
 <!-- class sticky when sticky is true, class animate when header is not alwaysSticky -->
 <header class:sticky={sticky} class:animate={!alwaysSticky}>
     <section class="top wide-screen-only">
@@ -167,6 +169,7 @@
         display: flex;
         align-items: center;
     }
+
 
     .top {
         background-color: black;
