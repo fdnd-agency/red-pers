@@ -12,7 +12,7 @@
 
 
 <a href="/{post.slug}">
-    <article class="article {isFirst ? 'first-article highlighted' : 'other-articles'}" 
+    <article class="article {isFirst ? 'first-article' : 'other-articles'}" 
         style={isFirst ? 'max-width:1240px' : 'max-width: 25em;'}>
 
         <!-- Voeg hier de badge toe voor het nieuwste artikel -->
