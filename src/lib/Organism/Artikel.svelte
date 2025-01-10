@@ -79,6 +79,7 @@
 
     .first-article .everything{
         padding: 2em;
+        width: 50%;
     }
 
     .first-article .excerpt {

@@ -16,9 +16,10 @@
     <main>
         <div class="featured">
             {#if data.posts && data.posts.length > 0}
-            {#each data.posts.slice(0, 5) as post, i}
+            {#each data.posts.slice(0, 4) as post, i}
                 <Artikel post={post} isFirst={i === 0} />
             {/each}
+            
         {:else}
             <p>No posts available</p>
         {/if}

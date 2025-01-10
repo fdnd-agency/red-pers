@@ -5,7 +5,7 @@
 <div class="artikelen">
     {#if posts && posts.length > 0} 
         {#each posts as post} 
-            <a href="/{post.slug}" class="article-link" aria-label="">
+            <a href="/{post.slug}" class="article-link" aria-label="" data-sveltekit-reload>
                 <article>
                     <div>
                         <img src={post.yoast_head_json.og_image[0].url} alt="Artikel afbeelding">
