@@ -69,10 +69,6 @@
         letter-spacing: 0.25px;
     }
 
-    .excerpt{
-        margin-top: -5em;
-    }
-
     .title {
         width: calc(100% - 1em);
         height: 11em;
@@ -80,18 +76,23 @@
         overflow: hidden;
     }
 
+
     .first-article .everything{
         padding: 2em;
     }
 
+    .first-article .excerpt {
+    font-size: 16px; /* Pas eventueel de lettergrootte aan voor de excerpt */
+    margin-top: -5em;
+    line-height: 1.5;
+}
+
+
     .info-text {
-        height: 2em;
-        padding: 0 0.5em;
 
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
         border-top: var(--border);
 
         font-size: 12px;
@@ -152,9 +153,9 @@
 
     .first-article {
         display: flex;
+        margin-top: 20px;
         position: relative;
         flex-direction: row;  /* Zorgt ervoor dat afbeelding en tekst naast elkaar staan */
-        gap: 1em;
         border-left: 4px solid #D5302D; /* Rode lijn aan de linkerkant voor accent */
         background-color: var(--background-color);
         max-width: 1240px;
@@ -203,6 +204,7 @@
         height: 2em;
         padding: 0 0.5em;
         display: flex;
+
         justify-content: space-between;
         align-items: center;
         font-size: 14px;
