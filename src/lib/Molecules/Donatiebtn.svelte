@@ -1,5 +1,5 @@
 <button popovertarget="donation" popovertargetaction="show" class="donation-button">
-    <img src="./4128927.png" alt="donation button" class="button-icon">Doneren
+    <img src="/4128927.png" alt="donation button" class="button-icon">Doneren
 </button>
 
 <div popover="auto" id="donation" class="popup">
