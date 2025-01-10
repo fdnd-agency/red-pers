@@ -15,15 +15,13 @@
 <div class="background">
     <main>
         <div class="featured">
-            {#if data.posts}
-                {#each data.posts as post}
-                    <!-- @html means: there is html in this string, render it -->
-                    <Artikel post={post} />
-                {/each}
-            {:else}
-                <!-- This will show if no posts are available -->
-                <p>No posts available</p>
-            {/if}
+            {#if data.posts && data.posts.length > 0}
+            {#each data.posts.slice(0, 5) as post, i}
+                <Artikel post={post} isFirst={i === 0} />
+            {/each}
+        {:else}
+            <p>No posts available</p>
+        {/if}
         </div>
 
         <Nav alwaysSticky={false} />
@@ -47,7 +45,6 @@
     }
 
     .featured {
-
         display: flex;
         flex-wrap: wrap;
         gap: 1em;
