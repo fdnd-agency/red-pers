@@ -19,6 +19,7 @@
             {#each data.posts.slice(0, 5) as post, i}
                 <Artikel post={post} isFirst={i === 0} />
             {/each}
+            
         {:else}
             <p>No posts available</p>
         {/if}
