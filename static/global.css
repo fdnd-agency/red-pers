@@ -44,6 +44,10 @@
     --hover: 0.4s;
 }
 
+@view-transition {
+    navigation: auto;
+} 
+
 /* #region Fonts */
 /* inter-regular - latin */
 @font-face {
