@@ -25,6 +25,7 @@ De website is gebouwd met behulp van de volgende technieken:
 * npm – Voor package management
 * GitHub – Voor samenwerking
 * Atomic design - Library indeling
+* View transitions - Betere gebruikerservaring
 
 ## Hoe dit project te clonen en te gebruiken
 
