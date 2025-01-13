@@ -1,7 +1,5 @@
 # Redpers
 
-<img width="269" alt="image" src="https://github.com/fdnd-agency/red-pers/assets/1061632/68215743-3d93-4897-b283-6f40b798d544">
-
 ## Live link website
 
 ## Beschrijving
