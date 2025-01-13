@@ -21,7 +21,7 @@
 </script>
 
 <Header/>
-<ArticleInfoFrame post={post}></AArticleInfoFrame>
+<ArticleInfoFrame post={post}></ArticleInfoFrame>
 
 <main>
     <ArticleTools changeFontSizeFunction={changeFontSize}></ArticleTools>
