@@ -3,16 +3,13 @@
     import Header from '$lib/Organism/Header.svelte';
     import ArticleSmall from '$lib/Molecules/ArticleSmall.svelte';
     import Footer from '$lib/Organism/Footer.svelte';
-
-    /** @type {import('./$types').PageData} */
-    export let data;
-    
-    // Check if the data has been received and is an array
-    const post = data.post;
     import AuthorInfo from '$lib/Molecules/AuthorInfo.svelte';
     import DonationBox from '$lib/Molecules/DonationBox.svelte';
     import ArticleTools from '../../lib/Molecules/ArticleTools.svelte';
 
+    export let data;
+    
+    const post = data.post;// Check if the data has been received and is an array
     let fontSizeBig = false;
 
     function changeFontSize() {
@@ -21,7 +18,7 @@
 </script>
 
 <Header/>
-<ArticleInfoFrame post={post}></AArticleInfoFrame>
+<ArticleInfoFrame post={post}></ArticleInfoFrame>
 
 <main>
     <ArticleTools changeFontSizeFunction={changeFontSize}></ArticleTools>

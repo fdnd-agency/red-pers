@@ -1,18 +1,14 @@
 <script>
-    /** @type {import('./$types').PageData} */
-    export let data;
-    
     import Footer from '$lib/Organism/Footer.svelte';
     import Header from '$lib/Organism/Header.svelte';
     import Article from '$lib/Organism/Article.svelte';
     import CategoryPreview from '$lib/Organism/CategoryPreview.svelte';
-    import Nav from '../lib/Organism/Nav.svelte';
+    import Nav from '$lib/Organism/Nav.svelte';
 
+    export let data;
 </script>
 
 <Header alwaysSticky={false}/>
-
-<div>test</div>
 
 <div class="background">
     <main>

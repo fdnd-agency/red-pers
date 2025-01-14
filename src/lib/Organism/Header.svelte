@@ -1,5 +1,10 @@
 <script>
-    /** @type {import('./$types').PageData} */
+    import SearchBar from "$lib/Molecules/SearchBar.svelte";
+    import NewsLetter from "$lib/Molecules/NewsLetter.svelte";
+    import DonationButton from "$lib/Molecules/DonationButton.svelte";
+    import MobileNav from "$lib/Organism/MobileNav.svelte";
+    import Nav from "$lib/Organism/Nav.svelte";
+    import { onMount } from "svelte";
 
     export let alwaysSticky = true;
 
@@ -9,13 +14,6 @@
         weekday: 'long',
         year: 'numeric'
     };
-
-    import SearchBar from "$lib/Molecules/SearchBar.svelte";
-    import NewsLetter from "$lib/Molecules/NewsLetter.svelte";
-    import DonationButton from "$lib/Molecules/DonationButton.svelte";
-    import MobileNav from "$lib/Organism/MobileNav.svelte";
-    import { onMount } from "svelte";
-    import Nav from "./Nav.svelte";
 
     let sticky = alwaysSticky;
     
