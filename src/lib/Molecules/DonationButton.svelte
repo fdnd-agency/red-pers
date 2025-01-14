@@ -31,13 +31,10 @@
 
 <style>
     .donation-button {
-        /* all: unset; */
         background-color: var(--accent-color1);
         border-radius: 2px;
         color: var(--background-color);
         cursor: pointer;
-        /* display: flex; */
-        /* align-items: center; */
         padding: 8px 12px;
     }
 
@@ -97,12 +94,11 @@
 
     fieldset {
         all: unset;
-        /* padding: 0; */
     }
 
     .amount-options {
         display: flex;
-        /* justify-content: space-between; */
+        justify-content: space-between;
         gap: 10px;
         margin-bottom: 10px;
     }
@@ -125,7 +121,6 @@
         border-radius: 2px;
         text-align: center;
         cursor: pointer;
-        /* transition: background-color 0.3s ease; */
     }
 
     .other {
@@ -150,24 +145,69 @@
         transition: background-color 0.3s ease;
     }
 
-    @media (max-width: 560px) {
+    /* Media Queries */
+    @media (max-width: 1024px) {
         .popup {
-            width: 400px;
-            height: auto;
+            padding: 3rem;
+            max-width: 450px;
         }
 
-        h2 {
+        .popup h2 {
             font-size: 2.8rem;
+        }
+
+        .popup p {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .amount-options label,
+        .other {
+            font-size: 1.1rem;
         }
     }
 
-    @media (max-width: 420px) {
+    @media (max-width: 768px) {
         .popup {
-            width: 280px;
+            padding: 2rem;
+            max-width: 400px;
         }
 
-        h2 {
+        .popup h2 {
+            font-size: 2.4rem;
+        }
+
+        .popup p {
+            font-size: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .amount-options label,
+        .other {
+            font-size: 0.8rem;
+            padding: 0.8rem 1.2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .popup {
+            padding: 1.5rem;
+            max-width: 350px;
+        }
+
+        .popup h2 {
             font-size: 2rem;
+        }
+
+        .popup p {
+            font-size: 0.6rem;
+            line-height: 1.2;
+        }
+
+        .amount-options label,
+        .other {
+            font-size: 0.6rem;
+            padding: 0.6rem 1rem;
         }
     }
 </style>
