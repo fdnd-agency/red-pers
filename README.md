@@ -2,6 +2,8 @@
 
 ## Live link
 
+https://redpers.netlify.app
+
 ## Description
 We are a team of 4 students that have made a SSR website for our client Red Pers, using WordPress as headless CMS API. 
 
