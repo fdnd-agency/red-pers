@@ -1,5 +1,3 @@
-
-
 <script>
     export let post;
     export let isFirst = false;

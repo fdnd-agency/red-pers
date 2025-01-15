@@ -275,7 +275,6 @@
             animation-timeline: view();
             animation-range: 100vh calc(100vh + 40em);
         }
-        /* Bron: https://kizu.dev/scroll-driven-animations/ */
 
         .sticky {
             margin-bottom: 70px;

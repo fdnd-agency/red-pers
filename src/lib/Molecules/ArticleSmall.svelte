@@ -2,7 +2,7 @@
     export let posts;
 </script>
 
-<div class="artikelen">
+<div class="articles">
     {#if posts && posts.length > 0} 
         {#each posts as post} 
             <a href="/{post.slug}" class="article-link" aria-label="" data-sveltekit-reload>
@@ -21,7 +21,7 @@
 </div>
 
 <style>
-    .artikelen {
+    .articles {
         display: flex;
         gap: 0.5em;
         align-items: center;
