@@ -2,7 +2,12 @@
 <img width="1470" alt="Scherm­afbeelding 2025-01-15 om 15 37 55" src="https://github.com/user-attachments/assets/8bdf4082-3a16-47b0-9723-d1fb5675af30" />
 
 ## Contents
-
+* [Live link](https://github.com/fdnd-agency/red-pers/blob/main/README.md#live-link)
+* [Description](https://github.com/fdnd-agency/red-pers/blob/main/README.md#description)
+* [Techniques](https://github.com/fdnd-agency/red-pers/blob/main/README.md#techniques)
+* [How to Clone and Use This Project](https://github.com/fdnd-agency/red-pers/blob/main/README.md#how-to-clone-and-use-this-project)
+* [Links](https://github.com/fdnd-agency/red-pers/blob/main/README.md#links)
+* [Resources](https://github.com/fdnd-agency/red-pers/blob/main/README.md#resources)
 
 ## Live link
 
@@ -48,8 +53,8 @@ Optional:
 
 ## Resources
 
-[Website Red Pers](https://redpers.nl/)
-[Red Pers API](https://redpers.nl/wp-json/wp/v2/posts)
+* [Website Red Pers](https://redpers.nl/)
+* [Red Pers API](https://redpers.nl/wp-json/wp/v2/posts)
 
 * https://cloudcannon.com/tutorials/sveltekit-beginner-tutorial/sveltekit-components/
 * https://www.youtube.com/watch?v=rkwKpULfWZA
