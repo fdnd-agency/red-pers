@@ -20,7 +20,8 @@
         <div class="newest">NIEUWSTE ARTIKEL</div>
         {/if}
         
-        <img loading="lazy" src={post.yoast_head_json.og_image[0].url} alt="Artikel afbeelding" width="25em" height="15em">
+        <img loading={isFirst ? "eager" : "lazy"} src={post.yoast_head_json.og_image[0].url} alt="Artikel afbeelding" width="25em" height="15em">
+
         
         <div class="everything">
         <div class="title-info-text">
