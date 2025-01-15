@@ -6,6 +6,3 @@ const wp = new WPAPI({
 });
 
 export default wp
-
-//BRON
-// https://www.npmjs.com/package/wpapi	

@@ -1,13 +1,11 @@
 <script>
-    /** @type {import('./$types').PageData} */
-    export let data;
-    
     import Footer from '$lib/Organism/Footer.svelte';
     import Header from '$lib/Organism/Header.svelte';
-    import Artikel from '$lib/Organism/Artikel.svelte';
+    import Article from '$lib/Organism/Article.svelte';
     import CategoryPreview from '$lib/Organism/CategoryPreview.svelte';
-    import Nav from '../lib/Organism/Nav.svelte';
+    import Nav from '$lib/Organism/Nav.svelte';
 
+    export let data;
 </script>
 
 <Header alwaysSticky={false}/>
@@ -17,7 +15,7 @@
         <div class="featured">
             {#if data.posts && data.posts.length > 0}
             {#each data.posts.slice(0, 4) as post, i}
-                <Artikel post={post} isFirst={i === 0} />
+                <Article post={post} isFirst={i === 0} />
             {/each}
             
         {:else}

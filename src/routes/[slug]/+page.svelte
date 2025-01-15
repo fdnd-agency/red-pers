@@ -1,18 +1,15 @@
 <script>
-    import ArtikelInfoframe from '$lib/Organism/ArtikelInfoframe.svelte';
+    import ArticleInfoFrame from '$lib/Organism/ArticleInfoFrame.svelte';
     import Header from '$lib/Organism/Header.svelte';
-    import ArtikelKlein from '$lib/Molecules/Artikelklein.svelte';
+    import ArticleSmall from '$lib/Molecules/ArticleSmall.svelte';
     import Footer from '$lib/Organism/Footer.svelte';
+    import AuthorInfo from '$lib/Molecules/AuthorInfo.svelte';
+    import DonationBox from '$lib/Molecules/DonationBox.svelte';
+    import ArticleTools from '../../lib/Molecules/ArticleTools.svelte';
 
-    /** @type {import('./$types').PageData} */
     export let data;
     
-    // Check if the data has been received and is an array
-    const post = data.post;
-    import Makersblok from '$lib/Molecules/Makersblok.svelte';
-    import Donatiebox from '$lib/Molecules/Donatiebox.svelte';
-    import ArtikelTools from '../../lib/Molecules/ArtikelTools.svelte';
-
+    const post = data.post;// Check if the data has been received and is an array
     let fontSizeBig = false;
 
     function changeFontSize() {
@@ -21,17 +18,17 @@
 </script>
 
 <Header/>
-<ArtikelInfoframe post={post}></ArtikelInfoframe>
+<ArticleInfoFrame post={post}></ArticleInfoFrame>
 
 <main>
-    <ArtikelTools changeFontSizeFunction={changeFontSize}></ArtikelTools>
+    <ArticleTools changeFontSizeFunction={changeFontSize}></ArticleTools>
     {#if post}
     <!-- @html means: there is html in this string, render it -->
     <article>
         <p class:large={fontSizeBig}>{@html post.content.rendered} </p>
-        <Donatiebox />
+        <DonationBox />
         <h2>Dit artikel werd geschreven door</h2>
-        <Makersblok author={post.authors[0]}></Makersblok>
+        <AuthorInfo author={post.authors[0]}></AuthorInfo>
     </article>
   
 {:else}
@@ -39,9 +36,9 @@
 {/if}
 
 <h2>Meer van {post.authors[0].display_name}</h2>
-<ArtikelKlein posts={data.authorPosts}/>
+<ArticleSmall posts={data.authorPosts}/>
 <h2>Meer van Red Pers</h2>
-<ArtikelKlein posts={data.additionalPosts}/>
+<ArticleSmall posts={data.additionalPosts}/>
 
 </main>
 

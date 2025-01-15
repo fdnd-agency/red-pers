@@ -1,14 +1,13 @@
 <script>
-    /** @type {import('./$types').PageData} */
+    import Footer from '$lib/Organism/Footer.svelte';
+    import Header from '$lib/Organism/Header.svelte';
+    
     export let data;
 
     const dateFormat = {
         month: 'short',
         day: 'numeric',
     };
-    
-    import Footer from '$lib/Organism/Footer.svelte';
-    import Header from '$lib/Organism/Header.svelte';
 </script>
 
 <Header/>

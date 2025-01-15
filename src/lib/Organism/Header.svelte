@@ -1,5 +1,10 @@
 <script>
-    /** @type {import('./$types').PageData} */
+    import SearchBar from "$lib/Molecules/SearchBar.svelte";
+    import NewsLetter from "$lib/Molecules/NewsLetter.svelte";
+    import DonationButton from "$lib/Molecules/DonationButton.svelte";
+    import MobileNav from "$lib/Organism/MobileNav.svelte";
+    import Nav from "$lib/Organism/Nav.svelte";
+    import { onMount } from "svelte";
 
     export let alwaysSticky = true;
 
@@ -9,13 +14,6 @@
         weekday: 'long',
         year: 'numeric'
     };
-
-    import SearchBar from "$lib/Molecules/SearchBar.svelte";
-    import Nieuwsbrief from "$lib/Molecules/Nieuwsbrief.svelte";
-    import Donatiebtn from "$lib/Molecules/Donatiebtn.svelte";
-    import MobileNav from "$lib/Organism/MobileNav.svelte";
-    import { onMount } from "svelte";
-    import Nav from "./Nav.svelte";
 
     let sticky = alwaysSticky;
     
@@ -61,8 +59,8 @@
                 <img src="/RedPers_Logo_Cmyk_Black.webp" alt="RedPers logo" width="280" height="70" />
             </a>
             <ul>
-                <li class="wide-screen-only"><Nieuwsbrief /></li>
-                <li class="wide-screen-only"><Donatiebtn /></li>
+                <li class="wide-screen-only"><NewsLetter/></li>
+                <li class="wide-screen-only"><DonationButton /></li>
                 <li class="search">
                     <SearchBar resultsPage="/search" name="searchterm" placeholder="Zoeken..." />
                 </li>
@@ -277,7 +275,6 @@
             animation-timeline: view();
             animation-range: 100vh calc(100vh + 40em);
         }
-        /* Bron: https://kizu.dev/scroll-driven-animations/ */
 
         .sticky {
             margin-bottom: 70px;

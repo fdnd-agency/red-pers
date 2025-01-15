@@ -1,16 +1,14 @@
 <script>
+    import Footer from '$lib/Organism/Footer.svelte';
+    import Header from '$lib/Organism/Header.svelte';
+    import SearchBar from '$lib/Molecules/SearchBar.svelte';
 
-    /** @type {import('./$types').PageData} */
     export let data;
 
     const dateFormat = {
         month: 'short',
         day: 'numeric',
     };
-
-    import Footer from '$lib/Organism/Footer.svelte';
-    import Header from '$lib/Organism/Header.svelte';
-    import SearchBar from '$lib/Molecules/SearchBar.svelte';
 </script>
 
 <Header/>

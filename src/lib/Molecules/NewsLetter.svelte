@@ -1,3 +1,19 @@
+<input type="checkbox" id="popup-toggle">
+
+<label class="open-popup-btn" for="popup-toggle">Nieuwsbrief</label>
+
+<section class="overlay">
+    <article class="popup">
+        <label class="close-btn" for="popup-toggle">&times;</label>
+        <h2>Nieuwsbrief</h2>
+        <p>
+            Elke drie weken houden we je op de hoogte van wat we schreven en wat we 
+            lazen in de Red Pers-nieuwsbrief.
+        </p>
+        <button class="subscribe-btn">Schrijf je hier in!</button>
+    </article>
+</section>
+
 <style>
     .open-popup-btn {
         cursor: pointer;
@@ -18,7 +34,7 @@
     }
 
     article.popup {
-        background-color: white;
+        background-color: var(--background-color);
         border: 2px solid black;
         padding: 4rem;
         max-width: 500px;
@@ -46,15 +62,15 @@
 
     .popup p {
         margin-bottom: 1rem;
-        color: #757575;
+        color: var(--alt-text-color);
         font-size: 1rem;
         line-height: 1.2;
         letter-spacing: 0.02em;
     }
 
     .subscribe-btn {
-        background-color: black;
-        color: white;
+        background-color: var(--text-color);
+        color: var(--paper-color);
         padding: 1rem 1.5rem;
         cursor: pointer;
         margin-top: 1rem;
@@ -64,7 +80,7 @@
     }
 
     .subscribe-btn:hover {
-        background-color: #D5302D;
+        background-color: var(----accent-color1);
         transition: background-color 0.3s ease;
     }
 
@@ -139,19 +155,3 @@
         }
     }
 </style>
-
-<input type="checkbox" id="popup-toggle">
-
-<label class="open-popup-btn" for="popup-toggle">Nieuwsbrief</label>
-
-<section class="overlay">
-    <article class="popup">
-        <label class="close-btn" for="popup-toggle">&times;</label>
-        <h2>Nieuwsbrief</h2>
-        <p>
-            Elke drie weken houden we je op de hoogte van wat we schreven en wat we 
-            lazen in de Red Pers-nieuwsbrief.
-        </p>
-        <button class="subscribe-btn">Schrijf je hier in!</button>
-    </article>
-</section>

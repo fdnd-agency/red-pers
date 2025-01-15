@@ -1,13 +1,13 @@
 <script>
     export let changeFontSizeFunction;
 
-    function betterAlert(message) { // Deze functie laat een custom alert zien
+    function betterAlert(message) { // This function shows a custom alert
         alertDialog.show()
         alertMessage.innerText = message;
         setTimeout(() => alertDialog.close(), 2000);
     }
     function share(event) {
-        if (navigator.share) { // deze functie wordt niet door elke browser ondersteunt
+        if (navigator.share) { // This function isn't supported in every browser
             navigator.share({url: window.top.location});
         } else {
             navigator.clipboard.writeText(window.top.location);
@@ -16,7 +16,7 @@
     }
 </script>
 
-<div class="artikel-tools">
+<div class="article-tools">
     <button class="listen"><img src="/Play.svg" alt="Play">Artikel beluisteren</button>
     <ul>
         <li>
@@ -41,7 +41,7 @@
         gap: 0.5em;
     }
 
-    .artikel-tools {
+    .article-tools {
         display: flex;
         justify-content: space-between;
         margin-top: 2em;

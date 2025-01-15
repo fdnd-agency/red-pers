@@ -57,7 +57,6 @@
 
         @starting-style {
             translate: calc(-50vw - 1px) 0; /* width + border */
-            /* Bron: https://www.youtube.com/watch?v=vmDEHAzj2XE */
         }
     }
 

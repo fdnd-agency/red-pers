@@ -1,4 +1,3 @@
-/** @type {import('./$types').PageLoad} */
 import wp from "$lib/wordpress";
 import { error } from "@sveltejs/kit";
 import { categoriesData } from "$lib/index.js";

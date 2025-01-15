@@ -108,7 +108,6 @@
         padding: 8px 16px;
         background-color: black;
         color: white;
-        /* padding: 1rem 1.5rem; */
         cursor: pointer;
         margin-top: 1rem;
         font-size: 1.2rem;
@@ -146,9 +145,10 @@
         color: #E85340;
     }
 
-   /* Mediaquery voor schermen kleiner dan 560px */
+   /* Mediaquery for screens smaller than 560px */
 @media (max-width: 560px) {
-    /* Popup aanpassen voor kleinere schermen */
+    /* Adjust popup for smaller screens */
+
     .popup {
         width: 400px;
         height: 220px;
@@ -158,24 +158,24 @@
         margin-top: -10px;
     }
 
-    /* Verkleinen van de radio-opties */
+    /* Reducing size of the radio options */
     .amount-options {
         justify-content: center;
         align-items: center;
     }
 
     .amount-options label {
-        font-size: 14px; /* Kleinere tekst voor de labels */
-        padding: 6px 12px; /* Kleinere padding voor de labels */
+        font-size: 14px; /* Smaller text for the labels */
+        padding: 6px 12px; /* Smaller padding for the labels */
     }
 
-    /* 'Ander bedrag' invoerveld aanpassen */
+    /* 'Other amount' inputfield adjustments */
     .other {
-        width: 91%; /* Volledige breedte van de popup */
+        width: 91%; /* Full width of the popup */
         height: 20px;
     }
 
-    /* Verkleinen van de sluitknop */
+    /* Reducing size of the close button */
     .close-button {
         font-size: 18px;
         top: 5px;
@@ -183,7 +183,7 @@
     }
 }
 
-/* Mediaquery voor schermen kleiner dan 520px */
+/* Mediaquery for screens smaller than 520px */
 @media (max-width: 520px) {
     .popup {
         width: 380px;
@@ -197,12 +197,12 @@
 
 
     .other {
-        height: 20px; /* Kleinere invoerveldhoogte */
+        height: 20px; /* Smaller input height */
     }
 
 }
 
-/* Mediaquery voor schermen kleiner dan 450px */
+/* Mediaquery for screens smaller than 450px */
 @media (max-width: 490px) {
     .popup {
         width: 300px;
@@ -231,7 +231,7 @@
     }
 }
 
-/* Mediaquery voor schermen kleiner dan 420px */
+/* Mediaquery for screens smaller than 420px */
 @media (max-width: 420px) {
     .popup {
         width: 280px;
@@ -239,7 +239,7 @@
     }
 
     h2 {
-        font-size: 26px; /* Nog kleinere koptekst */
+        font-size: 26px; /* Even smaller headingtext */
         margin-top: -45px;
     }
 
@@ -252,11 +252,11 @@
     }
 
     .other {
-        height: 18px; /* Verkleinen van de invoerveldhoogte */
+        height: 18px; /* Reducing size of the input height */
     }
 }
 
-/* Mediaquery voor schermen kleiner dan 380px */
+/* Mediaquery for screens smaller than 380px */
 @media (max-width: 390px) {
     .popup {
         width: 230px;
@@ -264,11 +264,11 @@
     }
 
     h2 {
-        font-size: 20px; /* Hele kleine koptekst */
+        font-size: 20px; /* Very small headingtext */
     }
 
     p {
-        font-size: 12px; /* Kleine tekst voor de paragraaf */
+        font-size: 12px; /* small text for the paragraph */
     }
 
     .amount-options {
@@ -281,12 +281,12 @@
     }
 
     .other {
-        height: 10px; /* Verkleinen van het invoerveld */
+        height: 10px; /* Reducing size of the input */
         font-size: 10px;
     }
 }
 
-/* Mediaquery voor schermen kleiner dan 380px */
+/* Mediaquery for screens smaller than 380px */
 @media (max-width: 340px) {
     .popup {
         width: 220px;
@@ -294,11 +294,11 @@
     }
 
     h2 {
-        font-size: 18px; /* Hele kleine koptekst */
+        font-size: 18px; /* Very small headingtext */
     }
 
     p {
-        font-size: 11px; /* Kleine tekst voor de paragraaf */
+        font-size: 11px; /* small text for the paragraph */
     }
 
     .amount-options {
@@ -311,7 +311,7 @@
     }
 
     .other {
-        height: 10px; /* Verkleinen van het invoerveld */
+        height: 10px; /* Reducing size of the input */
         font-size: 10px;
     }
 }

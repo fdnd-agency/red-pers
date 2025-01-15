@@ -1,4 +1,3 @@
-/** @type {import('./$types').PageLoad} */
 import wp from "$lib/wordpress";
 
 export async function load({url}) {
