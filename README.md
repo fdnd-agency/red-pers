@@ -9,44 +9,38 @@ We are a team of 4 students that have made a SSR website for our client Red Pers
 
 Red Pers is a journalist platform with 54 young, motivated poeple who are comitted to journalism. It is perfect for beginner or student journalists and writers to build their portfolio and share their stories. This website is only a year old and still a work in progress.
 
-Voor de opdrachtgever Redpers hebben wij (Shanna, Ruben & Annelinde) een ontwerp en website ontwikkeld op basis van een Headless CMS API. Tijdens Sprint 17 is Tristan bij ons aangelosten om ook voor deze opdrachtgever aan de slag te gaan. 
+The goal of this project was to make the website more user-friendly and accessible. The site was not yet fully responsive and doesn’t work perfectly on all devices. We worked to change that. We focused on frontend design and development principles, standards, and best practices to create a solution for the client that follows RAP/PE. This includes responsiveness, accessibility, performance, and progressive enhancement.
 
-RedPers is een journalistiek platform met 54 jonge, gedreven mensen die zich inzetten voor journalistiek. Het biedt de kans om ervaring op te doen met alle aspecten van een journalistiek platform, van schrijven tot websitebeheer. De website is nog geen jaar oud en volop in ontwikkeling.
+## Techniques
+The website was built using the following technologies:
+* HTML – For the structure of the website
+* CSS – For the styling
+* JavaScript – For interactive functionalities
+* SvelteKit – To set up a Svelte-based framework
+* WordPress – Used as a headless CMS for content management via the API
+* WP-API – For the connection between the website and the WordPress CMS
+* npm – For package management
+* GitHub – For collaboration
+* Atomic design – Library structure
+* View transitions – For an improved user experience
 
-Dit project had als doel de website gebruiksvriendelijker en toegankelijker te maken. De site is nog niet volledig responsive en werkt niet optimaal op alle apparaten. 
-Wij hebben er voor gezorgd hier verandering in te brengen. Wij hebben tijdens onze werkwijze ons vooral bezig gehouden met de principes, standaarden en best-practices op het gebied van frontend design en development om een oplossing voor de opdrachtgever te realiseren om RAP/PE te werken. Denk hierbij aan: responsive, accessibility, performance en progressive enhancement. 
+## How to Clone and Use This Project
+Follow the steps below to use this project locally:
+* Clone the repository
+* Open the repo in a code editor, such as VSCode
+* Open the terminal and navigate to the project folder
+* Type npm i or npm install
+* Type npm run dev
 
-## Technnieken
+Optional:
 
-De website is gebouwd met behulp van de volgende technieken:
-* HTML – Voor de structuur van de website
-* CSS – Voor de styling van de website
-* JavaScript – Voor interactieve functionaliteiten
-* SvelteKit – Voor het opzetten van een Svelte-gebaseerd framework
-* WordPress – Gebruikt als headless CMS voor contentbeheer via de API
-* WP-API – Voor de verbinding tussen de website en het WordPress CMS
-* npm – Voor package management
-* GitHub – Voor samenwerking
-* Atomic design - Library indeling
-* View transitions - Betere gebruikerservaring
-
-## Hoe dit project te clonen en te gebruiken
-
-Volg de onderstaande stappen om dit project lokaal te gebruiken:
-
-* Clone de repository
-* Open de repo met een code-editor, zoals VSCode
-* Open de terminal en navigeer naar de projectmap
-* Typ npm i of npm install
-* Typ npm run dev
-"Optioneel":
-* Fork de repository
-* Maak een nieuwe branch en voer je wijzigingen door
-* Dien een pull request in met een beschrijving van je wijzigingen.
+* Fork the repository
+* Create a new branch and make your changes
+* Submit a pull request with a description of your changes.
 
 ## Links
-* [Link naar Projectboard](https://github.com/orgs/fdnd-agency/projects/28/views/1)
-* [Link naar code conventies](https://github.com/orgs/fdnd-agency/projects/28/views/1?pane=issue&itemId=86764521)
+* [Link to Project Board](https://github.com/orgs/fdnd-agency/projects/28/views/1)
+* [Link to code conventies](https://github.com/orgs/fdnd-agency/projects/28/views/1?pane=issue&itemId=86764521)
 
 ## Resources
 
