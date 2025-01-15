@@ -12,8 +12,6 @@
 
 <Header alwaysSticky={false}/>
 
-<div>test</div>
-
 <div class="background">
     <main>
         <div class="featured">
