@@ -49,7 +49,7 @@ Optional:
 
 ## Links
 * [Link to Project Board](https://github.com/orgs/fdnd-agency/projects/28/views/1)
-* [Link to code conventies](https://github.com/orgs/fdnd-agency/projects/28/views/1?pane=issue&itemId=86764521)
+* [Link to code conventions](https://github.com/orgs/fdnd-agency/projects/28/views/1?pane=issue&itemId=86764521)
 
 ## Resources
 
