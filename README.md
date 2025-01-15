@@ -1,6 +1,8 @@
 # Redpers
 <img width="1470" alt="Scherm­afbeelding 2025-01-15 om 15 37 55" src="https://github.com/user-attachments/assets/8bdf4082-3a16-47b0-9723-d1fb5675af30" />
 
+## Contents
+
 
 ## Live link
 
@@ -46,9 +48,8 @@ Optional:
 
 ## Resources
 
-[Design](https://github.com/fdnd-agency/red-pers/tree/main/design)  
-
 [Website Red Pers](https://redpers.nl/)
+[Red Pers API](https://redpers.nl/wp-json/wp/v2/posts)
 
 * https://cloudcannon.com/tutorials/sveltekit-beginner-tutorial/sveltekit-components/
 * https://www.youtube.com/watch?v=rkwKpULfWZA
@@ -56,7 +57,3 @@ Optional:
 * https://stackoverflow.com/questions/58937183/browser-doesnt-show-tab-raw-parsed-when-i-send-json-object-by-express
 * https://chromewebstore.google.com/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa
 * https://www.npmjs.com/package/wpapi
-
-## Resources Semester 2
-
-[Red Pers API](https://redpers.nl/wp-json/wp/v2/posts)
