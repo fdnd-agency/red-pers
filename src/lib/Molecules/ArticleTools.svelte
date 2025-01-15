@@ -16,7 +16,7 @@
     }
 </script>
 
-<div class="artikel-tools">
+<div class="article-tools">
     <button class="listen"><img src="/Play.svg" alt="Play">Artikel beluisteren</button>
     <ul>
         <li>
@@ -41,7 +41,7 @@
         gap: 0.5em;
     }
 
-    .artikel-tools {
+    .article-tools {
         display: flex;
         justify-content: space-between;
         margin-top: 2em;
