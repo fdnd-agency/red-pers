@@ -1,8 +1,11 @@
 # Redpers
 
-## Live link website
+## Live link
 
-## Beschrijving
+## Description
+We are a team of 4 students that have made a SSR website for our client Red Pers, using WordPress as headless CMS API. 
+
+Red Pers is a journalist platform with 54 young, motivated poeple who are comitted to journalism. It is perfect for beginner or student journalists and writers to build their portfolio and share their stories. This website is only a year old and still a work in progress.
 
 Voor de opdrachtgever Redpers hebben wij (Shanna, Ruben & Annelinde) een ontwerp en website ontwikkeld op basis van een Headless CMS API. Tijdens Sprint 17 is Tristan bij ons aangelosten om ook voor deze opdrachtgever aan de slag te gaan. 
 
@@ -43,8 +46,11 @@ Volg de onderstaande stappen om dit project lokaal te gebruiken:
 * [Link naar Projectboard](https://github.com/orgs/fdnd-agency/projects/28/views/1)
 * [Link naar code conventies](https://github.com/orgs/fdnd-agency/projects/28/views/1?pane=issue&itemId=86764521)
 
-## Bronnen
-Hier zijn wat handige bronnen die we tijdens dit project hebben gebruikt:
+## Resources
+
+[Design](https://github.com/fdnd-agency/red-pers/tree/main/design)  
+
+[Website Red Pers](https://redpers.nl/)
 
 * https://cloudcannon.com/tutorials/sveltekit-beginner-tutorial/sveltekit-components/
 * https://www.youtube.com/watch?v=rkwKpULfWZA
@@ -52,12 +58,6 @@ Hier zijn wat handige bronnen die we tijdens dit project hebben gebruikt:
 * https://stackoverflow.com/questions/58937183/browser-doesnt-show-tab-raw-parsed-when-i-send-json-object-by-express
 * https://chromewebstore.google.com/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa
 * https://www.npmjs.com/package/wpapi
-
-## Resources
-
-[Design](https://github.com/fdnd-agency/red-pers/tree/main/design)  
-
-[Website Red Pers](https://redpers.nl/)
 
 ## Resources Semester 2
 
