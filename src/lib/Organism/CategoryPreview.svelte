@@ -6,6 +6,9 @@
     export let posts;
 </script>
 
+
+
+
 <div>
     <div class="category-name">
         <h1>{categoryName}</h1>
@@ -47,7 +50,7 @@
 
     .articles {
         justify-self: start;
-
+        border: 2px solid black;
         display: flex;
         flex-wrap: wrap;
         gap: 1em;
