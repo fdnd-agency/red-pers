@@ -81,6 +81,7 @@
         padding: 0 0;
         background-color: var(--background-color);
         --search-background-color: var(--background-color);
+        overflow: hidden; /* Hide the inner borders when animating */
 
         height: 80px;
     }
