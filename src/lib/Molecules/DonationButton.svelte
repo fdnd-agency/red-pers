@@ -32,10 +32,10 @@
 <style>
     .donation-button {
         background-color: var(--accent-color1);
-        border-radius: 2px;
+        border-radius: 0.125em; 
         color: var(--background-color);
         cursor: pointer;
-        padding: 8px 12px;
+        padding: 0.5em 0.75em; 
     }
 
     .overlay {
@@ -53,17 +53,17 @@
 
     article.popup {
         background-color: var(--background-color);
-        border: 2px solid black;
+        border: 0.125em solid black; 
         padding: 4rem;
-        max-width: 500px;
+        max-width: 31.25em; 
         position: relative;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1); 
     }
 
     .close-btn {
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 0.625em; 
+        right: 0.625em; 
         font-size: 1.5rem;
         cursor: pointer;
         border: none;
@@ -100,8 +100,8 @@
     .amount-options {
         display: flex;
         justify-content: space-between;
-        gap: 10px;
-        margin-bottom: 10px;
+        gap: 0.625em; 
+        margin-bottom: 0.625em; 
     }
 
     .amount-options label:hover {
@@ -114,27 +114,27 @@
     }
 
     .amount-options label {
-        width: 95px;
+        width: 6em; 
         font-size: 1rem;
         background-color: var(--text-color);
         color: var(--background-color);
-        padding: 6px 16px;
-        border-radius: 2px;
+        padding: 0.375em 1em; 
+        border-radius: 0.125em; 
         text-align: center;
         cursor: pointer;
     }
 
     .other {
         width: 100%;
-        height: 20px;
+        height: 1.25em; 
         font-size: 1rem;
         background-color: var(--text-color);
         color: var(--background-color);
-        padding: 6px 50px;
-        border-radius: 2px;
+        padding: 0.375em 3.125em; 
+        border-radius: 0.125em; 
         text-align: center;
         cursor: pointer;
-        margin-top: 10px;
+        margin-top: 0.625em; 
     }
 
     .other input[type="radio"] {
@@ -146,11 +146,10 @@
         transition: background-color 0.3s ease;
     }
 
-    /* Media Queries */
     @media (max-width: 1024px) {
         .popup {
             padding: 3rem;
-            max-width: 450px;
+            max-width: 28.125em; 
         }
 
         .popup h2 {
@@ -171,7 +170,7 @@
     @media (max-width: 768px) {
         .popup {
             padding: 2rem;
-            max-width: 400px;
+            max-width: 25em; 
         }
 
         .popup h2 {
@@ -193,7 +192,7 @@
     @media (max-width: 480px) {
         .popup {
             padding: 1.5rem;
-            max-width: 350px;
+            max-width: 21.875em;
         }
 
         .popup h2 {
@@ -210,5 +209,68 @@
             font-size: 0.6rem;
             padding: 0.6rem 1rem;
         }
+    }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+    }
+
+    #donation-toggle:checked ~ .overlay {
+        display: flex;
+        animation: fadeIn 0.3s ease-in-out forwards;
+    }
+
+    .overlay {
+        animation: fadeOut 0.3s ease-in-out forwards;
+    }
+
+    #donation-toggle:checked ~ .overlay article.popup {
+        animation: slideUp 0.3s ease-in-out forwards;
+    }
+
+    .popup {
+        animation: slideDown 0.3s ease-in-out forwards;
+    }
+
+    .overlay, .popup {
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
     }
 </style>

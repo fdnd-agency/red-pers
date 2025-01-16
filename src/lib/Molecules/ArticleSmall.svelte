@@ -36,7 +36,7 @@
     article {
         width: calc(var(--article-width) / 3 - 1em);
         height: 22em;
-        border: 1.6px solid #7B7B7A;
+        border: 0.1em solid black;
         cursor: pointer;
 
         font-size: smaller;
@@ -49,7 +49,7 @@
 
     img {
         width: 100%;
-        height: 150px;
+        height: 9.5em;
         object-fit: cover;
     }
 
@@ -60,6 +60,5 @@
 
     article p {
         margin: 0 0.5em;
-        color: #7B7B7A;
     }
 </style>
