@@ -3,12 +3,13 @@
     import Header from '$lib/Organism/Header.svelte';
     import Nav from '$lib/Organism/Nav.svelte';
     import ArticleAlt from '$lib/Molecules/ArticleAlt.svelte';
-
+    import ScrollWatcher from '$lib/Molecules/ScrollWatcher.svelte';
+    
     export let data;
 </script>
 
-<Header alwaysSticky={true}/>
-<Nav alwaysSticky={true}/>
+<Header/>
+<ScrollWatcher />
 <div class="background">
     <main class="posts-container">
         {#if data.posts}

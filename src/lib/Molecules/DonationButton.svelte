@@ -1,36 +1,82 @@
-<button popovertarget="donation" popovertargetaction="show" class="donation-button">
-    <img src="./4128927.png" alt="donation button" class="button-icon">Doneren
-</button>
+<input type="checkbox" id="donation-toggle">
 
-<div popover="auto" id="donation" class="popup">
-    <button popovertarget="donation" popovertargetaction="hide" class="close-button" aria-label="Sluit">x</button>
-    <h2>Doneren</h2>
-    <p>Wij bieden jonge, aspirerende journalisten een podium en begeleiding. Dat kunnen we nog beter met jouw steun. Die steun komt met twee voor de prijs van een, want onze sponsor matcht jouw donatie, Geef jij ons vijf euro? Dan ontvangen wij een tientje.</p>
-    <fieldset>
-        <div class="amount-options">
-            <label for="amount-10">
-                <input type="radio" id="amount-10" name="donation" value="10">
-                €10
+<label class="donation-button" for="donation-toggle">Doneren</label>
+
+<section class="overlay">
+    <article class="popup">
+        <label class="close-btn" for="donation-toggle">&times;</label>
+        <h2>Doneren</h2>
+        <p>Wij bieden jonge, aspirerende journalisten een podium en begeleiding. Dat kunnen we nog beter met jouw steun. Die steun komt met twee voor de prijs van een, want onze sponsor matcht jouw donatie. Geef jij ons vijf euro? Dan ontvangen wij een tientje.</p>
+        <fieldset>
+            <div class="amount-options">
+                <label for="amount-10">
+                    <input type="radio" id="amount-10" name="donation" value="10">
+                    €10
+                </label>
+                <label for="amount-25">
+                    <input type="radio" id="amount-25" name="donation" value="25">
+                    €25
+                </label>
+                <label for="amount-50">
+                    <input type="radio" id="amount-50" name="donation" value="50">
+                    €50
+                </label>
+            </div>
+            <label for="amount-other" class="other">
+                <input type="radio" id="amount-other" name="donation" value="other"> Ander bedrag:
             </label>
-
-            <label for="amount-25">
-                <input type="radio" id="amount-25" name="donation" value="25">
-                €25
-            </label>
-
-            <label for="amount-50">
-                <input type="radio" id="amount-50" name="donation" value="50">
-                €50
-            </label>
-        </div>
-
-        <label for="amount-other" class="other">
-            <input type="radio" id="amount-other" name="donation" value="other"> Ander bedrag:
-        </label>
-    </fieldset>
-</div>
+        </fieldset>
+    </article>
+</section>
 
 <style>
+    .donation-button {
+        background-color: var(--accent-color1);
+        border-radius: 0.125em; 
+        color: var(--background-color);
+        cursor: pointer;
+        padding: 0.5em 0.75em; 
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+    }
+
+    article.popup {
+        background-color: var(--background-color);
+        border: 0.125em solid black; 
+        padding: 4rem;
+        max-width: 31.25em; 
+        position: relative;
+        box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1); 
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 0.625em; 
+        right: 0.625em; 
+        font-size: 1.5rem;
+        cursor: pointer;
+        border: none;
+    }
+
+    #donation-toggle:checked ~ .overlay {
+        display: flex;
+    }
+
+    #donation-toggle {
+        display: none;
+    }
+
     h2 {
         font-size: 3.2rem;
         margin: 0.2rem 0.2rem;
@@ -41,7 +87,7 @@
 
     p {
         margin-bottom: 1rem;
-        color: #757575;
+        color: var(--alt-text-color);
         font-size: 1rem;
         line-height: 1.2;
         letter-spacing: 0.02em;
@@ -49,293 +95,182 @@
 
     fieldset {
         all: unset;
-        padding: 0;
-    }
-
-    .popup {
-        background-color: white;
-        border: 2px solid black;
-        padding: 4rem;
-        max-width: 500px;
-        position: relative;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .donation-button {
-        all: unset;
-        --btn-color: #8a0000;
-        --btn-text: #ffffff;
-        background-color: var(--accent-color1);
-        border-radius: 2px;
-        color: var(--btn-text);
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        padding: 8px 12px;
-    }
-
-    input[type="radio"] {
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    .button-icon {
-        width: 20px;
-        height: auto;
-        filter: invert(1) grayscale(1) brightness(100%);
-        margin-right: 8px;
-    }
-
-    .donation-button:focus-visible {
-        outline: 2px solid #000000;
     }
 
     .amount-options {
         display: flex;
         justify-content: space-between;
-        gap: 10px; 
-        margin-bottom: 10px; 
+        gap: 0.625em; 
+        margin-bottom: 0.625em; 
     }
 
-    .amount-options label {
-        width: 95px;
-        font-size: 1rem;
-    }
-
-    label {
-        display: inline-block;
-        padding: 8px 16px;
-        background-color: black;
-        color: white;
-        cursor: pointer;
-        margin-top: 1rem;
-        font-size: 1.2rem;
-        width: 100%;
-        border-radius: 2px;
-        text-align: center;
-        transition: all 0.3s ease;
-    }
-
-    label:hover,
-    label:focus-within {
-        background-color: #D5302D;
+    .amount-options label:hover {
+        background-color: var(--accent-color1);
         transition: background-color 0.3s ease;
     }
 
-    .other {
-        height: 20px;
-        width: 100%;
+    .amount-options input[type="radio"] {
+        display: none;
+    }
+
+    .amount-options label {
+        width: 6em; 
         font-size: 1rem;
-    }
-
-    .close-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background-color: transparent;
-        border: none;
-        font-size: 20px;
-        color: #000;
+        background-color: var(--text-color);
+        color: var(--background-color);
+        padding: 0.375em 1em; 
+        border-radius: 0.125em; 
+        text-align: center;
         cursor: pointer;
-        padding: 5px;
-    }
-
-    .close-button:hover {
-        color: #E85340;
-    }
-
-   /* Mediaquery for screens smaller than 560px */
-@media (max-width: 560px) {
-    /* Adjust popup for smaller screens */
-
-    .popup {
-        width: 400px;
-        height: 220px;
-    }
-
-    h2{
-        margin-top: -10px;
-    }
-
-    /* Reducing size of the radio options */
-    .amount-options {
-        justify-content: center;
-        align-items: center;
-    }
-
-    .amount-options label {
-        font-size: 14px; /* Smaller text for the labels */
-        padding: 6px 12px; /* Smaller padding for the labels */
-    }
-
-    /* 'Other amount' inputfield adjustments */
-    .other {
-        width: 91%; /* Full width of the popup */
-        height: 20px;
-    }
-
-    /* Reducing size of the close button */
-    .close-button {
-        font-size: 18px;
-        top: 5px;
-        right: 5px;
-    }
-}
-
-/* Mediaquery for screens smaller than 520px */
-@media (max-width: 520px) {
-    .popup {
-        width: 380px;
-        height: 200px;
-    }
-
-    h2 {
-        font-size: 36px;
-        margin-top: -20px;
-    }
-
-
-    .other {
-        height: 20px; /* Smaller input height */
-    }
-
-}
-
-/* Mediaquery for screens smaller than 450px */
-@media (max-width: 490px) {
-    .popup {
-        width: 300px;
-        height: 160px;
-    }
-
-    h2 {
-        font-size: 28px; 
-        margin-top: -40px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-
-    .amount-options label {
-        font-size: 14px;
-        padding: 5px 10px;
-        width: 60px;
-        height: 12px;
     }
 
     .other {
-        height: 18px; 
-        width: 87%;
+        width: 100%;
+        height: 1.25em; 
+        font-size: 1rem;
+        background-color: var(--text-color);
+        color: var(--background-color);
+        padding: 0.375em 3.125em; 
+        border-radius: 0.125em; 
+        text-align: center;
+        cursor: pointer;
+        margin-top: 0.625em; 
     }
-}
 
-/* Mediaquery for screens smaller than 420px */
-@media (max-width: 420px) {
+    .other input[type="radio"] {
+        display: none;
+    }
+
+    .other:hover {
+        background-color: var(--accent-color1);
+        transition: background-color 0.3s ease;
+    }
+
+    @media (max-width: 1024px) {
+        .popup {
+            padding: 3rem;
+            max-width: 28.125em; 
+        }
+
+        .popup h2 {
+            font-size: 2.8rem;
+        }
+
+        .popup p {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .amount-options label,
+        .other {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .popup {
+            padding: 2rem;
+            max-width: 25em; 
+        }
+
+        .popup h2 {
+            font-size: 2.4rem;
+        }
+
+        .popup p {
+            font-size: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .amount-options label,
+        .other {
+            font-size: 0.8rem;
+            padding: 0.8rem 1.2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .popup {
+            padding: 1.5rem;
+            max-width: 21.875em;
+        }
+
+        .popup h2 {
+            font-size: 2rem;
+        }
+
+        .popup p {
+            font-size: 0.6rem;
+            line-height: 1.2;
+        }
+
+        .amount-options label,
+        .other {
+            font-size: 0.6rem;
+            padding: 0.6rem 1rem;
+        }
+    }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+    }
+
+    #donation-toggle:checked ~ .overlay {
+        display: flex;
+        animation: fadeIn 0.3s ease-in-out forwards;
+    }
+
+    .overlay {
+        animation: fadeOut 0.3s ease-in-out forwards;
+    }
+
+    #donation-toggle:checked ~ .overlay article.popup {
+        animation: slideUp 0.3s ease-in-out forwards;
+    }
+
     .popup {
-        width: 280px;
-        height: 160px;
+        animation: slideDown 0.3s ease-in-out forwards;
     }
 
-    h2 {
-        font-size: 26px; /* Even smaller headingtext */
-        margin-top: -45px;
+    .overlay, .popup {
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
     }
-
-    p {
-        font-size: 14px;
-    }
-
-    .amount-options label {
-        font-size: 11px;
-    }
-
-    .other {
-        height: 18px; /* Reducing size of the input height */
-    }
-}
-
-/* Mediaquery for screens smaller than 380px */
-@media (max-width: 390px) {
-    .popup {
-        width: 230px;
-        height: 110px;
-    }
-
-    h2 {
-        font-size: 20px; /* Very small headingtext */
-    }
-
-    p {
-        font-size: 12px; /* small text for the paragraph */
-    }
-
-    .amount-options {
-        justify-content: center;
-    }
-
-    .amount-options label {
-        font-size: 10px;
-        padding: 4px 8px;
-    }
-
-    .other {
-        height: 10px; /* Reducing size of the input */
-        font-size: 10px;
-    }
-}
-
-/* Mediaquery for screens smaller than 380px */
-@media (max-width: 340px) {
-    .popup {
-        width: 220px;
-        height: 100px;
-    }
-
-    h2 {
-        font-size: 18px; /* Very small headingtext */
-    }
-
-    p {
-        font-size: 11px; /* small text for the paragraph */
-    }
-
-    .amount-options {
-        justify-content: center;
-    }
-
-    .amount-options label {
-        font-size: 10px;
-        padding: 4px 8px;
-    }
-
-    .other {
-        height: 10px; /* Reducing size of the input */
-        font-size: 10px;
-    }
-}
-
-/* Popup animatie effect */
-@keyframes popup-zoom {
-    0% {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-
-/* Toepassing van animatie aan de popup */
-.popup {
-    animation: popup-zoom 0.6s ease-out, popup-shake 0.3s ease 0.3s;
-}
-
 </style>
