@@ -1,5 +1,6 @@
 # Redpers
-<img width="1470" alt="Scherm­afbeelding 2025-01-15 om 15 37 55" src="https://github.com/user-attachments/assets/8bdf4082-3a16-47b0-9723-d1fb5675af30" />
+
+<img width="1470" alt="Scherm­afbeelding 2025-01-16 om 19 45 58" src="https://github.com/user-attachments/assets/5465f02e-b21e-4dd6-aae2-ab8497972478" />
 
 ## Contents
 * [Live link](https://github.com/fdnd-agency/red-pers/blob/main/README.md#live-link)
@@ -11,7 +12,7 @@
 
 ## Live link
 
-https://redpers.netlify.app
+[https://redpers.netlify.app](https://redpers-fdnd.netlify.app)
 
 ## Description
 We are a team of 4 students that have made a SSR website for our client Red Pers, using WordPress as headless CMS API. 
