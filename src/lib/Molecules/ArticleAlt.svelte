@@ -46,6 +46,7 @@
         justify-content: space-between;
         align-items: flex-start;
         width: 100%;
+        height: 10em;
         max-width: 800px;
         margin: 0 auto;
         padding: 1rem;
@@ -66,7 +67,7 @@
     .post-image {
         object-fit: cover;
         width: 200px;
-        height: auto;
+        height: 100%;
         border: 1px solid black;
         flex-shrink: 0;
     }
