@@ -6,6 +6,7 @@
     import AuthorInfo from '$lib/Molecules/AuthorInfo.svelte';
     import DonationBox from '$lib/Molecules/DonationBox.svelte';
     import ArticleTools from '../../lib/Molecules/ArticleTools.svelte';
+    import ScrollWatcher from '$lib/Molecules/ScrollWatcher.svelte';
 
     export let data;
     
@@ -18,6 +19,7 @@
 </script>
 
 <Header/>
+<ScrollWatcher />
 <ArticleInfoFrame post={post}></ArticleInfoFrame>
 
 <main>
