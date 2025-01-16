@@ -5,7 +5,7 @@
 .scroll-watcher {
       height: 0.5em;
       position: fixed;
-      top: 5em;
+      top: 0;
       z-index: 1000;
       background-color: var(--accent-color1);
       transform-origin: left;
@@ -18,6 +18,13 @@
 
 @keyframes scroll-watcher{
     to { scale: 1 1;}
+    }
+
+    @media only screen and (max-width: 861px) {
+        .scroll-watcher {
+            top: 5em;
+        }   
+
     }
 
 </style>
