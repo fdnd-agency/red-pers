@@ -27,8 +27,6 @@
     }
 </script>
 
-
-
 <!-- class sticky when sticky is true, class animate when header is not alwaysSticky -->
 <header class:sticky={sticky} class:animate={!alwaysSticky}>
     <section class="top wide-screen-only">
@@ -82,6 +80,7 @@
         z-index: 100;
         padding: 0 0;
         background-color: var(--background-color);
+        --search-background-color: var(--background-color);
 
         height: 80px;
     }

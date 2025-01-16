@@ -43,6 +43,7 @@
     .search-main {
         max-width: 30em;
         --search-bar-width: 32.5em;
+        --search-background-color: var(--background-color);
         margin-left: auto;
         margin-right: auto;
     }
