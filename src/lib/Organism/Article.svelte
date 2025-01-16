@@ -209,7 +209,29 @@
         transform: scale(1.02);
     }
 
-    @media only screen and (max-width: 950px) {
+    @media only screen and (min-width: 700px) and (max-width: 1055px) {
+    .first-article {
+        transform: scale(0.95); 
+        transform-origin: top center; 
+    }
+
+    .first-article img {
+        max-width: 60%; 
+        height: auto;
+    }
+
+    .first-article h1 {
+        font-size: calc(var(--title-font-size) * 0.95); 
+    }
+
+    .first-article .everything {
+        padding: 0.95em; 
+    }
+
+}
+
+
+    @media only screen and (max-width: 700px) {
         .first-article {
             flex-direction: column;
         }
@@ -232,5 +254,7 @@
         }
     }
 </style>
+
+
 
 
