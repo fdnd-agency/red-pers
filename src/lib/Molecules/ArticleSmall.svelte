@@ -2,10 +2,10 @@
     export let posts;
 </script>
 
-<div class="artikelen">
+<div class="articles">
     {#if posts && posts.length > 0} 
         {#each posts as post} 
-            <a href="/{post.slug}" class="article-link" aria-label="">
+            <a href="/{post.slug}" class="article-link" aria-label="" data-sveltekit-reload>
                 <article>
                     <div>
                         <img src={post.yoast_head_json.og_image[0].url} alt="Artikel afbeelding">
@@ -21,7 +21,7 @@
 </div>
 
 <style>
-    .artikelen {
+    .articles {
         display: flex;
         gap: 0.5em;
         align-items: center;
@@ -36,7 +36,7 @@
     article {
         width: calc(var(--article-width) / 3 - 1em);
         height: 22em;
-        border: 1.6px solid #7B7B7A;
+        border: 0.1em solid black;
         cursor: pointer;
 
         font-size: smaller;
@@ -49,7 +49,7 @@
 
     img {
         width: 100%;
-        height: 150px;
+        height: 9.5em;
         object-fit: cover;
     }
 
@@ -60,6 +60,5 @@
 
     article p {
         margin: 0 0.5em;
-        color: #7B7B7A;
     }
 </style>

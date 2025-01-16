@@ -13,6 +13,7 @@
     --font-style-extra-bold: extra-bold;
 
     /* COLORS */
+    --paper-color: #f7f7f5;
     --background-color: #ffffff;
     --img-text-background-color: #00000080;
     --text-color: #000000;
@@ -42,6 +43,10 @@
     /* HOVER TRANSITIONS */
     --hover: 0.4s;
 }
+
+@view-transition {
+    navigation: auto;
+} 
 
 /* #region Fonts */
 /* inter-regular - latin */
@@ -103,6 +108,7 @@ body {
 main {
     max-width: 1240px;
     margin: var(--margin-center);
+    padding-top: 2em;
 }
   
 a {
@@ -137,7 +143,7 @@ button, a.button {
     line-height: var(--line-height-small);
 }
 
-header{
+header {
     font-family: var(--font-main);
     font-style: var(--font-style);
     font-size: var(--font-size);
@@ -145,21 +151,21 @@ header{
     letter-spacing: -2%;
 }
 
-.kop-1{
+h1 {
     font-family: var(--font-main);
     font-style: var(--font-style-extra-bold);
     font-size: 32px;
     line-height: 150%;
 }
 
-.kop-2{
+h2 {
     font-family: var(--font-main);
     font-style: var(--font-style-bold);
     font-size: 20px;
     line-height: 100%;
 }
 
-.kop-3{
+h3 {
     font-family: var(--font-main);
     font-style: var(--font-style-extra-bold);
     font-size: 16px;
@@ -191,7 +197,7 @@ h4 {
     letter-spacing: -2%;
 }
 
-.knop{
+.button-font{
     font-family: var(--font-main);
     font-style: var(--font-style);
     font-size: var(--font-size);
@@ -201,42 +207,6 @@ h4 {
 
 .uppercase {
     text-transform: uppercase;
-}
-
-.meta {
-    font-family: var(--font-main);
-    font-style: var(--font-style);
-    font-size: 11px;
-    line-height: 140%;
-    letter-spacing: 10%;
-}
-
-.tussenkop{
-    font-family: var(--font-main);
-    font-style: black;
-    font-size: 18px;
-    line-height: 150%;
-}
-
-.broodtekst{
-    font-family: var(--font-alt);
-    font-style: var(--font-style);
-    font-size: var(--font-size);
-    line-height: 170%;
-}
-
-.broodtekst-italic {
-    font-family: var(--font-alt);
-    font-style: var(--font-style-italic);
-    font-size: var(--font-size);
-    line-height: 170%;
-}
-
-.uitgelicht{
-    font-family: var(--font-alt);
-    font-style: var(--font-style-bold);
-    font-size: 38px;
-    line-height: 100%;
 }
 
 blockquote {

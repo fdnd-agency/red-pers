@@ -1,8 +1,7 @@
 <script>
     import Footer from '$lib/Organism/Footer.svelte';
     import Header from '$lib/Organism/Header.svelte';
-    // import Artikelklein from '$lib/Molecules/Artikelklein.svelte'
-    import Artikel from '$lib/Organism/Artikel.svelte';
+    import Article from '$lib/Organism/Article.svelte';
     
     export let data;
 
@@ -31,7 +30,7 @@
     {#if posts}
         <div class="articles">
             {#each posts as post}
-                <Artikel post={post} />
+                <Article post={post} />
             {/each}
         </div>
     {:else}

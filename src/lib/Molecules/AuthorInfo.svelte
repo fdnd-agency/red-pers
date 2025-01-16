@@ -2,7 +2,7 @@
     export let author
 </script>
 
-<div class="makersblok">
+<div class="author-frame">
     <div class="profile">
         <img src={author.avatar_url} alt={author.display_name}>
         <a href="/author/{author.user_id}" class="button hidden-on-mobile">Bekijk profiel</a>
@@ -19,7 +19,7 @@
 </div>
 
 <style>
-    .makersblok {
+    .author-frame {
         display: flex;
         align-items: center;
         border: var(--border);

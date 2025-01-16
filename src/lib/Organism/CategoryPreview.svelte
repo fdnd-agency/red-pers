@@ -1,5 +1,5 @@
 <script>
-    import Artikel from '$lib/Organism/Artikel.svelte';
+    import Article from '$lib/Organism/Article.svelte';
     
     export let categoryName;
     export let categorySlug;
@@ -13,7 +13,7 @@
     </div>
     <div class="articles">
         {#each posts as post}
-            <Artikel post={post} />
+            <Article post={post} />
         {/each}
     </div>
 </div>
@@ -47,7 +47,6 @@
 
     .articles {
         justify-self: start;
-
         display: flex;
         flex-wrap: wrap;
         gap: 1em;
