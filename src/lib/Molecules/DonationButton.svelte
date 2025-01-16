@@ -48,6 +48,7 @@
         display: none;
         align-items: center;
         justify-content: center;
+        z-index: 3;
     }
 
     article.popup {

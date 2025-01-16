@@ -49,15 +49,7 @@
         transition-property: transform display;
         transition-duration: 1s;
         transition-behavior: allow-discrete;
-    }
-
-    :global(header:has(.toggle-nav:checked) nav) {
-        translate: 0 0;
-        display: flex;
-
-        @starting-style {
-            translate: calc(-50vw - 1px) 0; /* width + border */
-        }
+        z-index: 1;
     }
 
     ul {
@@ -94,17 +86,31 @@
         margin: 0;
     }
 
+    :global(header:has(.toggle-nav:checked) nav) {
+        translate: 0 0;
+        display: flex;
+
+        @starting-style {
+            translate: calc(-50vw - 1px) 0; /* width + border */
+        }
+    }
+
     :global(header:has(.toggle-nav:checked) .overlay) {
         width: 100vw;
-        height: 100vh;
+        height: calc(100vh - 80px);
         position: fixed;
-        top: 0;
+        top: 80px;
         left: 0;
         background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1;
     }
 
     @media only screen and (min-width: 861px) {
         .mobile-datum {
+            display: none;
+        }
+
+        .container {
             display: none;
         }
     }
