@@ -1,6 +1,7 @@
 import wp from "$lib/wordpress";
 import { error } from "@sveltejs/kit";
 import { categoriesData } from "$lib/index.js";
+console.log (categoriesData);
 
 export async function load({ params }) {
     const category = categoriesData.find((category) => category.slug === params.slug)
@@ -13,3 +14,4 @@ export async function load({ params }) {
         posts: await wp.posts().param("categories", category.id)
     }
 }
+
