@@ -1,6 +1,7 @@
 <script>
     import Footer from '$lib/Organism/Footer.svelte';
     import Header from '$lib/Organism/Header.svelte';
+    import Nav from '$lib/Organism/Nav.svelte';
 
     export let data;
 
@@ -10,7 +11,8 @@
     };
 </script>
 
-<Header alwaysSticky={false}/>
+<Header alwaysSticky={true}/>
+<Nav alwaysSticky={true}/>
 <div class="background">
 <main class="posts-container">
     {#if data.posts}

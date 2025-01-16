@@ -46,6 +46,7 @@
     .sticky nav {
         position: fixed;
         top: 5em;
+        z-index: 100;
         left: 0;
         background-color: var(--background-color);
     }

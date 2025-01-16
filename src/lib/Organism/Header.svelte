@@ -104,6 +104,7 @@
         position: fixed;
         top: -1px; /* Hide upper inner border */
         left: 0;
+        z-index: 100;
         border-bottom: var(--border);
     }
 
