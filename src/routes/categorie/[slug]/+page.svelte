@@ -14,35 +14,35 @@
 <Header alwaysSticky={true}/>
 <Nav alwaysSticky={true}/>
 <div class="background">
-<main class="posts-container">
-    {#if data.posts}
-        {#each data.posts as post}
-            <article class="post-card">
+    <main class="posts-container">
+        {#if data.posts}
+            {#each data.posts as post}
                 <a href="/{post.slug}" class="post-title-link">
-                    <h3 class="post-title">{@html post.title.rendered}</h3>
+                    <article class="post-card">
+                        <h3 class="post-title">{@html post.title.rendered}</h3>
+                        <img 
+                            src={post.yoast_head_json.og_image[0].url} 
+                            alt="Artikel afbeelding" 
+                            class="post-image" 
+                            width="350" 
+                            height="350" 
+                        />
+                        <div class="post-meta">
+                            <p class="post-date">
+                                {(new Date(post.date)).toLocaleDateString("nl-NL", dateFormat)}
+                            </p>
+                            <p class="post-read-time">
+                                {post.yoast_head_json.twitter_misc["Geschatte leestijd"]}
+                            </p>
+                            <p class="post-author">{post.yoast_head_json.author}</p>
+                        </div>
+                    </article>
                 </a>
-                <img 
-                    src={post.yoast_head_json.og_image[0].url} 
-                    alt="Artikel afbeelding" 
-                    class="post-image" 
-                    width="350" 
-                    height="350" 
-                />
-                <div class="post-meta">
-                    <p class="post-date">
-                        {(new Date(post.date)).toLocaleDateString("nl-NL", dateFormat)}
-                    </p>
-                    <p class="post-read-time">
-                        {post.yoast_head_json.twitter_misc["Geschatte leestijd"]}
-                    </p>
-                    <p class="post-author">{post.yoast_head_json.author}</p>
-                </div>
-            </article>
-        {/each}
-    {:else}
-        <p class="no-posts-message">No posts available</p>
-    {/if}
-</main>
+            {/each}
+        {:else}
+            <p class="no-posts-message">No posts available</p>
+        {/if}
+    </main>
 </div>
 
 <Footer />
@@ -62,6 +62,17 @@
         background-color: var(--paper-color);
     }
 
+    .post-title-link {
+        text-decoration: none;
+        color: inherit;
+        display: block; /* Zorg ervoor dat de link de volledige kaart beslaat */
+        width: 100%; /* Zorg ervoor dat de link altijd de volledige breedte van de kaart heeft */
+    }
+
+    .post-title-link:hover {
+        text-decoration: underline;
+    }
+
     .post-card {
         display: flex;
         justify-content: space-between;
@@ -70,11 +81,18 @@
         max-width: 800px;
         margin: 0 auto;
         padding: 1rem;
+        cursor: pointer;
         background: #fff;
         border: 1px solid #ddd;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         box-sizing: border-box;
         position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .post-card:hover {
+        transform: translateY(-5px); /* Vergroten bij hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Diepere schaduw bij hover */
     }
 
     .post-image {
@@ -90,15 +108,6 @@
         margin: 0;
         flex-grow: 1;
         padding-right: 1rem;
-    }
-
-    .post-title-link {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .post-title-link:hover {
-        text-decoration: underline;
     }
 
     .post-meta {
@@ -117,6 +126,7 @@
     @media (max-width: 768px) {
         .post-card {
             max-width: 600px;
+            width: 100%;
         }
 
         .post-image {
