@@ -1,10 +1,11 @@
 <script>
     import Footer from '$lib/Organism/Footer.svelte';
     import Header from '$lib/Organism/Header.svelte';
-    import Nav from '$lib/Organism/Nav.svelte';
+
     
     export let data;
-    export let categoryName;
+
+
 
     const dateFormat = {
         month: 'short',
@@ -15,7 +16,6 @@
 <Header alwaysSticky={false}/>
 <div class="background">
 <main class="posts-container">
-    <h1 class="page-title">Je bekijkt berichten in de categorie: {categoryName}</h1>
     {#if data.posts}
         {#each data.posts as post}
             <article class="post-card">
@@ -68,9 +68,6 @@
         background-color: var(--paper-color);
     }
 
-    h1{
-        margin-top: -2rem;
-    }
     
     /* Individuele post-kaart */
     .post-card {
@@ -123,6 +120,10 @@
         left: 1rem; /* Plaatst het naar links in de hoek */
         display: flex;
         gap: 0.2rem;
+    }
+
+    .post-author {
+        font-weight: var(--font-style-bold); /* Vetgedrukte auteur */
     }
     
     @media (max-width: 768px) {
