@@ -11,6 +11,7 @@
 <Header/>
 <ScrollWatcher />
 
+<div class="background">
 <main>
     <h2 class="category-title">
 
@@ -31,6 +32,7 @@
         <h1>Geen resultaten gevonden voor: &quot;{data.searchterm}&quot;</h1>
     {/if}
 </main>
+</div>
 
 <Footer/>
 
@@ -46,6 +48,10 @@
         --search-background-color: var(--background-color);
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .background{
+        background-color: var(--paper-color);
     }
 
     .posts-container {
