@@ -1,5 +1,10 @@
 <script>
-    /** @type {import('./$types').PageData} */
+    import SearchBar from "$lib/Molecules/SearchBar.svelte";
+    import NewsLetter from "$lib/Molecules/NewsLetter.svelte";
+    import DonationButton from "$lib/Molecules/DonationButton.svelte";
+    import MobileNav from "$lib/Organism/MobileNav.svelte";
+    import Nav from "$lib/Organism/Nav.svelte";
+    import { onMount } from "svelte";
 
     export let alwaysSticky = true;
 
@@ -9,13 +14,6 @@
         weekday: 'long',
         year: 'numeric'
     };
-
-    import SearchBar from "$lib/Molecules/SearchBar.svelte";
-    import NewsLetter from "$lib/Molecules/NewsLetter.svelte";
-    import DonationButton from "$lib/Molecules/DonationButton.svelte";
-    import MobileNav from "$lib/Organism/MobileNav.svelte";
-    import { onMount } from "svelte";
-    import Nav from "./Nav.svelte";
 
     let sticky = alwaysSticky;
     
@@ -246,12 +244,14 @@
             padding: 3em 0;
             background-color: var(--paper-color);
             --search-background-color: var(--paper-color);
+            border-bottom: none;
         }
         50% {
             padding: 0 0;
             background-color: var(--background-color);
             --search-background-color: var(--background-color);
             height: 140px;
+            border-bottom: var(--border);
         }
         100% {
             padding: 0 0;
@@ -259,6 +259,7 @@
             --search-background-color: var(--background-color);
 
             height: 80px;
+            border-bottom: var(--border);
         }
     }
 
@@ -268,23 +269,30 @@
     
     @media only screen and (min-width: 861px) {
         .animate .main-header {
-            height: 140px;
-            padding: 3em 0;
+            height: 80px;
+            padding: 0 0;
             background-color: var(--paper-color);
-
-            animation: auto linear shrink-header both;
-
-            animation-timeline: view();
-            animation-range: 100vh calc(100vh + 40em);
+            border-bottom: var(--border);
         }
-        /* Bron: https://kizu.dev/scroll-driven-animations/ */
 
         .sticky {
             margin-bottom: 70px;
         }
-        .sticky.animate {
-            /* Total height of main-header, required when making position fixed */
-            margin-bottom: 230px;
+
+        @supports(animation-timeline: view()) {
+            .sticky.animate {
+                /* Total height of main-header, required when making position fixed */
+                margin-bottom: 230px;
+            }
+            
+            .animate .main-header {
+                height: 140px;
+                animation: auto linear shrink-header both;
+                border-bottom: none;
+
+                animation-timeline: view();
+                animation-range: 100vh calc(100vh + 40em);
+            }
         }
     }
 

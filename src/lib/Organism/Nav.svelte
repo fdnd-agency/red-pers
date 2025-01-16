@@ -10,7 +10,7 @@
     if (!alwaysSticky) {
         onMount(() => {
             window.addEventListener('scroll', () => {
-                sticky = container?.getBoundingClientRect()?.y <= 78; // Bron: https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element
+                sticky = container?.getBoundingClientRect()?.y <= 78;
             })
         })
     }

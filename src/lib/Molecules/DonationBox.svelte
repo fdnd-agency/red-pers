@@ -1,18 +1,18 @@
 <main>
 <h3>Steun Red Pers</h3>
-<section class="donatiebox">
+<section class="donationbox">
     <p class="intro">
       Je las dit artikel gratis, maar dat betekent niet dat het Red Pers niets heeft gekost. Wij bieden jonge, aspirerende journalisten een podium én begeleiding. Dat kunnen we nog beter met jouw steun. Die steun komt met twee voor de prijs van één, want onze sponsor matcht jouw donatie. Geef jij ons vijf euro? Dan ontvangen wij een tientje.
     </p>
   
-    <div class="donatie-bedragen">
-      <button aria-label="Doneer 5 euro" class="bedrag-button">€5</button>
-      <button aria-label="Doneer 10 euro" class="bedrag-button">€10</button>
-      <button aria-label="Doneer 20 euro" class="bedrag-button">€20</button>
-      <button aria-label="Doneer 50 euro" class="bedrag-button">€50</button>
+    <div class="donation-amounts">
+      <button aria-label="Doneer 5 euro" class="amount-button">€5</button>
+      <button aria-label="Doneer 10 euro" class="amount-button">€10</button>
+      <button aria-label="Doneer 20 euro" class="amount-button">€20</button>
+      <button aria-label="Doneer 50 euro" class="amount-button">€50</button>
     </div>
   
-    <div class="andere-donatie">
+    <div class="other-donation">
       <button aria-label="Anders, vul zelf bedrag in">ANDERS</button>
     </div>
   </section>
@@ -41,35 +41,35 @@ button{
     font-weight: bolder;
 }
 
-.donatiebox{
+.donationbox{
     background-color: var(--red-main-lightest);
     outline: 1px solid var(--red-main);
 }
 
-.donatie-bedragen{
+.donation-amounts{
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.donatie-bedragen button{
+.donation-amounts button{
     width: 23%;
     margin-top: -60px;
     padding: 5px;
 }
 
-.andere-donatie{
+.other-donation{
     padding: 20px;
     margin-top: -50px;
 }
 
-.andere-donatie button{
+.other-donation button{
     width: calc(4 * 25%);
     padding: 10px;
 }
 
-.donatiebox{
+.donationbox{
     margin-bottom: 50px;
 }
 
@@ -79,7 +79,7 @@ button:hover{
 }
 
 @media (min-width: 530px) {
-    .donatie-bedragen button {
+    .donation-amounts button {
         padding: 10px;
         margin-bottom: 10px;
         width: 24%;
