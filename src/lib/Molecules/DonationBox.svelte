@@ -17,76 +17,76 @@
     </div>
   </section>
 </main>
-  
 <style>
-main{
-    --red-main:#E85340;
-    --red-main-light: #F9D4CF;
-    --red-main-lightest:#FFF4F2;
-}
-
-h3{
-    color: var(--red-main);
-}
-
-p{
-    color: var(--red-main);
-    padding: 20px;
-    font-weight: bold;
-}
-
-button{
-    background-color: var(--red-main-light);
-    color: var(--red-main);
-    font-weight: bolder;
-}
-
-.donationbox{
-    background-color: var(--red-main-lightest);
-    outline: 1px solid var(--red-main);
-}
-
-.donation-amounts{
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.donation-amounts button{
-    width: 23%;
-    margin-top: -60px;
-    padding: 5px;
-}
-
-.other-donation{
-    padding: 20px;
-    margin-top: -50px;
-}
-
-.other-donation button{
-    width: calc(4 * 25%);
-    padding: 10px;
-}
-
-.donationbox{
-    margin-bottom: 50px;
-}
-
-button:hover{
-    background-color: var(--red-main);
-    color: var(--red-main-lightest);
-}
-
-@media (min-width: 530px) {
-    .donation-amounts button {
-        padding: 10px;
-        margin-bottom: 10px;
-        width: 24%;
+    main{
+        --red-main: #E85340;
+        --red-main-light: #F9D4CF;
+        --red-main-lightest: #FFF4F2;
     }
-
+    
+    h3{
+        color: var(--red-main);
+    }
+    
     p{
-        margin-bottom: 30px;
+        color: var(--red-main);
+        padding: 1.25em;
+        font-weight: bold;
     }
-}
-</style>
+    
+    button{
+        background-color: var(--red-main-light);
+        color: var(--red-main);
+        font-weight: bolder;
+    }
+    
+    .donationbox{
+        background-color: var(--red-main-lightest);
+        outline: 0.0625em solid var(--red-main);
+    }
+    
+    .donation-amounts{
+        padding: 1.25em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .donation-amounts button{
+        width: 23%;
+        margin-top: -3.75em;
+        padding: 0.3125em;
+    }
+    
+    .other-donation{
+        padding: 1.25em;
+        margin-top: -3.125em;
+    }
+    
+    .other-donation button{
+        width: calc(4 * 25%);
+        padding: 0.625em;
+    }
+    
+    .donationbox{
+        margin-bottom: 3.125em;
+    }
+    
+    button:hover{
+        background-color: var(--red-main);
+        color: var(--red-main-lightest);
+    }
+    
+    @media (min-width: 530px) {
+        .donation-amounts button {
+            padding: 0.625em;
+            margin-bottom: 0.625em;
+            width: 24%;
+        }
+    
+        p{
+            margin-bottom: 1.875em;
+        }
+    }
+    </style>
+    

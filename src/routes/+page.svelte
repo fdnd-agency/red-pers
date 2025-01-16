@@ -4,11 +4,14 @@
     import Article from '$lib/Organism/Article.svelte';
     import CategoryPreview from '$lib/Organism/CategoryPreview.svelte';
     import Nav from '$lib/Organism/Nav.svelte';
+    import ScrollWatcher from '$lib/Molecules/ScrollWatcher.svelte';
 
     export let data;
 </script>
 
+<ScrollWatcher />
 <Header alwaysSticky={false}/>
+
 
 <div class="background">
     <main>

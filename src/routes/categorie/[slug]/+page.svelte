@@ -1,6 +1,7 @@
 <script>
     import Footer from '$lib/Organism/Footer.svelte';
     import Header from '$lib/Organism/Header.svelte';
+    import ScrollWatcher from '$lib/Molecules/ScrollWatcher.svelte';
     
     export let data;
 
@@ -11,6 +12,7 @@
 </script>
 
 <Header/>
+<ScrollWatcher />
 
 <main>
     {#if data.posts}

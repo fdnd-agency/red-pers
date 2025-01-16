@@ -79,7 +79,6 @@
         background-color: var(--paper-color);
         padding: 3em 0;
         width: 100vw;
-        overflow-y: hidden; /* Hide the inner borders when animating */
         z-index: 100;
         padding: 0 0;
         background-color: var(--background-color);
