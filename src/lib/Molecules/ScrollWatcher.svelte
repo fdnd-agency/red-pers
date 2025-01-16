@@ -3,9 +3,9 @@
 <style>
 
 .scroll-watcher {
-      height: 10px;
+      height: 0.5em;
       position: fixed;
-      top: 0;
+      top: 5em;
       z-index: 1000;
       background-color: var(--accent-color1);
       transform-origin: left;
