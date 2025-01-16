@@ -65,8 +65,8 @@
     .post-title-link {
         text-decoration: none;
         color: inherit;
-        display: block; /* Zorg ervoor dat de link de volledige kaart beslaat */
-        width: 100%; /* Zorg ervoor dat de link altijd de volledige breedte van de kaart heeft */
+        display: block;
+        width: 100%;
     }
 
     .post-title-link:hover {
@@ -91,8 +91,8 @@
     }
 
     .post-card:hover {
-        transform: translateY(-5px); /* Vergroten bij hover */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Diepere schaduw bij hover */
+        transform: translateY(-5px); 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
     }
 
     .post-image {
