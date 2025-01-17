@@ -1,0 +1,240 @@
+.main-header {
+    background-color: var(--paper-color);
+    padding: 3em 0;
+    width: 100vw;
+    overflow-y: hidden; /* Hide the inner borders when animating */
+    z-index: 100;
+    padding: 0 0;
+    background-color: var(--background-color);
+
+    height: 80px;
+}
+
+.main-header-inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+
+    max-width: var(--main-width);
+    padding: 0 10px;
+    border-top: var(--border);
+    border-bottom: var(--border);
+    margin: 0 auto;
+}
+
+.sticky .main-header {
+    position: fixed;
+    top: -1px; /* Hide upper inner border */
+    left: 0;
+    border-bottom: var(--border);
+}
+
+.logo-container {
+    height: 50%;
+}
+
+img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.main-header ul {
+    display: flex; 
+    list-style: none; 
+    margin: 0;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 50px;
+    gap: 20px;
+    font-family: var(--menu-item);
+}
+
+.date {
+    display: flex;
+    flex-direction: column; 
+    margin-right: 20px;
+}
+
+.date p {
+    margin: 0;
+    font-family:var(--menu-item);
+    font-size: 14px;
+}
+
+.date-bold {
+    font-weight: bold;
+    text-wrap: nowrap;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px; 
+    padding: 0;
+    margin: 0;
+}
+
+.search {
+    --search-bar-width: 20em;
+    z-index: 2;
+}
+
+.top li:hover {
+    color: #000000;
+    background-color: #f0f0f0;
+    transition: var(--hover);
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+}
+
+
+.top {
+    background-color: black;
+    display: flex;
+    color: white;
+    justify-content: end;
+}
+
+.top ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    cursor: pointer;
+    padding: 0;
+}
+
+.top li {
+    padding: 15px;
+    font-family: var(--menu-item);
+    font-size: 14px;
+}
+
+.toggle-nav-container {
+    width: 36px;
+    height: 28px;
+    position: relative;
+}
+
+.toggle-nav-container input, .nav-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.toggle-nav-container input {
+    opacity: 0;
+}
+
+.toggle-nav-container:has(input:focus) {
+    outline: 1px solid purple;
+    outline-offset: 3px;
+}
+
+.nav-icon {
+    cursor: pointer;
+}
+
+.nav-icon path {
+    transition: transform 500ms, opacity 500ms;
+}
+
+.nav-icon path:nth-of-type(1) {
+    transform-origin: 1px 1px;
+}
+
+.nav-icon path:nth-of-type(3) {
+    transform-origin: 1px 13px;
+}
+
+header:has(.toggle-nav:checked) path:nth-of-type(1) {
+    transform: rotate(45deg);
+}
+
+header:has(.toggle-nav:checked) path:nth-of-type(2) {
+    opacity: 0;
+}
+
+header:has(.toggle-nav:checked) path:nth-of-type(3) {
+    transform: rotate(-45deg);
+}
+
+@keyframes shrink-header {
+    0% {
+        padding: 3em 0;
+        background-color: var(--paper-color);
+        --search-background-color: var(--paper-color);
+        border-bottom: none;
+    }
+    50% {
+        padding: 0 0;
+        background-color: var(--background-color);
+        --search-background-color: var(--background-color);
+        height: 140px;
+        border-bottom: var(--border);
+    }
+    100% {
+        padding: 0 0;
+        background-color: var(--background-color);
+        --search-background-color: var(--background-color);
+
+        height: 80px;
+        border-bottom: var(--border);
+    }
+}
+
+.small-screen-only {
+    display: none;
+}
+
+@media only screen and (min-width: 861px) {
+    .animate .main-header {
+        height: 80px;
+        padding: 0 0;
+        background-color: var(--paper-color);
+        border-bottom: var(--border);
+    }
+
+    .sticky {
+        margin-bottom: 70px;
+    }
+
+    @supports(animation-timeline: view()) {
+        .sticky.animate {
+            /* Total height of main-header, required when making position fixed */
+            margin-bottom: 230px;
+        }
+        
+        .animate .main-header {
+            height: 140px;
+            animation: auto linear shrink-header both;
+            border-bottom: none;
+
+            animation-timeline: view();
+            animation-range: 100vh calc(100vh + 40em);
+        }
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .wide-screen-only {
+        display: none;
+    }
+
+    .small-screen-only {
+        display: initial;
+    }
+
+
+    .main-header {
+        position: fixed;
+        top: -1px; /* Hide upper inner border */
+        left: 0;
+        border-bottom: var(--border);
+        z-index: 1;
+        --search-background-color: var(--background-color);
+    }
+}

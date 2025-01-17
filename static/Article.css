@@ -1,0 +1,190 @@
+img {
+    width: 100%;
+    height: 15em;
+    border-bottom: var(--border);
+}
+
+h1 {
+    font-family: var(--font-alt);
+    font-weight: var(--font-style-bold);
+    font-size: var(--title-font-size);
+    line-height: var(--title-font-line-height);
+    letter-spacing: 0.25px;
+}
+
+.title {
+    width: calc(100% - 1em);
+    height: 11em;
+    padding: 0.5em;
+    overflow: hidden;
+}
+
+
+.first-article .everything{
+    padding: 2em;
+    width: 50%;
+}
+
+.first-article .excerpt {
+font-size: 16px; /* Adjust the font size for the excerpt if necessary */
+margin-top: -5em;
+line-height: 1.5;
+}
+
+
+.info-text {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: var(--border);
+    padding: 0.5em;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.author {
+    font-weight: bold;
+}
+
+@media only screen and (width < 35em) {
+article {
+    max-width: unset;
+    display: flex;
+}
+
+img {
+    width: 42%;
+    height: 10em;
+    object-fit: cover;
+    border-bottom: none;
+}
+
+.title-info-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    height: 100%;
+}
+
+h1 {
+    font-size: calc(var(--title-font-size) * 2 / 3); /* make font 33% smaller */
+    line-height: calc(var(--title-font-line-height) * 2 / 3);
+    margin: 0;
+}
+
+.info-text {
+    border-top: none;
+    padding: 0 0.5em;
+    font-size: 12px;
+}
+
+.reading-time {
+    display: none;
+}
+}
+
+.other-articles {
+    --title-font-size: 28px;
+    --title-font-line-height: 32px;
+    max-width: 25em;
+    border: var(--border);
+    background-color: var(--background-color);
+}
+
+
+.first-article {
+    display: flex;
+    margin-top: 20px;
+    position: relative;
+    flex-direction: row;  /* Ensures that image and text are next to each other */
+    border-left: 4px solid #D5302D; /* Red line on the left side for accent */
+    background-color: var(--background-color);
+    max-width: 1240px;
+    margin-bottom: 1.5em;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Soft transition for the hover effects */
+}
+
+.first-article .newest {
+position: absolute;
+top: 10px;
+left: 10px;
+background-color: rgba(255, 0, 0, 0.7); /* Red with transparent background */
+color: white;
+font-size: 14px;
+padding: 5px 10px;
+font-weight: bold;
+text-transform: uppercase;
+border-radius: 3px;
+}
+
+.first-article img {
+    width: 100%;
+    height: 26em;
+    border-bottom: var(--border);
+    object-fit: cover; /* Ensures that the image is not stretched */
+}
+
+.first-article h1 {
+    font-family: var(--font-alt);
+    font-weight: var(--font-style-bold);
+    font-size: var(--title-font-size);
+    line-height: var(--title-font-line-height);
+    letter-spacing: 0.25px;
+    transition: color 0.3s ease; /* Soft transition for color change on hover */
+}
+
+.first-article .title {
+    width: calc(100% - 1em);
+    height: 11em;
+    padding: 0.5em;
+    overflow: hidden;
+}
+
+.first-article .info-text {
+    height: 2em;
+    padding: 0 0.5em;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.first-article .author {
+    font-weight: bold;
+}
+
+.first-article {
+    --title-font-size: 28px;
+    --title-font-line-height: 32px;
+    border: var(--border);
+    background-color: var(--background-color);
+    margin-bottom: 1.5em;
+    box-sizing: border-box;
+    border-left: 4px solid red;
+    max-width: 1240px;
+}
+
+/* Hover effect */
+.first-article:hover {
+    transform: scale(1.02);  /* Subtly enlarge the article */
+}
+
+
+/* Media Query for mobile devices */
+@media only screen and (max-width: 768px) {
+    .first-article {
+        flex-direction: column;  /* Ensures that image and text are aligned on mobile screens */
+        gap: 1em;
+    }
+
+    .first-article img {
+        width: 100%;  /* Image takes full width on mobile */
+        height: auto;
+    }
+}
