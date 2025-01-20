@@ -5,7 +5,7 @@
 <div class="author-frame">
     <div class="profile">
         <img src={author.avatar_url} alt={author.display_name}>
-        <a href="/author/{author.slug}" class="button hidden-on-mobile">Bekijk profiel</a>
+        <a href="/author/{author.user_id}" class="button hidden-on-mobile">Bekijk profiel</a>
     </div>
     <article>
         <div>
@@ -13,7 +13,7 @@
             <p>{author.job_title}</p>
             <p class="hidden-on-mobile">{author.description}</p>
         </div>
-        <a href="/author/{author.slug}" class="button hidden-on-desktop">&gt;</a>
+        <a href="/author/{author.user_id}" class="button hidden-on-desktop">&gt;</a>
     </article>
 
 </div>
