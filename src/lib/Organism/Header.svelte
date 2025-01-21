@@ -19,7 +19,6 @@
     
     if (!alwaysSticky) {
         onMount(() => {
-            // set sticky to true if we have scrolled > 50px
             window.addEventListener("scroll", () => {
                 sticky = window.scrollY > 50;
             });
@@ -27,7 +26,7 @@
     }
 </script>
 
-<!-- class sticky when sticky is true, class animate when header is not alwaysSticky -->
+
 <header class:sticky={sticky} class:animate={!alwaysSticky}>
     <section class="top wide-screen-only">
         <ul>
@@ -281,7 +280,6 @@
 
         @supports(animation-timeline: view()) {
             .sticky.animate {
-                /* Total height of main-header, required when making position fixed */
                 margin-bottom: 230px;
             }
             
@@ -308,7 +306,7 @@
 
         .main-header {
             position: fixed;
-            top: -1px; /* Hide upper inner border */
+            top: -1px; 
             left: 0;
             border-bottom: var(--border);
             z-index: 1;
@@ -318,10 +316,10 @@
 
     @media screen and (min-width: 320px) and (max-width: 450px){
         .main-header-inner {
-    display: flex;
-    justify-content: space-between; /* Zorgt voor gelijke ruimte tussen items */
-    align-items: center; /* Centreert items verticaal */
-}
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+        }
 
 
         .main-header-inner svg{
