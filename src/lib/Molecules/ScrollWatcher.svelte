@@ -1,52 +1,41 @@
 <script>
     import { onMount } from "svelte";
   
+    let scrollProgress = 0; // De voortgangsbalk in percentage
+  
+    // Wanneer de component wordt gemonteerd, voeg een scroll-eventlistener toe
     onMount(() => {
-      // Check of CSS scroll-timeline wordt ondersteund
-      const supportsScrollTimeline = CSS && CSS.supports("animation-timeline: scroll()");
+      const updateScrollProgress = () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        scrollProgress = (scrollTop / docHeight) * 100;
+      };
   
-      if (!supportsScrollTimeline) {
-        // Fallback: Dynamisch de breedte van .scroll-watcher aanpassen bij scrollen
-        const scrollWatcher = document.querySelector(".scroll-watcher");
+      // Voeg scroll event listener toe
+      window.addEventListener("scroll", updateScrollProgress);
   
-        window.addEventListener("scroll", () => {
-          const scrollTop = window.scrollY;
-          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const scrollProgress = (scrollTop / docHeight) * 100;
-  
-          scrollWatcher.style.width = `${scrollProgress}%`;
-        });
-      }
+      // Verwijder de event listener wanneer de component wordt vernietigd
+      return () => window.removeEventListener("scroll", updateScrollProgress);
     });
   </script>
   
-  <div class="scroll-watcher"></div>
-  
   <style>
     .scroll-watcher {
-      height: 0.5em;
       position: fixed;
       top: 0;
+      left: 0;
+      height: 5px;
+      background-color: #3498db;
       z-index: 1000;
-      background-color: var(--accent-color1);
-      transform-origin: left;
-      width: 100%;
-      scale: 0 1;
-      animation: scroll-watcher linear;
-      animation-timeline: scroll();
-      transition: background-image 0.2s ease-in-out;
     }
   
-    @keyframes scroll-watcher {
-      to {
-        scale: 1 1;
-      }
-    }
-  
-    @media only screen and (max-width: 861px) {
-      .scroll-watcher {
-        top: 5em;
-      }
-    }
   </style>
+  
+  <!-- Scroll watcher element -->
+  <div
+    class="scroll-watcher"
+    style="width: {scrollProgress}%"
+  ></div>
+  
+
   
