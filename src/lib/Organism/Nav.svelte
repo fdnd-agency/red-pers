@@ -6,17 +6,43 @@
 
     let sticky = alwaysSticky;
     let container;
+    let hidden = false;
 
-    if (!alwaysSticky) {
-        onMount(() => {
-            window.addEventListener('scroll', () => {
-                sticky = container?.getBoundingClientRect()?.y <= 78;
-            })
+    onMount(() => {
+        let scrolledSoFar = 0;
+        let prevScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            sticky = container?.getBoundingClientRect()?.y <= 78;
+
+            if (sticky || alwaysSticky) {
+                let scrollDiff = window.scrollY - prevScroll;
+                if (Math.sign(scrollDiff) == Math.sign(scrolledSoFar)) {
+                    // sign(a) returns 1 if a is positive and -1 if a is negative
+                    // still scrolling in same direction
+                    scrolledSoFar += scrollDiff;
+                } else {
+                    // reversed direction, restart count
+                    scrolledSoFar = scrollDiff;
+                }
+
+                if (scrolledSoFar < -100) {
+                    // scrolled up by > 100px
+                    hidden = false;
+                } else if (scrolledSoFar > 200) {
+                    // scrolled down by > 200px
+                    hidden = true;
+                }
+            } else {
+                scrolledSoFar = 0;
+                hidden = false;
+            }
+            prevScroll = window.scrollY;
         })
-    }
+    })
 </script>
 
-<div class="container" class:sticky={sticky} bind:this={container} class:alwaysSticky={alwaysSticky}>
+<div class="container" class:sticky={sticky} bind:this={container} class:always-sticky={alwaysSticky} class:hidden={hidden}>
     <nav>
         <div class="nav-items">
             <ul>
@@ -35,7 +61,7 @@
     }
 
     /* if sticky is true but alwaysSticky is false */
-    .sticky:not(.alwaysSticky) {
+    .sticky:not(.always-sticky) {
         margin-bottom: 7em;
     }
 
@@ -46,9 +72,14 @@
     .sticky nav {
         position: fixed;
         top: 5em;
-        z-index: 100;
+        z-index: 1;
         left: 0;
         background-color: var(--background-color);
+        transition: top 1s;
+    }
+
+    .hidden nav {
+        top: 2em;
     }
 
     .nav-items {
