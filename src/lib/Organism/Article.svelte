@@ -7,6 +7,8 @@
         day: 'numeric',
     };
 </script>
+
+
 <a href="/{post.slug}">
     <article class="article {isFirst ? 'first-article' : 'other-articles'}" 
         style={isFirst ? 'max-width:1240px' : 'max-width: 25em;'}>
@@ -256,7 +258,7 @@
         }
     }
 
-    @media screen and (min-width: 320px) and (max-width: 380px){
+    @media screen and (min-width: 320px) and (max-width: 400px){
         .other-articles{
         max-height: 10em;
         }
@@ -277,6 +279,8 @@
             display: none;
         }
     }
+
+    @media screen and (min-width: 820px) and (max-width: 1240px){
 
     
 </style>
