@@ -39,8 +39,8 @@ Follow the steps below to use this project locally:
 * Clone the repository
 * Open the repo in a code editor, such as VSCode
 * Open the terminal and navigate to the project folder
-* Type npm i or npm install
-* Type npm run dev
+* Type ``npm i`` or ``npm install``
+* Type ``npm run dev``
 
 Optional:
 
