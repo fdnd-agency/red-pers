@@ -1,9 +1,8 @@
 <script>
     import { onMount } from "svelte";
   
-    let scrollProgress = 0; // De voortgangsbalk in percentage
+    let scrollProgress = 0; 
   
-    // Wanneer de component wordt gemonteerd, voeg een scroll-eventlistener toe
     onMount(() => {
       const updateScrollProgress = () => {
         const scrollTop = window.scrollY;
@@ -11,10 +10,8 @@
         scrollProgress = (scrollTop / docHeight) * 100;
       };
   
-      // Voeg scroll event listener toe
       window.addEventListener("scroll", updateScrollProgress);
   
-      // Verwijder de event listener wanneer de component wordt vernietigd
       return () => window.removeEventListener("scroll", updateScrollProgress);
     });
   </script>
@@ -24,14 +21,19 @@
       position: fixed;
       top: 0;
       left: 0;
-      height: 5px;
-      background-color: #3498db;
+      height: 0.5em;
+      background-color: #D5302D;
       z-index: 1000;
+    }
+
+    @media only screen and (max-width: 861px) {
+        .scroll-watcher {
+            top: 5em;
+        }   
     }
   
   </style>
   
-  <!-- Scroll watcher element -->
   <div
     class="scroll-watcher"
     style="width: {scrollProgress}%"
