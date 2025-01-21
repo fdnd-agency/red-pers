@@ -1,7 +1,7 @@
 <script>
     import SearchBar from "$lib/Molecules/SearchBar.svelte";
-    import NewsLetter from "$lib/Molecules/NewsLetter.svelte";
-    import DonationButton from "$lib/Molecules/DonationButton.svelte";
+    import NewsLetter from "$lib/Atoms/NewsLetter.svelte";
+    import DonationButton from "$lib/Atoms/DonationButton.svelte";
     import MobileNav from "$lib/Organism/MobileNav.svelte";
     import Nav from "$lib/Organism/Nav.svelte";
     import { onMount } from "svelte";

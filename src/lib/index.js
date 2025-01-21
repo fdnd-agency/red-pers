@@ -4,7 +4,7 @@ export { default as Footer } from '$lib/Organism/Footer.svelte'
 
 export { default as Header } from '$lib/Organism/Header.svelte';
 
-export { default as DonationButton} from '$lib/Molecules/DonationButton.svelte';
+export { default as DonationButton} from '$lib/Atoms/DonationButton.svelte';
 
 export { default as DonationBox } from '$lib/Molecules/DonationBox.svelte';
 
