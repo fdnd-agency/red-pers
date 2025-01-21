@@ -17,16 +17,16 @@
 </script>
 
 <div class="article-tools">
-    <button class="listen"><img src="/Play.svg" alt="Play">Artikel beluisteren</button>
+    <button class="listen"><img src="icons/play.svg" alt="Play">Artikel beluisteren</button>
     <ul>
         <li>
-            <button><img src="/Vector2.svg" alt="Opslaan"></button>
+            <button><img src="icons/vector2.svg" alt="Opslaan"></button>
         </li>
         <li>
-            <button on:click={share}><img src="/Vector.svg" alt="Delen"></button>
+            <button on:click={share}><img src="icons/vector.svg" alt="Delen"></button>
         </li>
         <li>
-            <button on:click={changeFontSizeFunction}><img src="/Light.svg" alt="Vergroot text"></button>
+            <button on:click={changeFontSizeFunction}><img src="icons/light.svg" alt="Vergroot text"></button>
         </li>
     </ul>
 </div>

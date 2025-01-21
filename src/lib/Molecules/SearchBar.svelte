@@ -27,12 +27,12 @@
     {#if alwaysOpen}
         <input placeholder={placeholder} name={name} value={value} aria-label="Search bar">
         <button type="submit" class="search-button" width="50px" height="50px">
-            <img src="/search-svgrepo-com.svg" alt="search icon" width="50px" height="50px">
+            <img src="icons/searchIcon.svg" alt="search icon" width="50px" height="50px">
         </button>
     {:else}
         <input on:blur={handleBlur} on:focus={handleClick} bind:this={searchBar} class="closed" placeholder={placeholder} name={name} value={value} aria-label="Search bar">
         <button on:click={handleClick} bind:this={searchButton} type="submit" class="search-button" width="50px" height="50px">
-            <img src="/search-svgrepo-com.svg" alt="search icon" width="50px" height="50px">
+            <img src="icons/searchIcon.svg" alt="search icon" width="50px" height="50px">
         </button>
     {/if}
 </form>
