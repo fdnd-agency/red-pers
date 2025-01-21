@@ -280,8 +280,6 @@
         }
     }
 
-    @media screen and (min-width: 820px) and (max-width: 1240px){
-
     
 </style>
 
