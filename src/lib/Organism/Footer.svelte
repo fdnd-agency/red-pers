@@ -26,7 +26,7 @@
 </svelte:head>
 
 <footer>
-    <img src="/RedPers_Logo_Cmyk_Black.webp" alt="Red Pers Logo" height="48px" width="200px">
+    <img src="images/redpersLogo.webp" alt="Red Pers Logo" height="48px" width="200px">
     <ul class="footer-layout">
         <li class="kopjes">
             <h3 class="kop-4">RUBRIEKEN</h3>
