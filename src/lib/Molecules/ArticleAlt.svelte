@@ -118,4 +118,19 @@
             height: 100px;
         }
     }
+
+    @media and screen (max-width: 360px) {
+        .post-title {
+            font-size: 5px;
+        }
+
+        .post-meta {
+            font-size: 0.6rem;
+        }
+
+        .post-image {
+            width: 60px;
+            height: 60px;
+        }
+    }
 </style>

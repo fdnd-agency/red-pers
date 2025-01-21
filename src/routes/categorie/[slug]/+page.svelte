@@ -11,6 +11,9 @@
 <Header/>
 <ScrollWatcher />
 <div class="background">
+    <div class="category-name">
+        <h1>{data.category.name}</h1>
+    </div>
     <main class="posts-container">
         {#if data.posts}
             {#each data.posts as post}
@@ -25,6 +28,21 @@
 <Footer />
 
 <style>
+
+    
+.category-name {
+        border-top: 8px solid black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h1 {
+        background-color: black;
+        color: white;
+        margin: 0;
+        padding: 0.5em;
+    }
     .posts-container {
         display: flex;
         flex-direction: column;
