@@ -150,7 +150,6 @@
         display: flex;
         position: relative;
         flex-direction: row;
-        border-left: 4px solid #D5302D;
         background-color: var(--background-color);
         max-width: 1240px;
         z-index: 0;
@@ -205,7 +204,6 @@
         background-color: var(--background-color);
         margin-bottom: 1.5em;
         box-sizing: border-box;
-        border-left: 4px solid red;
         max-width: 1240px;
     }
 
@@ -257,6 +255,30 @@
             height: auto;
         }
     }
+
+    @media screen and (min-width: 320px) and (max-width: 380px){
+        .other-articles{
+        max-height: 10em;
+        }
+
+        .other-articles img{
+            max-height: 10em;
+        }
+
+        .other-articles h1{
+        font-size: 0.9em;
+        }
+
+        .first-article{
+            max-height: 25em;
+        }
+
+        .first-article .excerpt{
+            display: none;
+        }
+    }
+
+    
 </style>
 
 
