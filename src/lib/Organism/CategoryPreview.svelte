@@ -9,7 +9,7 @@
 <div>
     <div class="category-name">
         <h1>{categoryName}</h1>
-        <a href="/categorie/{categorySlug}">Meer {categoryName} <img src="/Vector-arrow.svg" alt="Link"></a>
+        <a href="/categorie/{categorySlug}"> Meer {categoryName} <img src="/Vector-arrow.svg" alt="Link"></a>
     </div>
     <div class="articles">
         {#each posts as post}
@@ -53,4 +53,28 @@
         margin-top: 1em;
         justify-content: center;
     }
+
+    @media screen and (min-width: 320px) and (max-width: 380px) {
+        a {
+            font-size: 0.8em;
+            padding: 1em;
+        }
+
+        h1 {
+            font-size: 1.5em;
+        }
+    }
+
+    @media screen and (min-width: 380px) and (max-width: 560px) {
+        a {
+            font-size: 1em;
+            padding: 1.2em;
+        }
+
+        h1 {
+            font-size: 1.8em;
+        }
+    }
+
+    
 </style>
