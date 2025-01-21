@@ -93,7 +93,7 @@
         padding: 0 10px;
         border-top: var(--border);
         border-bottom: var(--border);
-        margin: 0 auto;
+        margin: var(--margin-center);
     }
 
     .sticky .main-header {

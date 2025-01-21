@@ -1,4 +1,4 @@
-<main>
+<aside>
 <h3>Steun Red Pers</h3>
 <section class="donationbox">
     <p class="intro">
@@ -16,12 +16,13 @@
       <button aria-label="Anders, vul zelf bedrag in">ANDERS</button>
     </div>
   </section>
-</main>
+</aside>
 <style>
-    main{
+    aside {
         --red-main: #E85340;
         --red-main-light: #F9D4CF;
         --red-main-lightest: #FFF4F2;
+        margin-top: 2em;
     }
     
     h3{

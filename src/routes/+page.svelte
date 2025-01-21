@@ -9,9 +9,7 @@
     export let data;
 </script>
 
-<ScrollWatcher />
 <Header alwaysSticky={false}/>
-
 
 <div class="background">
     <main>

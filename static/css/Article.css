@@ -6,7 +6,7 @@ img {
 
 h1 {
     font-family: var(--font-alt);
-    font-weight: var(--font-style-bold);
+    font-weight: var(--font-weight-bold);
     font-size: var(--title-font-size);
     line-height: var(--title-font-line-height);
     letter-spacing: 0.25px;
@@ -130,7 +130,7 @@ border-radius: 3px;
 
 .first-article h1 {
     font-family: var(--font-alt);
-    font-weight: var(--font-style-bold);
+    font-weight: var(--font-weight-bold);
     font-size: var(--title-font-size);
     line-height: var(--title-font-line-height);
     letter-spacing: 0.25px;
