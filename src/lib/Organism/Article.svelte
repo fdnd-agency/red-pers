@@ -231,6 +231,27 @@
         transform: scale(1.02);  /* Vergroot het artikel subtiel */
     }
 
+    .other-articles:hover  {
+        transition: transform 0.3s ease;
+        transform: scale(1.02);  
+    }
+
+    .other-articles:hover h1 {
+        transition: transform 0.3s ease;
+        color: var(--accent-color1);  
+    }
+
+    .other-articles img {
+        filter: brightness(50%);
+    }
+
+    .other-articles:hover img {
+        filter: brightness(100%);
+    }
+
+
+    
+
 
     /* Media Query voor mobiele apparaten */
     @media only screen and (max-width: 768px) {
