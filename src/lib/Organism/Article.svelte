@@ -231,6 +231,13 @@
         transform: scale(1.02);  /* Vergroot het artikel subtiel */
     }
 
+    .first-article:hover h1 {
+        transition: transform 0.3s ease;
+        color: var(--accent-color1);  
+    }
+
+
+
     .other-articles:hover  {
         transition: transform 0.3s ease;
         transform: scale(1.02);  
@@ -241,13 +248,7 @@
         color: var(--accent-color1);  
     }
 
-    .other-articles img {
-        filter: brightness(50%);
-    }
 
-    .other-articles:hover img {
-        filter: brightness(100%);
-    }
 
 
     
