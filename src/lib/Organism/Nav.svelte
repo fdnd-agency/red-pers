@@ -34,7 +34,6 @@
         margin-top: 2em;
     }
 
-    /* if sticky is true but alwaysSticky is false */
     .sticky:not(.alwaysSticky) {
         margin-bottom: 7em;
     }

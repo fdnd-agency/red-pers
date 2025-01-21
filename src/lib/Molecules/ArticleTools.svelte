@@ -1,13 +1,13 @@
 <script>
     export let changeFontSizeFunction;
 
-    function betterAlert(message) { // This function shows a custom alert
+    function betterAlert(message) { 
         alertDialog.show()
         alertMessage.innerText = message;
         setTimeout(() => alertDialog.close(), 2000);
     }
     function share(event) {
-        if (navigator.share) { // This function isn't supported in every browser
+        if (navigator.share) { 
             navigator.share({url: window.top.location});
         } else {
             navigator.clipboard.writeText(window.top.location);

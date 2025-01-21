@@ -1,6 +1,6 @@
 <script>
     export let placeholder;
-    export let name = 'q'; // optional custom parameter with default value 'q'
+    export let name = 'q'; 
     export let resultsPage;
     export let alwaysOpen = false;
     export let value = '';
@@ -10,7 +10,6 @@
 
     function handleClick(event) {
         if (searchBar.classList.contains('closed')) {
-            // If the search bar is closed, open it and don't search
             event.preventDefault();
             searchBar.focus();
             searchBar.classList.remove('closed');
@@ -18,7 +17,6 @@
     }
 
     function handleBlur(event) {
-        // If the user clicks anywhere other than the search button, close the search bar
         if (event.relatedTarget !== searchButton) {
             searchBar.classList.add('closed');
         }
