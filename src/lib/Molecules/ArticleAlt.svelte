@@ -48,7 +48,7 @@
         width: 100%;
         height: 10em;
         max-width: 800px;
-        margin: 0 auto;
+        margin: var(--margin-center);
         padding: 1rem;
         cursor: pointer;
         background: #fff;
@@ -89,7 +89,7 @@
     }
 
     .post-author {
-        font-weight: var(--font-style-bold);
+        font-weight: var(--font-weight-bold);
     }
 
     @media (max-width: 768px) {

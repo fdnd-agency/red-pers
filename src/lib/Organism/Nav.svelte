@@ -76,7 +76,7 @@
         gap: 20px;
 
         padding: 10px 0;
-        margin: 0 auto;
+        margin: var(--margin-center);
         
         list-style: none;
         font-family: var(--menu-item);

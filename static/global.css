@@ -2,44 +2,36 @@
     /* FONTS */
     --font-main: Inter, 'sans-serif';
     --font-alt: Tiempos, 'Source serif 4';
-    --font-style: regular;
+
     --font-size: 16px;
     --font-size-small: 14px;
-    --line-height: 125%;
-    --font-style-ligth: light;
-    --line-height-small: 144%;
-    --font-style-bold: bold;
-    --font-style-italic: italic;
-    --font-style-extra-bold: extra-bold;
+    
+    --line-height: 1.25;
+    --line-height-small: 1.44;
+
+    --font-weight-light: 300;
+    --font-weight-bold: 700;
+    --font-weight-extra-bold: 800;
 
     /* COLORS */
     --paper-color: #f7f7f5;
     --background-color: #ffffff;
-    --img-text-background-color: #00000080;
     --text-color: #000000;
     --alt-text-color: #757575;
     --light-border-color: #9b9b9b94;
     --accent-color1: #D5302D;
     --accent-color2: #F4FBE9;
     --accent-color3: #F9D4CF;
-    --accent-color4: #5340e8;
-    --border-fieldset-focus: #005FCC;
   
     /* WIDTH/HEIGHT */
     --main-width: 1240px;
     --article-width: 600px;
     --margin-center: 0 auto;
-    --thumbnail-width: 100%;
-    --thumbnail-height: 200px;
-    --thumbnail-heightsm: 150px;
   
     /* BORDERS */
     --border: solid var(--text-color) 1px;
     --border-light: solid var(--light-border-color) 1px;
     
-    --line-length: 75ch;
-    --line-heigth: 30px;
-
     /* HOVER TRANSITIONS */
     --hover: 0.4s;
 }
@@ -97,7 +89,6 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: var(--font-main);
-    font-style: var(--font-style);
     font-size: var(--font-size);
     margin: 0;
     overflow-x: hidden;
@@ -126,26 +117,17 @@ button, a.button {
 }
 
 .bold {
-    font-weight: var(--font-style-bold);
-}
-
-.italic{
-    font-family: var(--font-main);
-    font-style: var(--font-style-italic);
-    font-size: var(--font-size);
-    line-height: var(--line-height);
+    font-weight: var(--font-weight-bold);
 }
 
 .small{
     font-family: var(--font-main);
-    font-style: var(--font-style);
     font-size: var(--font-size-small);
     line-height: var(--line-height-small);
 }
 
 header {
     font-family: var(--font-main);
-    font-style: var(--font-style);
     font-size: var(--font-size);
     line-height: 100%;
     letter-spacing: -2%;
@@ -153,21 +135,21 @@ header {
 
 h1 {
     font-family: var(--font-main);
-    font-style: var(--font-style-extra-bold);
+    font-weight: var(--font-weight-extra-bold);
     font-size: 32px;
     line-height: 150%;
 }
 
 h2 {
     font-family: var(--font-main);
-    font-style: var(--font-style-bold);
+    font-weight: var(--font-weight-bold);
     font-size: 20px;
     line-height: 100%;
 }
 
 h3 {
     font-family: var(--font-main);
-    font-style: var(--font-style-extra-bold);
+    font-weight: var(--font-weight-extra-bold);
     font-size: 16px;
     line-height: 100%;
     letter-spacing: -1%;
@@ -175,7 +157,7 @@ h3 {
 
 h4 {
     font-family: var(--font-main);
-    font-style: var(--font-style-bold);
+    font-weight: var(--font-weight-bold);
     font-size: var(--font-size-small);
     line-height: 150%;
     letter-spacing: 2%;
@@ -183,23 +165,6 @@ h4 {
 
 .menu-item{
     font-family: var(--font-main);
-    font-style: var(--font-style);
-    font-size: var(--font-size);
-    line-height: 100%;
-    letter-spacing: -2%;
-}
-
-.slogan{
-    font-family: var(--font-main);
-    font-style: var(--font-style);
-    font-size: var(--font-size);
-    line-height: 100%;
-    letter-spacing: -2%;
-}
-
-.button-font{
-    font-family: var(--font-main);
-    font-style: var(--font-style);
     font-size: var(--font-size);
     line-height: 100%;
     letter-spacing: -2%;
@@ -211,7 +176,7 @@ h4 {
 
 blockquote {
     font-family: var(--font-alt);
-    font-style: bold;
+    font-weight: var(--font-weight-bold);
     font-size: 38px;
     line-height: 100%;
     padding-top: 1em;

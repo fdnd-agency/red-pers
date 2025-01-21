@@ -59,7 +59,7 @@
 
     h1 {
         font-family: var(--font-alt);
-        font-weight: var(--font-style-bold);
+        font-weight: var(--font-weight-bold);
         font-size: var(--title-font-size);
         line-height: var(--title-font-line-height);
         letter-spacing: 0.25px;
@@ -180,7 +180,7 @@
 
     .first-article h1 {
         font-family: var(--font-alt);
-        font-weight: var(--font-style-bold);
+        font-weight: var(--font-weight-bold);
         font-size: var(--title-font-size);
         line-height: var(--title-font-line-height);
         letter-spacing: 0.25px;
@@ -214,25 +214,25 @@
     }
 
     @media only screen and (min-width: 700px) and (max-width: 1055px) {
-    .first-article {
-        transform: scale(0.95); 
-        transform-origin: top center; 
-    }
+        .first-article {
+            transform: scale(0.95); 
+            transform-origin: top center; 
+        }
 
-    .first-article img {
-        max-width: 60%; 
-        height: auto;
-    }
+        .first-article img {
+            max-width: 60%; 
+            height: auto;
+        }
 
-    .first-article h1 {
-        font-size: calc(var(--title-font-size) * 0.95); 
-    }
+        .first-article h1 {
+            font-size: calc(var(--title-font-size) * 0.95); 
+        }
 
-    .first-article .everything {
-        padding: 0.95em; 
-    }
+        .first-article .everything {
+            padding: 0.95em; 
+        }
 
-}
+    }
 
 
     @media only screen and (max-width: 700px) {

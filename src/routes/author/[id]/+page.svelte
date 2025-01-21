@@ -49,7 +49,7 @@
     .author-info-container {
         width: calc(100% - 10em);
         min-width: min(500px, 100%);
-        margin: 0 auto;
+        margin: var(--margin-center);
         display: flex;
         flex-direction: column;
         gap: 1em;
@@ -57,7 +57,7 @@
     
     .author-img {
         width: calc(100% - 2px);
-        margin: 0 auto;
+        margin: var(--margin-center);
         border: var(--border);
     }
 
