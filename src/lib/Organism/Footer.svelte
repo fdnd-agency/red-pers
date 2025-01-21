@@ -22,7 +22,7 @@
 </script>
 
 <svelte:head>
-    <link rel="stylesheet" href="/Footer.css">
+    <link rel="stylesheet" href="/css/Footer.css">
 </svelte:head>
 
 <footer>
