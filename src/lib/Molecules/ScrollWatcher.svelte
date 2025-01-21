@@ -3,9 +3,9 @@
 <style>
 
 .scroll-watcher {
-      height: 0.5em;
+      height: 5px;
       position: fixed;
-      top: 0;
+      top: 76.5px;
       z-index: 1000;
       background-color: var(--accent-color1);
       transform-origin: left;
@@ -13,7 +13,7 @@
       scale: 0 1;
       animation: scroll-watcher linear;
       animation-timeline: scroll();
-      transition: background-image 0.2s ease-in-out; 
+      transition: background-image 0.2s linear; 
     }
 
 @keyframes scroll-watcher{
