@@ -112,9 +112,7 @@ label:focus-within {
     color: #E85340;
 }
 
-/* Mediaquery for screens smaller than 560px */
 @media (max-width: 560px) {
-/* Adjust popup for smaller screens */
 
 .popup {
     width: 400px;
@@ -125,24 +123,21 @@ h2{
     margin-top: -10px;
 }
 
-/* Reducing size of the radio options */
 .amount-options {
     justify-content: center;
     align-items: center;
 }
 
 .amount-options label {
-    font-size: 14px; /* Smaller text for the labels */
-    padding: 6px 12px; /* Smaller padding for the labels */
+    font-size: 14px; 
+    padding: 6px 12px; 
 }
 
-/* 'Other amount' inputfield adjustments */
 .other {
-    width: 91%; /* Full width of the popup */
+    width: 91%;
     height: 20px;
 }
 
-/* Reducing size of the close button */
 .close-button {
     font-size: 18px;
     top: 5px;
@@ -150,7 +145,6 @@ h2{
 }
 }
 
-/* Mediaquery for screens smaller than 520px */
 @media (max-width: 520px) {
 .popup {
     width: 380px;
@@ -164,12 +158,11 @@ h2 {
 
 
 .other {
-    height: 20px; /* Smaller input height */
+    height: 20px;
 }
 
 }
 
-/* Mediaquery for screens smaller than 450px */
 @media (max-width: 490px) {
 .popup {
     width: 300px;
@@ -198,7 +191,6 @@ p {
 }
 }
 
-/* Mediaquery for screens smaller than 420px */
 @media (max-width: 420px) {
 .popup {
     width: 280px;
@@ -206,7 +198,7 @@ p {
 }
 
 h2 {
-    font-size: 26px; /* Even smaller headingtext */
+    font-size: 26px;
     margin-top: -45px;
 }
 
@@ -219,11 +211,10 @@ p {
 }
 
 .other {
-    height: 18px; /* Reducing size of the input height */
+    height: 18px;
 }
 }
 
-/* Mediaquery for screens smaller than 380px */
 @media (max-width: 390px) {
 .popup {
     width: 230px;
@@ -231,11 +222,11 @@ p {
 }
 
 h2 {
-    font-size: 20px; /* Very small headingtext */
+    font-size: 20px; 
 }
 
 p {
-    font-size: 12px; /* small text for the paragraph */
+    font-size: 12px;
 }
 
 .amount-options {
@@ -248,12 +239,11 @@ p {
 }
 
 .other {
-    height: 10px; /* Reducing size of the input */
+    height: 10px; 
     font-size: 10px;
 }
 }
 
-/* Mediaquery for screens smaller than 380px */
 @media (max-width: 340px) {
 .popup {
     width: 220px;
@@ -261,11 +251,11 @@ p {
 }
 
 h2 {
-    font-size: 18px; /* Very small headingtext */
+    font-size: 18px; 
 }
 
 p {
-    font-size: 11px; /* small text for the paragraph */
+    font-size: 11px; 
 }
 
 .amount-options {
@@ -278,12 +268,11 @@ p {
 }
 
 .other {
-    height: 10px; /* Reducing size of the input */
+    height: 10px; 
     font-size: 10px;
 }
 }
 
-/* Popup animation effect */
 @keyframes popup-zoom {
 0% {
     transform: scale(0.8);
@@ -299,8 +288,6 @@ p {
 }
 }
 
-
-/* Toepassing van animatie aan de popup */
 .popup {
 animation: popup-zoom 0.6s ease-out, popup-shake 0.3s ease 0.3s;
 }

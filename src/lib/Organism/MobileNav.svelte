@@ -45,7 +45,7 @@
         flex-direction: column;
         justify-content: space-between;
         border-right: var(--border);
-        translate: calc(-50vw - 1px) 0; /* width + border */
+        translate: calc(-50vw - 1px) 0; 
         transition-property: transform display;
         transition-duration: 1s;
         transition-behavior: allow-discrete;
@@ -91,7 +91,7 @@
         display: flex;
 
         @starting-style {
-            translate: calc(-50vw - 1px) 0; /* width + border */
+            translate: calc(-50vw - 1px) 0; 
         }
     }
 

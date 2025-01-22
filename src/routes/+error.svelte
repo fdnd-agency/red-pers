@@ -34,21 +34,21 @@
 
     .error-message {
         font-size: 1.5em;
-        color: #ff6347; /* Tomato color */
+        color: #ff6347; 
     }
 
     .btn {
         display: inline-block;
         padding: 10px 20px;
-        background-color: #ff6347; /* Tomaatkleur */
+        background-color: #ff6347; 
         color: white;
-        text-decoration: none; /* Geen onderstreping */
-        border-radius: 5px; /* Ronde hoeken */
-        transition: background-color 0.3s; /* Smooth hover effect */
+        text-decoration: none;
+        border-radius: 5px; 
+        transition: background-color 0.3s; 
     }
 
     .btn:hover {
-        background-color: #ff4500; /* Oranje-rood bij hover */
+        background-color: #ff4500;
     }
 
     @media (max-width: 600px) {

@@ -1,7 +1,7 @@
 <script>
     import SearchBar from "$lib/Molecules/SearchBar.svelte";
-    import NewsLetter from "$lib/Molecules/NewsLetter.svelte";
-    import DonationButton from "$lib/Molecules/DonationButton.svelte";
+    import NewsLetter from "$lib/Atoms/NewsLetter.svelte";
+    import DonationButton from "$lib/Atoms/DonationButton.svelte";
     import MobileNav from "$lib/Organism/MobileNav.svelte";
     import Nav from "$lib/Organism/Nav.svelte";
     import { onMount } from "svelte";
@@ -19,7 +19,6 @@
     
     if (!alwaysSticky) {
         onMount(() => {
-            // set sticky to true if we have scrolled > 50px
             window.addEventListener("scroll", () => {
                 sticky = window.scrollY > 50;
             });
@@ -27,7 +26,6 @@
     }
 </script>
 
-<!-- class sticky when sticky is true, class animate when header is not alwaysSticky -->
 <header class:sticky={sticky} class:animate={!alwaysSticky}>
     <section class="top wide-screen-only">
         <ul>
@@ -54,7 +52,7 @@
                 <p class="uppercase wide-screen-only">Podium voor de journalistiek</p>
             </div>
             <a href="/" class="logo-container">
-                <img src="/RedPers_Logo_Cmyk_Black.webp" alt="RedPers logo" width="280" height="70" />
+                <img src="images/redpersLogo.webp" alt="RedPers logo" width="280" height="70" />
             </a>
             <ul>
                 <li class="wide-screen-only"><NewsLetter/></li>
@@ -66,7 +64,6 @@
         </div>
     </section>
     {#if alwaysSticky}
-        <!-- Only include nav in header when header is alwaysSticky -->
         <Nav alwaysSticky={alwaysSticky} />
     {/if}
     <MobileNav />
@@ -81,7 +78,7 @@
         padding: 0 0;
         background-color: var(--background-color);
         --search-background-color: var(--background-color);
-        overflow: hidden; /* Hide the inner borders when animating */
+        overflow: hidden; 
 
         height: 80px;
     }
@@ -101,7 +98,7 @@
 
     .sticky .main-header {
         position: fixed;
-        top: -1px; /* Hide upper inner border */
+        top: -1px; 
         left: 0;
         z-index: 100;
         border-bottom: var(--border);
@@ -281,7 +278,6 @@
 
         @supports(animation-timeline: view()) {
             .sticky.animate {
-                /* Total height of main-header, required when making position fixed */
                 margin-bottom: 230px;
             }
             
@@ -308,7 +304,7 @@
 
         .main-header {
             position: fixed;
-            top: -1px; /* Hide upper inner border */
+            top: -1px; 
             left: 0;
             border-bottom: var(--border);
             z-index: 1;

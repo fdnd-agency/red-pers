@@ -3,7 +3,7 @@ import { categoriesData } from "$lib";
 
 export async function load() {
     return {
-        posts: await wp.posts().perPage(4), // TODO: Make 4 when grid works
+        posts: await wp.posts().perPage(4), 
         categories: await Promise.all(categoriesData.map(async (category) => ({
             name: category.name,
             slug: category.slug,

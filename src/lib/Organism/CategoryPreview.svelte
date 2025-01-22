@@ -9,7 +9,7 @@
 <div>
     <div class="category-name">
         <h1>{categoryName}</h1>
-        <a href="/categorie/{categorySlug}">Meer {categoryName} <img src="/Vector-arrow.svg" alt="Link"></a>
+        <a href="/categorie/{categorySlug}">Meer {categoryName} <img src="icons/vector-arrow.svg" alt="Link"></a>
     </div>
     <div class="articles">
         {#each posts as post}

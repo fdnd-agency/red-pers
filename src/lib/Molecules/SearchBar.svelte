@@ -1,6 +1,6 @@
 <script>
     export let placeholder;
-    export let name = 'q'; // optional custom parameter with default value 'q'
+    export let name = 'q'; 
     export let resultsPage;
     export let alwaysOpen = false;
     export let value = '';
@@ -10,7 +10,6 @@
 
     function handleClick(event) {
         if (searchBar.classList.contains('closed')) {
-            // If the search bar is closed, open it and don't search
             event.preventDefault();
             searchBar.focus();
             searchBar.classList.remove('closed');
@@ -18,7 +17,6 @@
     }
 
     function handleBlur(event) {
-        // If the user clicks anywhere other than the search button, close the search bar
         if (event.relatedTarget !== searchButton) {
             searchBar.classList.add('closed');
         }
@@ -29,12 +27,12 @@
     {#if alwaysOpen}
         <input placeholder={placeholder} name={name} value={value} aria-label="Search bar">
         <button type="submit" class="search-button" width="50px" height="50px">
-            <img src="/search-svgrepo-com.svg" alt="search icon" width="50px" height="50px">
+            <img src="icons/searchIcon.svg" alt="search icon" width="50px" height="50px">
         </button>
     {:else}
         <input on:blur={handleBlur} on:focus={handleClick} bind:this={searchBar} class="closed" placeholder={placeholder} name={name} value={value} aria-label="Search bar">
         <button on:click={handleClick} bind:this={searchButton} type="submit" class="search-button" width="50px" height="50px">
-            <img src="/search-svgrepo-com.svg" alt="search icon" width="50px" height="50px">
+            <img src="icons/searchIcon.svg" alt="search icon" width="50px" height="50px">
         </button>
     {/if}
 </form>
