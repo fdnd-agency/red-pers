@@ -33,6 +33,7 @@
 .category-name {
         border-top: 8px solid black;
         display: flex;
+        margin-top: 5em;
     }
 
     h1 {
@@ -53,5 +54,11 @@
 
     .background {
         background-color: var(--paper-color);
+    }
+
+    @media screen and (max-width: 861px) {
+        .category-name{
+            margin-top: 0;
+        }
     }
 </style>
