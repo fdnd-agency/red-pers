@@ -18,19 +18,13 @@
             if (sticky || alwaysSticky) {
                 let scrollDiff = window.scrollY - prevScroll;
                 if (Math.sign(scrollDiff) == Math.sign(scrolledSoFar)) {
-                    // sign(a) returns 1 if a is positive and -1 if a is negative
-                    // still scrolling in same direction
                     scrolledSoFar += scrollDiff;
                 } else {
-                    // reversed direction, restart count
                     scrolledSoFar = scrollDiff;
                 }
-
                 if (scrolledSoFar < -100) {
-                    // scrolled up by > 100px
                     hidden = false;
                 } else if (scrolledSoFar > 200) {
-                    // scrolled down by > 200px
                     hidden = true;
                 }
             } else {

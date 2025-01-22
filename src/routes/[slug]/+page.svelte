@@ -10,11 +10,11 @@
 
     export let data;
     
-    const post = data.post;// Check if the data has been received and is an array
+    const post = data.post;
     let fontSizeBig = false;
 
     function changeFontSize() {
-        fontSizeBig = !fontSizeBig; // flip value of fontSizeBig
+        fontSizeBig = !fontSizeBig;
     }
 </script>
 
@@ -25,7 +25,6 @@
 <main>
     <ArticleTools changeFontSizeFunction={changeFontSize}></ArticleTools>
     {#if post}
-    <!-- @html means: there is html in this string, render it -->
     <article>
         <div class:large={fontSizeBig}>{@html post.content.rendered}</div>
         <DonationBox />
