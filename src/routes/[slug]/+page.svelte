@@ -26,7 +26,7 @@
     <ArticleTools changeFontSizeFunction={changeFontSize}></ArticleTools>
     {#if post}
     <article>
-        <div class:large={fontSizeBig}>{@html post.content.rendered}</div>
+        <div class="content" class:large={fontSizeBig}>{@html post.content.rendered}</div>
         <DonationBox />
         <h2>Dit artikel werd geschreven door</h2>
         <AuthorInfo author={post.authors[0]}></AuthorInfo>
@@ -50,8 +50,26 @@
         padding: 0 1em;
     }
 
+    .content {
+        font-size: 18px;
+        font-style: 'source-serif-pro';
+    }
+
+    :global(.content a) {
+        color: var(--accent-color1);
+    }
+
+    :global(.content p) {
+        font-family: var(--font-alt);
+        line-height: 30px;
+    }
+
+    :global(.content a:hover) {
+        text-decoration: underline;
+    }
+
     .large {
-        font-size: large;
+        font-size: 20px;
     }
 
     article {

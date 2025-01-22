@@ -1,25 +1,29 @@
 <script>
+    import { getCategoryById } from "$lib/index.js";
+
     export let post
     const dateFormat = {
         day: 'numeric',
         month: 'long',
         year: 'numeric'
     };
+
+    const category = post ? getCategoryById(post.categories[0]) : null;
 </script>
 
 <header>
     {#if post}
         <div class="container">
             <article class="summary">
-                <p class="boven-kop uppercase bold">
-                    {@html post.yoast_head_json.schema["@graph"][0].articleSection[0]}
-                </p>
-                <h1 class="artikel-kop">{@html post.title.rendered}</h1>
-                <div class="introtekst">
+                <a class="category-name uppercase bold" href="/categorie/{category.slug}">
+                    {category.name}
+                </a>
+                <h1>{@html post.title.rendered}</h1>
+                <div class="excerpt">
                     {@html post.excerpt.rendered}
                 </div>
                 <div class="author-and-read-time">
-                    <p>Door <span class="bold">{post.authors[0].display_name}</span></p>
+                    <p>Door <a class="bold" href="/author/{post.author}">{post.authors[0].display_name}</a></p>
                     <p>{post.yoast_head_json.twitter_misc["Geschatte leestijd"]}</p>
                 </div>
             </article>
@@ -61,7 +65,11 @@
         overflow-wrap: break-word;
     }
 
-    .artikel-kop{
+    .author-and-read-time {
+        margin-bottom: 2em;
+    }
+
+    h1 {
         font-family: var(--font-alt);
         font-weight: var(--font-weight-bold);
         font-size: 38px;
@@ -70,7 +78,7 @@
         margin: 0;
     }
 
-    .boven-kop{
+    .category-name {
         font-family: var(--font-main);
         font-size: 12px;
         line-height: 220%;
@@ -78,7 +86,7 @@
         color: var(--accent-color1);
     }
 
-    .introtekst {
+    .excerpt {
         font-family: var(--font-main);
         font-weight: var(--font-weight-light);
         font-size: 21px;
@@ -89,6 +97,10 @@
     img {
         max-width: 100%;
         height: auto;
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 
     @media only screen and (min-width: 960px) {

@@ -142,6 +142,7 @@
         max-width: 25em;
         border: var(--border);
         background-color: var(--background-color);
+        transition: transform 0.3s ease;
     }
 
     .first-article {
@@ -203,6 +204,7 @@
         margin-bottom: 1.5em;
         box-sizing: border-box;
         max-width: 1240px;
+        transition: transform 0.3s ease;
     }
 
     .first-article:hover {
@@ -210,16 +212,13 @@
     }
 
     .first-article:hover h1 {
-        transition: transform 0.3s ease;
         color: var(--accent-color1);  
     }
     .other-articles:hover  {
-        transition: transform 0.3s ease;
         transform: scale(1.02);  
     }
     
     .other-articles:hover h1 {
-        transition: transform 0.3s ease;
         color: var(--accent-color1); 
         
     }
@@ -279,7 +278,8 @@
         }
 
         .other-articles h1{
-        font-size: 0.8em;
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
         }
 
         .first-article{

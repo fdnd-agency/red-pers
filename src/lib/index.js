@@ -18,3 +18,7 @@ export const categoriesData = [
     {id: 63, name: "Politiek", slug: "politiek"},
     {id: 94, name: "Wetenschap", slug: "wetenschap"},
 ];
+
+export function getCategoryById(id) {
+    return categoriesData.find(category => category.id === id);
+}

@@ -24,7 +24,7 @@
                 }
                 if (scrolledSoFar < -100) {
                     hidden = false;
-                } else if (scrolledSoFar > 200) {
+                } else if (scrolledSoFar > 100) {
                     hidden = true;
                 }
             } else {

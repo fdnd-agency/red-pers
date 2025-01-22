@@ -3,13 +3,11 @@
     import Header from '$lib/Organism/Header.svelte';
     import Nav from '$lib/Organism/Nav.svelte';
     import ArticleAlt from '$lib/Molecules/ArticleAlt.svelte';
-    import ScrollWatcher from '$lib/Molecules/ScrollWatcher.svelte';
     
     export let data;
 </script>
 
 <Header/>
-<ScrollWatcher />
 <div class="background">
     <div class="category-name">
         <h1>{data.category.name}</h1>

@@ -34,7 +34,6 @@
 <style>
     .listen {
         width: max-content;
-        background-color: var(--accent-color3);
         color: var(--text-color);
         display: flex;
         align-items: center;
@@ -44,7 +43,9 @@
     .article-tools {
         display: flex;
         justify-content: space-between;
-        margin-top: 2em;
+        align-items: center;
+        margin-top: 3em;
+        margin-bottom: 2em;
     }
 
     ul {
