@@ -38,6 +38,16 @@
         padding: 0.5em 0.75em; 
     }
 
+    .donation-button:hover {
+        animation: pulse 1s infinite;
+        animation-timing-function: linear;
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+  }
+
     .overlay {
         position: fixed;
         top: 0;

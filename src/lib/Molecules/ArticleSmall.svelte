@@ -47,6 +47,10 @@
         justify-content: space-between;
     }
 
+    article:hover {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
     img {
         width: 100%;
         height: 9.5em;

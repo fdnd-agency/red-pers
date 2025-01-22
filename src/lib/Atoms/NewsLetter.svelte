@@ -21,6 +21,12 @@
         margin: 2rem auto;
     }
 
+    .open-popup-btn:hover{
+        transform: scale(1.1);
+        transition: all ease 500ms;
+        text-decoration: underline;
+    }
+
     .overlay {
         position: fixed;
         top: 0;
