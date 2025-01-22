@@ -29,7 +29,7 @@
     --margin-center: 0 auto;
   
     /* BORDERS */
-    --border: solid var(--text-color) 1px;
+    --border: solid var(--alt-text-color) 1px;
     --border-light: solid var(--light-border-color) 1px;
     
     /* HOVER TRANSITIONS */

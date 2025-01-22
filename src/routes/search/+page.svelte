@@ -28,7 +28,6 @@
             {/each}
         </div>
     {:else}
-        <!-- This will show if no posts are available -->
         <h1>Geen resultaten gevonden voor: &quot;{data.searchterm}&quot;</h1>
     {/if}
 </main>

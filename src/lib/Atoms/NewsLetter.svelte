@@ -92,7 +92,6 @@
         display: none;
     }
 
-    /* Media Queries */
     @media (max-width: 1024px) {
         .popup {
             padding: 3rem;

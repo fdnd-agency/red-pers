@@ -24,7 +24,6 @@
       height: 0.4em;
       background-color: #D5302D;
       z-index: 1000;
-    }
 
     @media only screen and (max-width: 861px) {
         .scroll-watcher {

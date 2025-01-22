@@ -6,7 +6,7 @@
     export let data;
 
     const posts = data.posts;
-    const author = posts && posts.length > 0 ? posts[0].authors[0] : null; // If there is at least 1 post, take its author info
+    const author = posts && posts.length > 0 ? posts[0].authors[0] : null; 
 
     const dateFormat = {
         month: 'short',
@@ -34,7 +34,6 @@
             {/each}
         </div>
     {:else}
-        <!-- This will show if no posts are available -->
         <p>No posts available</p>
     {/if}
 </main>
