@@ -21,7 +21,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      height: 0.5em;
+      height: 0.4em;
       background-color: #D5302D;
       z-index: 1000;
     }
