@@ -332,6 +332,7 @@
             height: auto;
             max-width: 10em;
             max-height: 10em;
+            margin-left: 2.5em;
         }
     }
 
