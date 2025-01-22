@@ -11,7 +11,8 @@ export async function load({ params }) {
     }
 
     return {
-        posts: await wp.posts().param("categories", category.id)
+        posts: await wp.posts().param("categories", category.id),
+        category
     }
 }
 

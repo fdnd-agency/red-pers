@@ -48,7 +48,7 @@
         width: 100%;
         height: 10em;
         max-width: 800px;
-        margin: 0 auto;
+        margin: var(--margin-center);
         padding: 1rem;
         cursor: pointer;
         background: #fff;
@@ -89,7 +89,7 @@
     }
 
     .post-author {
-        font-weight: var(--font-style-bold);
+        font-weight: var(--font-weight-bold);
     }
 
     @media (max-width: 768px) {
@@ -116,6 +116,21 @@
         .post-image {
             width: 100px;
             height: 100px;
+        }
+    }
+
+    @media and screen (max-width: 360px) {
+        .post-title {
+            font-size: 5px;
+        }
+
+        .post-meta {
+            font-size: 0.6rem;
+        }
+
+        .post-image {
+            width: 60px;
+            height: 60px;
         }
     }
 </style>

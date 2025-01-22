@@ -63,7 +63,7 @@
 
     .artikel-kop{
         font-family: var(--font-alt);
-        font-style: var(--font-style-bold);
+        font-weight: var(--font-weight-bold);
         font-size: 38px;
         line-height: 120%;
         letter-spacing: -1%;
@@ -72,7 +72,6 @@
 
     .boven-kop{
         font-family: var(--font-main);
-        font-style: var(--font-style);
         font-size: 12px;
         line-height: 220%;
         letter-spacing: 8%;
@@ -81,7 +80,7 @@
 
     .introtekst {
         font-family: var(--font-main);
-        font-style: var(--font-style-ligth);
+        font-weight: var(--font-weight-light);
         font-size: 21px;
         line-height: var(--line-height-small);
         letter-spacing: -1%;

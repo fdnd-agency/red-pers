@@ -2,7 +2,7 @@
     background-color: var(--paper-color);
     padding: 3em 0;
     width: 100vw;
-    overflow-y: hidden; /* Hide the inner borders when animating */
+    overflow-y: hidden;
     z-index: 100;
     padding: 0 0;
     background-color: var(--background-color);
@@ -20,12 +20,12 @@
     padding: 0 10px;
     border-top: var(--border);
     border-bottom: var(--border);
-    margin: 0 auto;
+    margin: var(--margin-center);
 }
 
 .sticky .main-header {
     position: fixed;
-    top: -1px; /* Hide upper inner border */
+    top: -1px;
     left: 0;
     border-bottom: var(--border);
 }
@@ -204,7 +204,6 @@ header:has(.toggle-nav:checked) path:nth-of-type(3) {
 
     @supports(animation-timeline: view()) {
         .sticky.animate {
-            /* Total height of main-header, required when making position fixed */
             margin-bottom: 230px;
         }
         
@@ -231,7 +230,7 @@ header:has(.toggle-nav:checked) path:nth-of-type(3) {
 
     .main-header {
         position: fixed;
-        top: -1px; /* Hide upper inner border */
+        top: -1px;
         left: 0;
         border-bottom: var(--border);
         z-index: 1;
