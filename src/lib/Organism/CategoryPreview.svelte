@@ -40,6 +40,11 @@
         gap: 1em;
     }
 
+    a:hover {
+        transform: scale(1.1);
+        transition: all ease 500ms;
+    }
+
     img {
         width: 1.5em;
         height: 1.5em;

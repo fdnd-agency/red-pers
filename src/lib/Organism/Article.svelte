@@ -236,16 +236,16 @@
         color: var(--accent-color1);  
     }
 
-
-
     .other-articles:hover  {
         transition: transform 0.3s ease;
         transform: scale(1.02);  
     }
+    
 
     .other-articles:hover h1 {
         transition: transform 0.3s ease;
-        color: var(--accent-color1);  
+        color: var(--accent-color1); 
+        
     }
 
 

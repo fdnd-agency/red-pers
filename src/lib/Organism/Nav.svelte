@@ -48,6 +48,7 @@
         top: 5em;
         left: 0;
         background-color: var(--background-color);
+        z-index: 10;
     }
 
     .nav-items {
