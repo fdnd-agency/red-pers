@@ -7,6 +7,8 @@
         day: 'numeric',
     };
 </script>
+
+
 <a href="/{post.slug}">
     <article class="article {isFirst ? 'first-article' : 'other-articles'}" 
         style={isFirst ? 'max-width:1240px' : 'max-width: 25em;'}>
@@ -33,7 +35,7 @@
 
                 <div class="info-text">
                     <p>
-                        <a href="/author/{post.author}" class="author">{post.yoast_head_json.author}</a>
+                        <span class="author">{post.yoast_head_json.author}</span>
                         <span class="reading-time">
                             <span aria-hidden="true">&minus;</span>
                             <abbr title="Geschatte leestijd">
@@ -95,10 +97,6 @@
         font-weight: bold;
     }
 
-    .author:hover {
-        text-decoration: underline;
-    }
-
     @media only screen and (width < 35em) {
         article {
             max-width: unset;
@@ -150,7 +148,6 @@
         display: flex;
         position: relative;
         flex-direction: row;
-        border-left: 4px solid #D5302D;
         background-color: var(--background-color);
         max-width: 1240px;
         z-index: 0;
@@ -205,7 +202,6 @@
         background-color: var(--background-color);
         margin-bottom: 1.5em;
         box-sizing: border-box;
-        border-left: 4px solid red;
         max-width: 1240px;
     }
 
@@ -257,6 +253,34 @@
             height: auto;
         }
     }
+
+    @media screen and (min-width: 320px) and (max-width: 400px){
+        .other-articles{
+        max-height: 10em;
+        }
+
+        .other-articles img{
+            max-height: 10em;
+        }
+
+        .other-articles h1{
+        font-size: 0.8em;
+        }
+
+        .first-article{
+            max-height: 25em;
+        }
+
+        .first-article .excerpt{
+            display: none;
+        }
+
+        .first-article .info-text{
+            display: none;
+        }
+    }
+
+
 </style>
 
 
