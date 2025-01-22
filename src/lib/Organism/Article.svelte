@@ -35,7 +35,7 @@
 
                 <div class="info-text">
                     <p>
-                        <a href="/author/{post.author}" class="author">{post.yoast_head_json.author}</a>
+                        <span class="author">{post.yoast_head_json.author}</span>
                         <span class="reading-time">
                             <span aria-hidden="true">&minus;</span>
                             <abbr title="Geschatte leestijd">
@@ -95,10 +95,6 @@
 
     .author {
         font-weight: bold;
-    }
-
-    .author:hover {
-        text-decoration: underline;
     }
 
     @media only screen and (width < 35em) {
@@ -268,7 +264,7 @@
         }
 
         .other-articles h1{
-        font-size: 0.9em;
+        font-size: 0.8em;
         }
 
         .first-article{
@@ -278,9 +274,13 @@
         .first-article .excerpt{
             display: none;
         }
+
+        .first-article .info-text{
+            display: none;
+        }
     }
 
-    
+
 </style>
 
 
