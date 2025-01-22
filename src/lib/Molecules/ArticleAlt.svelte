@@ -104,9 +104,9 @@
         }
     }
 
-    @media (max-width: 480px) {
+    @media (min-width: 360px) and (max-width: 450px) {
         .post-title {
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         .post-meta {
@@ -119,9 +119,9 @@
         }
     }
 
-    @media and screen (max-width: 360px) {
+    @media (min-width: 320px) {
         .post-title {
-            font-size: 5px;
+            font-size: 0.9rem;
         }
 
         .post-meta {
@@ -129,8 +129,8 @@
         }
 
         .post-image {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
         }
     }
 </style>

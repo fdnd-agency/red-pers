@@ -52,7 +52,7 @@
                 <p class="uppercase wide-screen-only">Podium voor de journalistiek</p>
             </div>
             <a href="/" class="logo-container">
-                <img src="images/redpersLogo.webp" alt="RedPers logo" width="280" height="70" />
+                <img src="/images/redpersLogo.webp" alt="RedPers logo" width="280" height="70" />
             </a>
             <ul>
                 <li class="wide-screen-only"><NewsLetter/></li>
