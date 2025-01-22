@@ -33,8 +33,6 @@
 .category-name {
         border-top: 8px solid black;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
     }
 
     h1 {
