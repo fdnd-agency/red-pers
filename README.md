@@ -15,7 +15,7 @@
 [https://redpers.netlify.app](https://redpers-fdnd.netlify.app)
 
 ## Description
-We are a team of 4 students that have made a SSR website for our client Red Pers, using WordPress as headless CMS API. 
+We are a team of 4 students ([Ruben](https://github.com/RubenErhardt), [Shanna](https://github.com/Shannafdnd), [Annelinde](https://github.com/annelinderaadsheer) & [Tristan](https://github.com/TristanKatte)) that have made a SSR website for our client Red Pers, using WordPress as headless CMS API. 
 
 Red Pers is a journalist platform with 54 young, motivated poeple who are comitted to journalism. It is perfect for beginner or student journalists and writers to build their portfolio and share their stories. This website is only a year old and still a work in progress.
 
