@@ -1,7 +1,7 @@
 <script>
     import SearchBar from "$lib/Molecules/SearchBar.svelte";
-    import NewsLetter from "$lib/Molecules/NewsLetter.svelte";
-    import DonationButton from "$lib/Molecules/DonationButton.svelte";
+    import NewsLetter from "$lib/Atoms/NewsLetter.svelte";
+    import DonationButton from "$lib/Atoms/DonationButton.svelte";
     import MobileNav from "$lib/Organism/MobileNav.svelte";
     import Nav from "$lib/Organism/Nav.svelte";
     import { onMount } from "svelte";
@@ -25,7 +25,6 @@
         });
     }
 </script>
-
 
 <header class:sticky={sticky} class:animate={!alwaysSticky}>
     <section class="top wide-screen-only">
@@ -53,7 +52,7 @@
                 <p class="uppercase wide-screen-only">Podium voor de journalistiek</p>
             </div>
             <a href="/" class="logo-container">
-                <img src="/RedPers_Logo_Cmyk_Black.webp" alt="RedPers logo" width="280" height="70" />
+                <img src="images/redpersLogo.webp" alt="RedPers logo" width="280" height="70" />
             </a>
             <ul>
                 <li class="wide-screen-only"><NewsLetter/></li>
@@ -65,7 +64,6 @@
         </div>
     </section>
     {#if alwaysSticky}
-        <!-- Only include nav in header when header is alwaysSticky -->
         <Nav alwaysSticky={alwaysSticky} />
     {/if}
     <MobileNav />
@@ -80,7 +78,7 @@
         padding: 0 0;
         background-color: var(--background-color);
         --search-background-color: var(--background-color);
-        overflow: hidden; /* Hide the inner borders when animating */
+        overflow: hidden; 
 
         height: 80px;
     }
@@ -95,12 +93,12 @@
         padding: 0 10px;
         border-top: var(--border);
         border-bottom: var(--border);
-        margin: 0 auto;
+        margin: var(--margin-center);
     }
 
     .sticky .main-header {
         position: fixed;
-        top: -1px; /* Hide upper inner border */
+        top: -1px; 
         left: 0;
         z-index: 100;
         border-bottom: var(--border);

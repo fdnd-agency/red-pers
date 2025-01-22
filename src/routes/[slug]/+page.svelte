@@ -27,21 +27,20 @@
     {#if post}
     <!-- @html means: there is html in this string, render it -->
     <article>
-        <p class:large={fontSizeBig}>{@html post.content.rendered} </p>
+        <div class:large={fontSizeBig}>{@html post.content.rendered}</div>
         <DonationBox />
         <h2>Dit artikel werd geschreven door</h2>
         <AuthorInfo author={post.authors[0]}></AuthorInfo>
     </article>
   
-{:else}
-    <p>No post available</p>
-{/if}
+    {:else}
+        <p>No post available</p>
+    {/if}
 
-<h2>Meer van {post.authors[0].display_name}</h2>
-<ArticleSmall posts={data.authorPosts}/>
-<h2>Meer van Red Pers</h2>
-<ArticleSmall posts={data.additionalPosts}/>
-
+    <h2>Meer van {post.authors[0].display_name}</h2>
+    <ArticleSmall posts={data.authorPosts}/>
+    <h2>Meer van Red Pers</h2>
+    <ArticleSmall posts={data.additionalPosts}/>
 </main>
 
 <Footer/>

@@ -6,7 +6,7 @@
     export let data;
 
     const posts = data.posts;
-    const author = posts && posts.length > 0 ? posts[0].authors[0] : null; // If there is at least 1 post, take its author info
+    const author = posts && posts.length > 0 ? posts[0].authors[0] : null; 
 
     const dateFormat = {
         month: 'short',
@@ -34,7 +34,6 @@
             {/each}
         </div>
     {:else}
-        <!-- This will show if no posts are available -->
         <p>No posts available</p>
     {/if}
 </main>
@@ -49,7 +48,7 @@
     .author-info-container {
         width: calc(100% - 10em);
         min-width: min(500px, 100%);
-        margin: 0 auto;
+        margin: var(--margin-center);
         display: flex;
         flex-direction: column;
         gap: 1em;
@@ -57,7 +56,7 @@
     
     .author-img {
         width: calc(100% - 2px);
-        margin: 0 auto;
+        margin: var(--margin-center);
         border: var(--border);
     }
 

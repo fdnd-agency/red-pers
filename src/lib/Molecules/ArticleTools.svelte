@@ -1,13 +1,13 @@
 <script>
     export let changeFontSizeFunction;
 
-    function betterAlert(message) { // This function shows a custom alert
+    function betterAlert(message) { 
         alertDialog.show()
         alertMessage.innerText = message;
         setTimeout(() => alertDialog.close(), 2000);
     }
     function share(event) {
-        if (navigator.share) { // This function isn't supported in every browser
+        if (navigator.share) { 
             navigator.share({url: window.top.location});
         } else {
             navigator.clipboard.writeText(window.top.location);
@@ -17,16 +17,16 @@
 </script>
 
 <div class="article-tools">
-    <button class="listen"><img src="/Play.svg" alt="Play">Artikel beluisteren</button>
+    <button class="listen"><img src="icons/play.svg" alt="Play">Artikel beluisteren</button>
     <ul>
         <li>
-            <button><img src="/Vector2.svg" alt="Opslaan"></button>
+            <button><img src="icons/vector2.svg" alt="Opslaan"></button>
         </li>
         <li>
-            <button on:click={share}><img src="/Vector.svg" alt="Delen"></button>
+            <button on:click={share}><img src="icons/vector.svg" alt="Delen"></button>
         </li>
         <li>
-            <button on:click={changeFontSizeFunction}><img src="/Light.svg" alt="Vergroot text"></button>
+            <button on:click={changeFontSizeFunction}><img src="icons/light.svg" alt="Vergroot text"></button>
         </li>
     </ul>
 </div>
