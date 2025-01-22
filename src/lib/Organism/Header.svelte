@@ -311,4 +311,27 @@
             --search-background-color: var(--background-color);
         }
     }
+
+    @media screen and (min-width: 320px) and (max-width: 450px){
+        .main-header-inner {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+        }
+
+
+        .main-header-inner svg{
+            width: 1.3em;
+            height: 1.3em;
+        }
+
+        .logo-container img{
+            width: 100%;
+            height: auto;
+            max-width: 10em;
+            max-height: 10em;
+            margin-left: 2.5em;
+        }
+    }
+
 </style>
