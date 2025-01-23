@@ -23,7 +23,7 @@
 <ArticleInfoFrame post={post}></ArticleInfoFrame>
 
 <main>
-    <ArticleTools changeFontSizeFunction={changeFontSize}></ArticleTools>
+    <ArticleTools fontSizeBig={fontSizeBig} changeFontSizeFunction={changeFontSize}></ArticleTools>
     {#if post}
     <article>
         <div class="content" class:large={fontSizeBig}>{@html post.content.rendered}</div>

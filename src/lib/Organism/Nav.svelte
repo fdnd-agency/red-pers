@@ -112,7 +112,7 @@
         font-size: 14px;
     }
 
-    a:hover {
+    a:hover, a:focus {
         color: #ff0000;
         transition: var(--hover);
     }

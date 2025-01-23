@@ -74,7 +74,7 @@
         background-color: var(--paper-color);
         padding: 3em 0;
         width: 100vw;
-        z-index: 100;
+        z-index: 4;
         padding: 0 0;
         background-color: var(--background-color);
         --search-background-color: var(--background-color);
@@ -89,7 +89,7 @@
         height: 100%;
         justify-content: space-between;
 
-        max-width: var(--main-width);
+        max-width: calc(var(--main-width) - 20px);
         padding: 0 10px;
         border-top: var(--border);
         border-bottom: var(--border);

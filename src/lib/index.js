@@ -19,6 +19,6 @@ export const categoriesData = [
     {id: 94, name: "Wetenschap", slug: "wetenschap"},
 ];
 
-export function getCategoryById(id) {
-    return categoriesData.find(category => category.id === id);
+export function getCategoryById(ids) {
+    return categoriesData.find(category => ids.includes(category.id));
 }

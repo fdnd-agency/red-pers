@@ -8,15 +8,15 @@
         year: 'numeric'
     };
 
-    const category = post ? getCategoryById(post.categories[0]) : null;
+    const category = post ? getCategoryById(post.categories) : null;
 </script>
 
 <header>
     {#if post}
         <div class="container">
             <article class="summary">
-                <a class="category-name uppercase bold" href="/categorie/{category.slug}">
-                    {category.name}
+                <a class="category-name uppercase bold" href="/categorie/{category?.slug}">
+                    {category?.name}
                 </a>
                 <h1>{@html post.title.rendered}</h1>
                 <div class="excerpt">

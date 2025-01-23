@@ -10,9 +10,7 @@
 
 
 <a href="/{post.slug}">
-    <article class="article {isFirst ? 'first-article' : 'other-articles'}" 
-        style={isFirst ? 'max-width:1240px' : 'max-width: 25em;'}>
-        
+    <article class="article {isFirst ? 'first-article' : 'other-articles'}">
         {#if isFirst}
         <div class="newest">NIEUWSTE ARTIKEL</div>
         {/if}
@@ -136,7 +134,7 @@
         }
     }
 
-    .other-articles {
+    .article {
         --title-font-size: 28px;
         --title-font-line-height: 32px;
         max-width: 25em;
@@ -146,11 +144,16 @@
     }
 
     .first-article {
+        box-sizing: border-box;
+        max-width: var(--main-width);
+    }
+
+    .first-article {
         display: flex;
         position: relative;
         flex-direction: row;
         background-color: var(--background-color);
-        max-width: 1240px;
+        max-width: var(--main-width);
         z-index: 0;
         box-sizing: border-box;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -196,31 +199,12 @@
         font-weight: bold;
     }
 
-    .first-article {
-        --title-font-size: 28px;
-        --title-font-line-height: 32px;
-        border: var(--border);
-        background-color: var(--background-color);
-        margin-bottom: 1.5em;
-        box-sizing: border-box;
-        max-width: 1240px;
-        transition: transform 0.3s ease;
-    }
-
-    .first-article:hover {
+    .article:hover, a:focus .article {
         transform: scale(1.02);
     }
 
-    .first-article:hover h1 {
+    .article:hover h1, a:focus h1 {
         color: var(--accent-color1);  
-    }
-    .other-articles:hover  {
-        transform: scale(1.02);  
-    }
-    
-    .other-articles:hover h1 {
-        color: var(--accent-color1); 
-        
     }
 
     @media only screen and (min-width: 700px) and (max-width: 1055px) {

@@ -23,7 +23,7 @@
       left: 0;
       height: 0.3em;
       background-color: #D5302D;
-      z-index: 1000;
+      z-index: 3;
     }
 
     @media only screen and (max-width: 861px) {

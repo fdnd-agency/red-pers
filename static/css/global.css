@@ -97,9 +97,8 @@ body {
 }
   
 main {
-    max-width: 1240px;
+    max-width: var(--main-width);
     margin: var(--margin-center);
-    padding-top: 2em;
 }
   
 a {
@@ -109,11 +108,22 @@ a {
 
 button, a.button {
     color: var(--alt-text-color);
-    background-color: var(--button-background-color);
-    padding: 5px;
+    background-color: lightgray;
+    padding: 0.5em;
     text-align: center;
     cursor: pointer;
     border: none;
+}
+
+button:enabled:hover, a.button:hover {
+    background-color: var(--text-color);
+    color: white;
+    transition: var(--hover);
+}
+
+button:disabled {
+    background-color: #f0f0f0;
+    cursor: unset;
 }
 
 .bold {
