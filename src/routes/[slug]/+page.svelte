@@ -1,5 +1,5 @@
 <script>
-    import ArticleInfoFrame from '$lib/Organism/ArticleInfoFrame.svelte';
+    import ArticleExcerpt from '$lib/Organism/ArticleExcerpt.svelte';
     import Header from '$lib/Organism/Header.svelte';
     import ArticleSmall from '$lib/Molecules/ArticleSmall.svelte';
     import Footer from '$lib/Organism/Footer.svelte';
@@ -20,7 +20,7 @@
 
 <Header/>
 <ScrollWatcher />
-<ArticleInfoFrame post={post}></ArticleInfoFrame>
+<ArticleExcerpt post={post}></ArticleExcerpt>
 
 <main>
     <ArticleTools fontSizeBig={fontSizeBig} changeFontSizeFunction={changeFontSize}></ArticleTools>
