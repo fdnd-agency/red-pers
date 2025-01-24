@@ -1,10 +1,10 @@
-<input type="checkbox" id="donation-toggle">
+<script>
+    import Dialog from "$lib/Atoms/Dialog.svelte";
+</script>
 
-<label class="donation-button" for="donation-toggle">Doneren</label>
-
-<section class="overlay">
-    <article class="popup">
-        <label class="close-btn" for="donation-toggle">&times;</label>
+<Dialog>
+    <div slot="button" class="donation-button">Doneren</div>
+    <article class="popup" slot="content">
         <h2>Doneren</h2>
         <p>Wij bieden jonge, aspirerende journalisten een podium en begeleiding. Dat kunnen we nog beter met jouw steun. Die steun komt met twee voor de prijs van een, want onze sponsor matcht jouw donatie. Geef jij ons vijf euro? Dan ontvangen wij een tientje.</p>
         <fieldset>
@@ -27,7 +27,7 @@
             </label>
         </fieldset>
     </article>
-</section>
+</Dialog>
 
 <style>
     .donation-button {
@@ -46,45 +46,11 @@
         0% { transform: scale(1); }
         50% { transform: scale(1.1); }
         100% { transform: scale(1); }
-  }
-
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        z-index: 3;
     }
 
     article.popup {
-        background-color: var(--background-color);
-        border: 0.125em solid black; 
         padding: 4rem;
-        max-width: 31.25em; 
-        position: relative;
-        box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1); 
-    }
-
-    .close-btn {
-        position: absolute;
-        top: 0.625em; 
-        right: 0.625em; 
-        font-size: 1.5rem;
-        cursor: pointer;
-        border: none;
-    }
-
-    #donation-toggle:checked ~ .overlay {
-        display: flex;
-    }
-
-    #donation-toggle {
-        display: none;
+        max-width: 31.25em;
     }
 
     h2 {
@@ -154,133 +120,5 @@
     .other:hover {
         background-color: var(--accent-color1);
         transition: background-color 0.3s ease;
-    }
-
-    @media (max-width: 1024px) {
-        .popup {
-            padding: 3rem;
-            max-width: 28.125em; 
-        }
-
-        .popup h2 {
-            font-size: 2.8rem;
-        }
-
-        .popup p {
-            font-size: 1rem;
-            line-height: 1.4;
-        }
-
-        .amount-options label,
-        .other {
-            font-size: 1.1rem;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .popup {
-            padding: 2rem;
-            max-width: 25em; 
-        }
-
-        .popup h2 {
-            font-size: 2.4rem;
-        }
-
-        .popup p {
-            font-size: 0.8rem;
-            line-height: 1.3;
-        }
-
-        .amount-options label,
-        .other {
-            font-size: 0.8rem;
-            padding: 0.8rem 1.2rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .popup {
-            padding: 1.5rem;
-            max-width: 21.875em;
-        }
-
-        .popup h2 {
-            font-size: 2rem;
-        }
-
-        .popup p {
-            font-size: 0.6rem;
-            line-height: 1.2;
-        }
-
-        .amount-options label,
-        .other {
-            font-size: 0.6rem;
-            padding: 0.6rem 1rem;
-        }
-    }
-
-      /* Animations */
-      @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-
-    @keyframes slideUp {
-        from {
-            transform: translateY(20px);
-            opacity: 0;
-        }
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes fadeOut {
-        from {
-            opacity: 1;
-        }
-        to {
-            opacity: 0;
-        }
-    }
-
-    @keyframes slideDown {
-        from {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateY(20px);
-            opacity: 0;
-        }
-    }
-
-    #donation-toggle:checked ~ .overlay {
-        display: flex;
-        animation: fadeIn 0.3s ease-in-out forwards;
-    }
-
-    .overlay {
-        animation: fadeOut 0.3s ease-in-out forwards;
-    }
-
-    #donation-toggle:checked ~ .overlay article.popup {
-        animation: slideUp 0.3s ease-in-out forwards;
-    }
-
-    .popup {
-        animation: slideDown 0.3s ease-in-out forwards;
-    }
-
-    .overlay, .popup {
-        animation-duration: 0.3s;
-        animation-timing-function: ease-in-out;
     }
 </style>

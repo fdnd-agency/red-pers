@@ -113,12 +113,12 @@ button, a.button {
     text-align: center;
     cursor: pointer;
     border: none;
+    transition: var(--hover);
 }
 
 button:enabled:hover, a.button:hover {
     background-color: var(--text-color);
     color: white;
-    transition: var(--hover);
 }
 
 button:disabled {
